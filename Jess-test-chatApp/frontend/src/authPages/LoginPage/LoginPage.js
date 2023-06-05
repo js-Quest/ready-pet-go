@@ -6,7 +6,7 @@ import LoginPageInputs from './LoginPageInputs';
 
 
 export default function LoginPage() {
-  const [mail, setMail] = useState('');
+  const [email, setMail] = useState('');
   const [password, setPassword] = useState('');
   const [isFormValid, setIsFormValid] = useState(false);
   const handleLogin = () => {
@@ -16,7 +16,7 @@ export default function LoginPage() {
     <AuthBox>
       <LoginPageHeader />
       <LoginPageInputs 
-      mail={mail}
+      email={email}
       setMail={setMail}
       password={password}
       setPassword={setPassword}

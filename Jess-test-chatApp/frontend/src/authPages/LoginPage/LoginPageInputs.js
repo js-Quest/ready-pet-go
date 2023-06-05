@@ -2,7 +2,7 @@ import React from "react";
 import InputWithLabel from "../../shared/components/InputWithLabel";
 
 export default function LoginPageInputs({
-  mail,
+  email,
   setMail,
   password,
   setPassword,
@@ -10,7 +10,7 @@ export default function LoginPageInputs({
   return (
     <>
       <InputWithLabel
-        value={mail}
+        value={email}
         setValue={setMail}
         label="Email"
         type="text"
