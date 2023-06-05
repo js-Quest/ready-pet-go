@@ -21,7 +21,7 @@ const Input = styled("input")({
   height: "40px",
   border: "1px solid black",
   borderRadius: "10px",
-  color: "#dcddde",
+  color: "black",
   background: "#D7DEDF",
   margin: 0,
   fontSize: "16px",
