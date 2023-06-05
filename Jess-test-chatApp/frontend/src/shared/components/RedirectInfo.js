@@ -10,7 +10,8 @@ export default function RedirectInfo({text, redirectText, additionalStyles, redi
   return (
     <Typography
     sx={{color:'#72767d'}} //light grey
-    style={additionalStyles ? additionalStyles : {} }
+    //if additional styles available, implement them.
+    style={additionalStyles ? additionalStyles : {} } 
     variant='subtitle2' //mui Typography subtitle style
     >
       {text}
