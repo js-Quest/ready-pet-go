@@ -4,9 +4,13 @@ import LoginPageHeader from './LoginPageHeader';
 import LoginPageFooter from './LoginPageFooter';
 import LoginPageInputs from './LoginPageInputs';
 import { validateLoginForm } from '../../shared/utils/validators';
+import { connect } from 'react-redux';
+import { getActions } from '../../app/actions/authActions';
+// import {useNavigate} from 'react-router-dom'
 
 
-export default function LoginPage() {
+function LoginPage({login}) {
+  // const navigate = useNavigate();
   const [email, setMail] = useState('');
   const [password, setPassword] = useState('');
   const [isFormValid, setIsFormValid] = useState(false);
@@ -15,7 +19,13 @@ export default function LoginPage() {
     setIsFormValid(validateLoginForm({email, password}));
   }, [email, password, setIsFormValid])
 
+  //will change for graphQL
   const handleLogin = () => {
+    const userDetails = {
+      email,
+      password
+    }
+    login(userDetails)  //(userDetails, navigate)?
     console.group(email);
     console.log(password);
     console.log('logging in now')
@@ -33,3 +43,11 @@ export default function LoginPage() {
     </AuthBox>
   )
 }
+
+const mapActionsToProps =(dispatch)=>{
+  return{
+    ...getActions(dispatch),
+  }
+};
+
+export default connect(null, mapActionsToProps)(LoginPage);

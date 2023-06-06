@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const authControllers = require("../controllers/auth/authControllers");
+const authControllers = require("../controllers/auth/authController");
 
 // trying out joi validation npm package
 const Joi = require("joi");
