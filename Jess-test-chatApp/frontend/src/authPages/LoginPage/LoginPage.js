@@ -43,11 +43,11 @@ function LoginPage({login}) {
     </AuthBox>
   )
 }
-
+// map all actions to props
 const mapActionsToProps =(dispatch)=>{
   return{
     ...getActions(dispatch),
   }
 };
-
+// access through react-redux connect
 export default connect(null, mapActionsToProps)(LoginPage);

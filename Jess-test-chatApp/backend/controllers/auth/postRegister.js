@@ -38,7 +38,7 @@ const postRegister = async (req,res)=>{
     })
   }catch(err){
     console.log(err);
-    res.status(500).json({message: 'error try again'})
+    res.status(500).json({message: 'username or email already in use, please try again'})
   }
 };
 

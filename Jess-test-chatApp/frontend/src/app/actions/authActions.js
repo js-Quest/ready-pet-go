@@ -1,20 +1,21 @@
 import * as api from '../../api';
-// import {useNavigate} from 'react-router-dom'
+import { openAlertMessage } from './alertActions';
 const authActions = { 
   //action type
   SET_USER_DETAILS: 'AUTH.SET_USER_DETAILS'
 };
 
 const getActions = (dispatch) => {
-  // const navigate = useNavigate();
+
   const login = async (userDetails) => {
     const response = await api.login(userDetails);
     console.log(response);
     if (response.error) {
       // handle error
+      dispatch(openAlertMessage(response?.exception?.response?.data?.message));
     } else {
       const { userDetails } = response?.data;
-      localStorage.setItem('user', JSON.stringify(userDetails));
+      // localStorage.setItem('user', JSON.stringify(userDetails));
 
       dispatch(setUserDetails(userDetails));
       window.location.replace('/dashboard');
@@ -25,10 +26,12 @@ const getActions = (dispatch) => {
     const response = await api.register(userDetails);
     console.log(response);
     if (response.error) {
+      console.log('email or username already exists')
       // handle error
+      dispatch(openAlertMessage(response?.exception?.response?.data?.message));
     } else {
       const { userDetails } = response?.data;
-      localStorage.setItem('user', JSON.stringify(userDetails));
+      // localStorage.setItem('user', JSON.stringify(userDetails));
 
       dispatch(setUserDetails(userDetails));
       window.location.replace('/dashboard');
