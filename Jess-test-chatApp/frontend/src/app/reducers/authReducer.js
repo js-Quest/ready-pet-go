@@ -9,6 +9,7 @@ const reducer = (state = initState, action) => {
     case authActions.SET_USER_DETAILS:
       return {
         ...state,
+        //from setUserDetails in authActions
         userDetails: action.userDetails,
       };
     default:
