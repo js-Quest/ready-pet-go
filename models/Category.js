@@ -16,6 +16,6 @@ const categorySchema = new Schema(
   }
 );
 
-const Product = model('product', productSchema);
+const Category = model('category', categorySchema);
 
-module.exports = Product;
+module.exports = Category;
