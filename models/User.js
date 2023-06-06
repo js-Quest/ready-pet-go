@@ -29,6 +29,12 @@ const userSchema = new Schema(
       maxLength: 26
     },
     pets: [petSchema],
+    friends: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'user'
+      },
+    ],
   },
   {
     toJSON: {
@@ -36,6 +42,11 @@ const userSchema = new Schema(
     },
   }
 );
+
+// Create a virtual property `friendCount` that retrieves the length of the friends array field on query
+userSchema.virtual('friendCount').get(function () {
+  return this.friends.length;
+});
 
 // Create a virtual property `petCount` that retrieves the length of the pet array field on query
 userSchema.virtual('petCount').get(function () {
