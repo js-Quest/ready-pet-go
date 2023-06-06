@@ -88,7 +88,7 @@ const Quiz = () => {
 
     };
 
-    const addLeadingZero = (number) => (number > 9 ? number : `0${number}`)
+    const addLeadingZero = (number) => (`0${number}`)
 
 
     return (
