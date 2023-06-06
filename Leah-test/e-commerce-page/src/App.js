@@ -1,5 +1,6 @@
+import React from "react";
 import './App.css';
-import ProductSearch from './components/ProductSearch';
+import ProductSearch from './components/ProductSearchResults';
 import Header from './components/Header';
 
 function App() {

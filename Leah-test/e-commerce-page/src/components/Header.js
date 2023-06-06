@@ -17,9 +17,6 @@ function Header() {
   return (
     <header className="app-header" style={styles.heading}>
       <h1>Ready, Pet, Go!</h1>
-      <nav>
-        <a href>why is my link here</a>
-      </nav>
     </header>
 
   )
