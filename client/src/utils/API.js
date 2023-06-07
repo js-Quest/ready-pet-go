@@ -17,8 +17,8 @@ const searchGoogle = async (searchTerm, apiKey, searchId) => {
 
     console.log(response.data);
   } catch (error) {
-    console.log(error;
-      throw new Error('lol nope not this api call'));
+    console.log(error);
+      throw new Error('lol nope not this api call');
   }
 };
 
