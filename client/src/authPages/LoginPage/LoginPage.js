@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import AuthBox from '../../shared/components/AuthBox';
+import AuthBox from '../../components/AuthBox';
 import LoginPageHeader from './LoginPageHeader';
 import LoginPageFooter from './LoginPageFooter';
 import LoginPageInputs from './LoginPageInputs';
-import { validateLoginForm } from '../../shared/utils/validators';
+import { validateLoginForm } from '../../utils/validators';
 import { connect } from 'react-redux';
 import { getActions } from '../../app/actions/authActions';
 // import {useNavigate} from 'react-router-dom'

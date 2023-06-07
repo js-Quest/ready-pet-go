@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import AuthBox from "../../shared/components/AuthBox";
+import AuthBox from "../../components/AuthBox";
 import { Typography } from "@mui/material";
 import RegisterPageInputs from "./RegisterPageInputs";
 import RegisterPageFooter from "./RegisterPageFooter";
-import { validateRegisterForm } from "../../shared/utils/validators";
+import { validateRegisterForm } from "../../utils/validators";
 import { connect } from 'react-redux';
 import { getActions } from '../../app/actions/authActions';
 import {useNavigate} from 'react-router-dom';
