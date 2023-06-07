@@ -7,7 +7,7 @@ const postRegister = async (req,res)=>{
     const { username, email, password } = req.body;
     const userExists = await User.exists({email});
     if (userExists){
-      return res.status(500).json({message: 'Email or username already exists'});
+      return res.status(500).json({ message: 'username or email already in use, please try again'});
     }
     //password encryption
     const encryptedPassword = await bcrypt.hash(password, 10);
