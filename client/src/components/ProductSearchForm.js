@@ -26,7 +26,7 @@ function SearchForm(props) {
         />
         <br />
         <button
-          onClick={props.handleFormSubmit}
+          onClick={props.handleSearchBarSubmit}
           className="btn btn-primary"
           type="submit"
         >
