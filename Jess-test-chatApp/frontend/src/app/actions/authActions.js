@@ -34,7 +34,7 @@ const getActions = (dispatch) => {
       // localStorage.setItem('user', JSON.stringify(userDetails));
 
       dispatch(setUserDetails(userDetails));
-      window.location.replace('/dashboard');
+      window.location.href ='/dashboard';
     }
   };
 
