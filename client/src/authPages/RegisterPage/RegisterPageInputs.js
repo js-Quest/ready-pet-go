@@ -1,5 +1,5 @@
 import React from 'react';
-import InputWithLabel from '../../shared/components/InputWithLabel';
+import InputWithLabel from '../../components/InputWithLabel';
 
 export default function RegisterPageInputs(props) {
   const {
