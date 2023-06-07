@@ -44,11 +44,13 @@ function Navigation()
       {/* rendering full nav list for large screens */}
       {isDesktop ?
         <nav>
-          <a href="#" style={styles.nav}>Home</a>
-          <a href="#" style={styles.nav}>Profile</a>
-          <a href="#" style={styles.nav}>Products</a>
+          <a href="/" style={styles.nav}>Home</a>
+          <a href="/dashboard" style={styles.nav}>Dashboard</a>
+          <a href="product" style={styles.nav}>Products</a>
           <a href="#" style={styles.nav}><BsFillChatTextFill /></a>
           <a href="#" style={styles.nav}><FaShoppingCart /></a></nav>
+          // * { isLogged}
+          // <a href="/login" style={styles.nav}>Login</a> */}
         :
         // rendering dropdown bars for small screens 
         <nav><a href="#" style={styles.nav}>
