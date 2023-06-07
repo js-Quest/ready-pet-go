@@ -48,8 +48,7 @@ const Quiz = () => {
     const [activeQuestion, setActiveQuestion] = useState(0);
     const [defaultText, setDefaultText] = useState('Type Here!');
     const [startQuiz, setStartQuiz] = useState(true);
-
-
+    
 
     ////only using this until production, no reason to clear it out otherwise
     useEffect(() => {
@@ -88,6 +87,7 @@ const Quiz = () => {
 
     };
 
+    ///OnClick function to chage StartQuiz use state to by pass first if statment
     const startUp = (e) => {
         e.preventDefault();
         setStartQuiz(false)
