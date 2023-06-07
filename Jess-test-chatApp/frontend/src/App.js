@@ -9,6 +9,7 @@ import "./App.css";
 import LoginPage from "./authPages/LoginPage/LoginPage";
 import RegisterPage from "./authPages/RegisterPage/RegisterPage";
 import Dashboard from "./Dashboard/Dashboard";
+import AlertNotice from "./shared/components/AlertNotice";
 
 function App() {
   return (
@@ -18,9 +19,10 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/" element={<Navigate to="/dashboard" />} />
+            <Route path="/" element={<Navigate to="/login" />} />
         </Routes>
       </Router>
+      <AlertNotice />
     </>
   );
 }

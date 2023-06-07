@@ -30,7 +30,7 @@ export default function LoginPageFooter({ handleLogin, isFormValid }) {
       </div>
       </Tooltip>
       <RedirectInfo 
-      text='Want an account? '
+      text='Not a member? '
       redirectText='Create an account'
       additionalStyles={{marginTop: '5px'}}
       redirectHandler={handlePushToRegisterPage}
