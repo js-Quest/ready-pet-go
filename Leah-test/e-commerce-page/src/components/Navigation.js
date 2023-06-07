@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { BsFillChatTextFill } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
 
 const styles = {
   nav: {
@@ -13,8 +15,7 @@ const styles = {
   },
 }
 
-
-function Navigation() 
+function Navigation()
 // referenced Stack Overflow for the code to set window states and effects https://stackoverflow.com/questions/46586165/react-conditionally-render-based-on-viewport-size
 {
   const [isDesktop, setDesktop] = useState(window.innerWidth > 900);
@@ -22,12 +23,22 @@ function Navigation()
   const updateMedia = () => {
     setDesktop(window.innerWidth > 900);
   };
-
+  // adding event listener to run updateMedia on a page resize; if window is resized to smaller screen size, event listener is removed 
   useEffect(() => {
     window.addEventListener("resize", updateMedia);
     return () => window.removeEventListener("resize", updateMedia);
   });
 
+  // using state to be able to show menu items on click
+  const [showMenu, setShowMenu] = useState(true)
+  const options = ['Home', 'Profile', 'Products', <BsFillChatTextFill />, <FaShoppingCart />];
+  const defaultOption = options[0];
+
+  if (!showMenu) {
+    return <Dropdown options={options} value={defaultOption} />;
+  }
+
+  // returning the navigation menu conditionally
   return (
     <div>
       {/* rendering full nav list for large screens */}
@@ -38,11 +49,13 @@ function Navigation()
           <a href="#" style={styles.nav}>Products</a>
           <a href="#" style={styles.nav}><BsFillChatTextFill /></a>
           <a href="#" style={styles.nav}><FaShoppingCart /></a></nav>
-        : 
+        :
         // rendering dropdown bars for small screens 
-        <nav><a href="#" style={styles.nav}><FaBars /></a></nav>
+        <nav><a href="#" style={styles.nav}>
+          <FaBars onClick={() => setShowMenu(!showMenu)} />
+        </a></nav>
       }
-      </div>
+    </div>
   )
 }
 

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import ResultList from './ResultList';
+import ResultList from '../components/ResultList';
+import Header from '../components/Header';
 
 // Import our search method
 import search from '../utils/API';
@@ -18,6 +19,7 @@ const ProductSearch = () => {
 
   return (
     <div>
+      <Header />
       <ResultList results={results} />
     </div>
   );
