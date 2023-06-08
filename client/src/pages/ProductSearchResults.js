@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import ResultList from '../components/ResultList';
-import Header from '../components/Header';
-import SearchForm from '../components/ProductSearchForm';
-import APICall from '../utils/API';
+import { useState, useEffect } from "react";
+import ResultList from "../components/ResultList";
+import Header from "../components/Header";
+import SearchForm from "../components/ProductSearchForm";
+import searchGoogle from "../utils/API";
 
 // const ProductSearch = () => {
 //   const [results, setResults] = useState([]);
@@ -19,7 +19,6 @@ import APICall from '../utils/API';
 
 //   const handleInputChange = (e) => setSearch(e.target.value);
 
-
 //   const handleSearchBar = (e) => {
 //     e.preventDefault();
 //     searchGiphy(search);
@@ -28,7 +27,7 @@ import APICall from '../utils/API';
 //   return (
 //     <div>
 //       <Header />
-//       <SearchForm 
+//       <SearchForm
 //       value={search}
 //         handleInputChange={handleInputChange}
 //         handleSearchBarSubmit={handleSearchBar} />
@@ -37,32 +36,38 @@ import APICall from '../utils/API';
 //   );
 // };
 
-const searchResult = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+const ProductSearch = () => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [results, setResults] = useState([]);
   const apiKey = process.env.REACT_APP_API_KEY;
-  const searchEngineId = process.env.REACT_APP_SEARCH_ENGINE_ID;
+  const searchId = "b4a20db7c79a34d3f";
+
+  const handleInputChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
 
   const handleSearch = () => {
     // call the API function with the user-inputted search term
-    searchGoogle(searchTerm, apiKey, searchEngineId)
-      .then(data => {
-        // Handle the API response
+    searchGoogle(searchTerm, apiKey, searchId)
+      .then((data) => {
         console.log(data);
+        setResults(data.items);
       })
-      .catch(error => {
-        // Handle any errors
+      .catch((error) => {
         console.error(error);
       });
   };
 
   return (
     <div>
-      <input
-        type="text"
+      {" "}
+      <Header />
+      <SearchForm
         value={searchTerm}
-        onChange={e => setSearchTerm(e.target.value)}
+        handleInputChange={handleInputChange}
+        handleSearchBarSubmit={handleSearch}
       />
-      <button onClick={handleSearch}>Search</button>
+      <ResultList results={results} />
     </div>
   );
 };

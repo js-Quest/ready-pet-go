@@ -12,7 +12,7 @@ const searchId = 'b4a20db7c79a34d3f';
 const searchGoogle = async (searchTerm, apiKey, searchId) => {
   try {
     const response = await axios.get(
-      `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${searchEngineId}&q=${searchTerm}`
+      `https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${searchId}&q=${searchTerm}`
     );
 
     console.log(response.data);
@@ -25,4 +25,4 @@ const searchGoogle = async (searchTerm, apiKey, searchId) => {
 
 
 // Export an object with a "search" method that searches the Giphy API for the passed query
-export default APICall;
+export default searchGoogle;
