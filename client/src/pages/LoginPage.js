@@ -7,6 +7,7 @@ import { Tooltip } from "@mui/material";
 import { useNavigate } from 'react-router-dom';
 import PrimaryButton from '../components/PrimaryButton';
 import AuthBox from '../components/AuthBox';
+import RedirectInfo from '../components/RedirectInfo';
 import InputWithLabel from '../components/InputWithLabel';
 
 import Auth from '../utils/auth';
@@ -44,6 +45,11 @@ const Login = (props) => {
       email: '',
       password: '',
     });
+  };
+
+  const navigate = useNavigate();
+  const handlePushToRegisterPage = () => {
+    navigate('/register')
   };
 
   return (
@@ -115,12 +121,12 @@ const Login = (props) => {
           />
         </div>
       {/* </Tooltip> */}
-      {/* <RedirectInfo
+      <RedirectInfo
         text='Want an account? '
         redirectText='Create an account'
         additionalStyles={{ marginTop: '5px' }}
         redirectHandler={handlePushToRegisterPage}
-      /> */}
+      />
     </AuthBox>
   );
 };
