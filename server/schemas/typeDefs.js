@@ -10,6 +10,8 @@ const typeDefs = gql`
   type Query {
     products: [Product]
   }
-`;
+
+
+`
 
 module.exports = typeDefs;
