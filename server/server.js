@@ -24,6 +24,7 @@ mongoose
   .then(() => {
     server.listen(PORT, () => {
       console.log(`server listening on ${PORT}!!!!`);
+      console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
     });
   })
   .catch((err) => {
