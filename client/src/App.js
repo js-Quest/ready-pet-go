@@ -9,7 +9,7 @@ import {
 import "./App.css";
 
 import { setContext } from '@apollo/client/link/context';
-import LoginPage from "./authPages/LoginPage/LoginPage";
+// import LoginPage from "./authPages/LoginPage/LoginPage";
 import RegisterPage from "./authPages/RegisterPage/RegisterPage";
 import Dashboard from "./pages/Dashboard";
 import ProductSearchResults from './pages/ProductSearchResults';
@@ -49,13 +49,11 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/product" element={<ProductSearchResults />} />
-          <Route path="/" element={<Navigate to="/login" />} />
-          <Route path='/logintest' element={<Login />} /> 
-            <Route path="/" element={<Navigate to="/dashboard" />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<RegisterPage />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/product" element={<ProductSearchResults />} />
+            <Route path="/" element={<Navigate to="/login" />} />
         </Routes>
         {/* //need footer  */}
       </Router>
