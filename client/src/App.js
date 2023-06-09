@@ -14,9 +14,9 @@ import RegisterPage from "./authPages/RegisterPage/RegisterPage";
 import Dashboard from "./pages/Dashboard";
 import ProductSearchResults from './pages/ProductSearchResults';
 
-import Header from "./components/Header"; 
-=======
+import Header from "./components/Header";
 import Login from './pages/LoginPage';
+import Header from "./components/Header";
 
 import {
   ApolloProvider,
@@ -44,23 +44,19 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-
 function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-      <Header />
+        <Header />
         <Routes>
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/product" element={<ProductSearchResults />} />
-
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/product" element={<ProductSearchResults />} />
+          <Route path="/" element={<Navigate to="/login" />} />
+          <Route path='/logintest' element={<Login />} /> 
             <Route path="/" element={<Navigate to="/dashboard" />} />
-
-            <Route path="/" element={<Navigate to="/login" />} />
-            <Route path='/logintest' element={<Login />} />
-
         </Routes>
         {/* //need footer  */}
       </Router>
