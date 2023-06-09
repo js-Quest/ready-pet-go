@@ -18,7 +18,7 @@ export default function Dashboard(setImage) {
       <h1>Hello, User</h1>
       <div className="imageContainer">
         <PetCard/>
-        <UploadImage />
+        {/* <UploadImage /> */}
       </div>
 
       <button onClick={(image) => setImage(image)}>Save</button>

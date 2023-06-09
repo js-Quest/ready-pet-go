@@ -3,15 +3,17 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-// import UploadImage from './UploadImage';
+import UploadImage from './UploadImage';
 
 function PetCard() {
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
+    <Card sx={{ maxWidth: 250 }}>
+      {/* <CardMedia
         sx={{ height: 140 }}
-        // image={image}
-      />
+        image="/static/images/cards/contemplative-reptile.jpg" 
+      /> */}
+      <UploadImage />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           Pet Name
