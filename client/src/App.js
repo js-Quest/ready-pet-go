@@ -16,7 +16,6 @@ import ProductSearchResults from './pages/ProductSearchResults';
 
 import Header from "./components/Header";
 import Login from './pages/LoginPage';
-import Header from "./components/Header";
 
 import {
   ApolloProvider,

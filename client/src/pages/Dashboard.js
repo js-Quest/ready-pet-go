@@ -1,12 +1,13 @@
 import React from 'react';
-import Header from '../components/Header';
+import UploadImage from '../components/ImageUpload';
 
-export default function Dashboard() {
+export default function Dashboard(setImage) {
+
   return (
     <div>
-      
-      Dashboard
     <h1>Hello, User</h1>
+      <UploadImage />
+    <button onClick={(image) => setImage(image)}>Save</button>
     </div>
   )
 }
