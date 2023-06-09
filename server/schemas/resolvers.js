@@ -6,6 +6,8 @@ const resolvers = {
       return await Product.find({});
     }
   },
+
+  
   // Query: {
   //   me: async (parent, args, context) => {
   //     // check if users exist
