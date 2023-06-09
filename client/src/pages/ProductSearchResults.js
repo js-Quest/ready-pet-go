@@ -1,38 +1,81 @@
-import { useState, useEffect } from 'react';
-import ResultList from '../components/ResultList';
-import Header from '../components/Header';
-import SearchForm from '../components/ProductSearchForm';
-import APICall from '../utils/API';
+import { useState, useEffect } from "react";
+import ResultList from "../components/ResultList";
+import Header from "../components/Header";
+import SearchForm from "../components/ProductSearchForm";
+import searchGoogle from "../utils/API";
+import { Helmet } from 'react-helmet';
+
+// const ProductSearch = () => {
+//   const [results, setResults] = useState([]);
+//   const [search, setSearch] = useState('');
+
+//   const searchGiphy = async (query) => {
+//     const response = await APICall(query);
+//     setResults(response.data.data);
+//   };
+
+//   useEffect(() => {
+//     searchGiphy('');
+//   }, []);
+
+//   const handleInputChange = (e) => setSearch(e.target.value);
+
+//   const handleSearchBar = (e) => {
+//     e.preventDefault();
+//     searchGiphy(search);
+//   };
+
+//   return (
+//     <div>
+//       <Header />
+//       <SearchForm
+//       value={search}
+//         handleInputChange={handleInputChange}
+//         handleSearchBarSubmit={handleSearchBar} />
+//       <ResultList results={results} />
+//     </div>
+//   );
+// };
 
 const ProductSearch = () => {
+  const [searchTerm, setSearchTerm] = useState("");
   const [results, setResults] = useState([]);
-  const [search, setSearch] = useState('');
+  const apiKey = process.env.REACT_APP_API_KEY;
+  const searchId = "b4a20db7c79a34d3f";
 
-  const searchGiphy = async (query) => {
-    const response = await APICall(query);
-    setResults(response.data.data);
+  const handleInputChange = (e) => {
+    setSearchTerm(e.target.value);
   };
 
-  useEffect(() => {
-    searchGiphy('');
-  }, []);
-
-  const handleInputChange = (e) => setSearch(e.target.value);
-
-
-  const handleSearchBar = (e) => {
-    e.preventDefault();
-    searchGiphy(search);
+  const handleSearch = () => {
+    // call the API function with the user input search term
+    searchGoogle(searchTerm, apiKey, searchId)
+      .then((data) => {
+        console.log(data);
+        setResults(data.items);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
     <div>
+      {" "}
       <Header />
-      <SearchForm 
-      value={search}
+      <SearchForm
+        value={searchTerm}
         handleInputChange={handleInputChange}
-        handleSearchBarSubmit={handleSearchBar} />
+        handleSearchBarSubmit={handleSearch}
+      />
       <ResultList results={results} />
+      <Helmet>
+        <script
+          async
+          src="https://cse.google.com/cse.js?cx=b4a20db7c79a34d3f"
+        ></script>
+      </Helmet>
+      <div className="gcse-searchresults-only"></div>
     </div>
   );
 };
