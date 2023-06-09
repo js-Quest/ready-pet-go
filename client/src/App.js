@@ -15,8 +15,7 @@ import Dashboard from "./pages/Dashboard";
 import ProductSearchResults from './pages/ProductSearchResults';
 
 import Header from "./components/Header";
-import Login from './pages/LoginPage';
-import Header from "./components/Header";
+import Login from './pages/LoginPage'; 
 
 import {
   ApolloProvider,
@@ -56,7 +55,7 @@ function App() {
           <Route path="/product" element={<ProductSearchResults />} />
           <Route path="/" element={<Navigate to="/login" />} />
           <Route path='/logintest' element={<Login />} /> 
-            <Route path="/" element={<Navigate to="/dashboard" />} />
+        
         </Routes>
         {/* //need footer  */}
       </Router>
