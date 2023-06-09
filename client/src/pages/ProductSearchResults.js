@@ -1,8 +1,8 @@
-import { useState } from "react";
-import ResultList from "../components/ResultList";
-import Header from "../components/Header";
-import SearchForm from "../components/ProductSearchForm";
-import searchGoogle from "../utils/API";
+// import { useState } from "react";
+// import ResultList from "../components/ResultList";
+// import Header from "../components/Header";
+// import SearchForm from "../components/ProductSearchForm";
+// import searchGoogle from "../utils/API";
 
 // const ProductSearch = () => {
 //   const [results, setResults] = useState([]);
@@ -73,4 +73,4 @@ import searchGoogle from "../utils/API";
 //   );
 // };
 
-export default ProductSearch;
+// export default ProductSearch;
