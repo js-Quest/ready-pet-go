@@ -11,9 +11,9 @@ import "./App.css";
 import { setContext } from '@apollo/client/link/context';
 // import LoginPage from "./authPages/LoginPage/LoginPage";
 import Dashboard from "./pages/Dashboard";
-import ProductSearchResults from './pages/ProductSearchResults';
+// import ProductSearchResults from './pages/ProductSearchResults';
 import Register from "./pages/RegisterPage";
-
+import ChatPage from "./pages/ChatPage";
 import Header from "./components/Header";
 import Login from './pages/LoginPage';
 
@@ -52,7 +52,8 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/product" element={<ProductSearchResults />} />
+            <Route path="/chatpage" element={<ChatPage />} />
+            {/* <Route path="/product" element={<ProductSearchResults />} /> */}
             <Route path="/" element={<Navigate to="/login" />} />
         </Routes>
         {/* //need footer  */}
