@@ -31,15 +31,15 @@ const Input = styled("input")({
 export default function InputWithLabel(props) {
   const { value, setValue, label, type, placeholder } = props;
 
-  const handleValueChange = (event) =>{
-    setValue(event.target.value);
-  }
+  // const handleValueChange = (event) =>{
+  //   setValue(event.target.value);
+  // }
   return (
     <Wrapper>
       <Label>{label}</Label>
       <Input 
         value={value}
-        onChange={handleValueChange}
+        // onChange={handleValueChange}
         type={type}
         placeholder={placeholder}
       />
