@@ -1,8 +1,15 @@
+<<<<<<< Updated upstream
 // import { useState } from "react";
 // import ResultList from "../components/ResultList";
 // import Header from "../components/Header";
 // import SearchForm from "../components/ProductSearchForm";
 // import searchGoogle from "../utils/API";
+=======
+import { useState } from "react";
+import ResultList from "../components/ResultList";
+import SearchForm from "../components/ProductSearchForm";
+import searchGoogle from "../utils/API";
+>>>>>>> Stashed changes
 
 // const ProductSearch = () => {
 //   const [results, setResults] = useState([]);
@@ -58,6 +65,7 @@
 //       });
 //   };
 
+<<<<<<< Updated upstream
 //   return (
 //     <div>
 //       {" "}
@@ -72,5 +80,20 @@
 //     </div>
 //   );
 // };
+=======
+  return (
+    <div>
+      {" "}
+      <SearchForm
+        value={searchTerm}
+        handleInputChange={handleInputChange}
+        handleSearchBarSubmit={handleSearch}
+      />
+      <ResultList results={results} />
+      <div className="gcse-searchresults-only"></div>
+    </div>
+  );
+};
+>>>>>>> Stashed changes
 
 // export default ProductSearch;
