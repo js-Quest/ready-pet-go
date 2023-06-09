@@ -36,41 +36,41 @@ import searchGoogle from "../utils/API";
 //   );
 // };
 
-const ProductSearch = () => {
-  const [searchTerm, setSearchTerm] = useState("");
-  const [results, setResults] = useState([]);
-  const apiKey = process.env.REACT_APP_API_KEY;
-  const searchId = "b4a20db7c79a34d3f";
+// const ProductSearch = () => {
+//   const [searchTerm, setSearchTerm] = useState("");
+//   const [results, setResults] = useState([]);
+//   const apiKey = process.env.REACT_APP_API_KEY;
+//   const searchId = "b4a20db7c79a34d3f";
 
-  const handleInputChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
+//   const handleInputChange = (e) => {
+//     setSearchTerm(e.target.value);
+//   };
 
-  const handleSearch = () => {
-    // call the API function with the user input search term
-    searchGoogle(searchTerm, apiKey, searchId)
-      .then((data) => {
-        console.log(data);
-        setResults(data.items);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
+//   const handleSearch = () => {
+//     // call the API function with the user input search term
+//     searchGoogle(searchTerm, apiKey, searchId)
+//       .then((data) => {
+//         console.log(data);
+//         setResults(data.items);
+//       })
+//       .catch((error) => {
+//         console.error(error);
+//       });
+//   };
 
-  return (
-    <div>
-      {" "}
-      <Header />
-      <SearchForm
-        value={searchTerm}
-        handleInputChange={handleInputChange}
-        handleSearchBarSubmit={handleSearch}
-      />
-      <ResultList results={results} />
-      <div className="gcse-searchresults-only"></div>
-    </div>
-  );
-};
+//   return (
+//     <div>
+//       {" "}
+//       <Header />
+//       <SearchForm
+//         value={searchTerm}
+//         handleInputChange={handleInputChange}
+//         handleSearchBarSubmit={handleSearch}
+//       />
+//       <ResultList results={results} />
+//       <div className="gcse-searchresults-only"></div>
+//     </div>
+//   );
+// };
 
 export default ProductSearch;
