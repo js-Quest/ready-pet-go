@@ -1,6 +1,7 @@
 import React from 'react';
-import UploadImage from '../components/UploadImage';
+// import UploadImage from '../components/UploadImage';
 import PetCard from '../components/PetCard';
+import AddPet from '../components/AddPet';
 
 export default function Dashboard(setImage) {
 
@@ -18,7 +19,7 @@ export default function Dashboard(setImage) {
       <h1>Hello, User</h1>
       <div className="imageContainer">
         <PetCard/>
-        {/* <UploadImage /> */}
+        <AddPet/>
       </div>
 
       <button onClick={(image) => setImage(image)}>Save</button>
