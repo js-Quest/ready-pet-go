@@ -1,5 +1,6 @@
 import React from "react";
 import Navigation from "./Navigation";
+// import AnimatedLogo from "./Logo";
 
 const styles = {
   heading: {
@@ -21,6 +22,7 @@ function Header() {
   return (
     <header className="app-header" style={styles.heading}>
       <h1 style={styles.title}>Ready, Pet, Go!</h1>
+      {/* <AnimatedLogo /> */}
       <Navigation />
     </header>
 
