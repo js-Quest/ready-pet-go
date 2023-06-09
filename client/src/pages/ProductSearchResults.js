@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ResultList from "../components/ResultList";
 import Header from "../components/Header";
 import SearchForm from "../components/ProductSearchForm";
 import searchGoogle from "../utils/API";
-import { Helmet } from 'react-helmet';
 
 // const ProductSearch = () => {
 //   const [results, setResults] = useState([]);
@@ -69,12 +68,6 @@ const ProductSearch = () => {
         handleSearchBarSubmit={handleSearch}
       />
       <ResultList results={results} />
-      <Helmet>
-        <script
-          async
-          src="https://cse.google.com/cse.js?cx=b4a20db7c79a34d3f"
-        ></script>
-      </Helmet>
       <div className="gcse-searchresults-only"></div>
     </div>
   );
