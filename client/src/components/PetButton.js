@@ -16,7 +16,7 @@ const styles = {
   }
 }
 
-function AddPet({setShowCard}) {
+function PetButton({setShowCard}) {
   return (
     <>
       <button type='submit' onClick={() => setShowCard((prev) => prev += 1)}>
@@ -31,4 +31,4 @@ function AddPet({setShowCard}) {
   )
 }
 
-export default AddPet
+export default PetButton;

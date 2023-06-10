@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
 // import UploadImage from '../components/UploadImage';
 import PetCard from '../components/PetCard';
-import AddPet from '../components/AddPet';
+import PetForm from '../components/PetForm';
+import PetButton from '../components/PetButton';
 
 export default function Dashboard() {
-  const [showCard, setShowCard] = useState(false);
   const [numCard, setNumCard] = useState(0);
 
   return (
@@ -13,8 +13,9 @@ export default function Dashboard() {
       <div className="imageContainer">
        {/* map through card info */}
        {/* Tutor Patrick Lake helped me with this map function */}
-        {[...Array(numCard)].map((_,i) => <PetCard key={i}/>)}
-        <AddPet setShowCard={setNumCard}/>
+        <PetCard />
+        {[...Array(numCard)].map((_,i) => <PetForm key={i}/>)}
+        <PetButton setShowCard={setNumCard}/>
       </div>
 
       {/* <button onClick={(image) => setImage(image)}>Save</button> */}
