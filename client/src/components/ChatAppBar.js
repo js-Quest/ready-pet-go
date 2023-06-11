@@ -8,7 +8,7 @@ const MainContainer = styled('div')({
   height: '48px',
   borderBottom: '1px solid black',
   backgroundColor: '#f7c297',
-  width: '67%',
+  width: '72%',
   marginLeft: '292px',
   display: 'flex',
   alignItems: 'center',
