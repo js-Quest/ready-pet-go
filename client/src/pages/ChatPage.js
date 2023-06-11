@@ -17,7 +17,7 @@ export default function ChatPage() {
       <ChatSideBar />
       <ChatFriendsSideBar />
       <Messenger />
-      {/* <ChatAppBar /> */}
+      <ChatAppBar />
     </Wrapper>
   )
 }

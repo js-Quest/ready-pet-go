@@ -3,7 +3,7 @@ import { styled } from "@mui/system";
 
 const MainContainer = styled('div')({
   position: 'absolute',
-  top: '0',
+  marginTop: '0px',
   right: '0',
   height: '48px',
   borderBottom: '1px solid black',
