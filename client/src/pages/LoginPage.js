@@ -9,7 +9,7 @@ import RedirectInfo from '../components/RedirectInfo';
 import { styled } from '@mui/system';
 import Auth from '../utils/auth';
 
-const Login = () => {
+const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
