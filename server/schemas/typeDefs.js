@@ -15,12 +15,16 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-    password: String
+  }
+  
+  type Auth {
+    token: ID!
+    user: User
   }
 
   type Query {
     me: User
-    user: User
+    user(username: String!): User
     users: [User]
   }
 
@@ -29,10 +33,6 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
   }
 
-  type Auth {
-    token: ID!
-    user: User
-  }
 
 
 `

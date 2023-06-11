@@ -9,7 +9,7 @@ import RedirectInfo from '../components/RedirectInfo';
 import { styled } from '@mui/system';
 import Auth from '../utils/auth';
 
-const Login = () => {
+const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
@@ -26,7 +26,7 @@ const Login = () => {
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
+    // console.log(formState)
     try {
       const { data } = await login({
         variables: { ...formState },
@@ -84,6 +84,7 @@ const Login = () => {
       marginTop: "30px",
       border: "1px solid black",
       borderRadius: "10px",
+      cursor: 'pointer',
     },
     errorMessage: {
       color: 'white'
@@ -129,7 +130,6 @@ const Login = () => {
       > */}
 
           <button
-            className="btn btn-block btn-primary"
             style={styles.button}
             type="submit"
           >
