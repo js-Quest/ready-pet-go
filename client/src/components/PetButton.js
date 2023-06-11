@@ -1,7 +1,6 @@
 import React from 'react';
 import { IconContext } from "react-icons";
 import { FaPaw } from "react-icons/fa";
-import PetCard from './PetCard';
 
 const styles = {
   container: {
@@ -17,23 +16,19 @@ const styles = {
   }
 }
 
-function AddPet() {
-
-  function newCard() {
-    return <PetCard />;
-  }
-
+function PetButton({setShowCard}) {
   return (
     <>
-      <button type='submit'>
-        <div style={styles.container} onClick={newCard}>
+      <button type='submit' onClick={() => setShowCard((prev) => prev += 1)}>
+        <div style={styles.container}>
           <IconContext.Provider value={{ fontSize: "100px" }} >
             <FaPaw style={{ fontSize: "60px", color: "#808080" }} />
           </IconContext.Provider >
         </div>
       </button>
+      {/* <button onClick={}>Save</button> */}
     </>
   )
 }
 
-export default AddPet
+export default PetButton;

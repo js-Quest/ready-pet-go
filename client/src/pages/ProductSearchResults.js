@@ -1,8 +1,7 @@
-// import { useState } from "react";
-// import ResultList from "../components/ResultList";
-// import Header from "../components/Header";
-// import SearchForm from "../components/ProductSearchForm";
-// import searchGoogle from "../utils/API";
+import { useState } from "react";
+import ResultList from "../components/ResultList";
+import SearchForm from "../components/ProductSearchForm";
+import searchGoogle from "../utils/API";
 
 // const ProductSearch = () => {
 //   const [results, setResults] = useState([]);
@@ -58,19 +57,18 @@
 //       });
 //   };
 
-//   return (
-//     <div>
-//       {" "}
-//       <Header />
-//       <SearchForm
-//         value={searchTerm}
-//         handleInputChange={handleInputChange}
-//         handleSearchBarSubmit={handleSearch}
-//       />
-//       <ResultList results={results} />
-//       <div className="gcse-searchresults-only"></div>
-//     </div>
-//   );
-// };
+  return (
+    <div>
+      {" "}
+      <SearchForm
+        value={searchTerm}
+        handleInputChange={handleInputChange}
+        handleSearchBarSubmit={handleSearch}
+      />
+      <ResultList results={results} />
+      <div className="gcse-searchresults-only"></div>
+    </div>
+  );
+;
 
 // export default ProductSearch;

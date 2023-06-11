@@ -4,12 +4,8 @@ const typeDefs = gql`
   type Product {
     _id: ID
     product: String
-    price: Int 
-  }
-
-  type Query {
-    products: [Product]
-  }
+    price: Float 
+  } 
 
   type User {
     _id: ID
@@ -26,6 +22,7 @@ const typeDefs = gql`
     me: User
     user(username: String!): User
     users: [User]
+    products: [Product]
   }
 
   type Mutation {
