@@ -149,7 +149,7 @@ export default function Register() {
 
       {error && (
         <div style={styles.errorMessage}>
-          {'username or email already exists, try again!'}
+          {'Invalid credentials, username or email may already exist!'}
         </div>
       )}
       {/* </Tooltip> */}
