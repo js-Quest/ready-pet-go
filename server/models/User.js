@@ -1,4 +1,5 @@
 const { Schema, model } = require('mongoose');
+const bcrypt = require('bcrypt');
 // Requiring the Pet schema to include in the pet array below
 const petSchema = require('./Pet')
 
@@ -9,12 +10,7 @@ const userSchema = new Schema(
       type: String,
       unique: true,
       required: true,
-      validate: {
-        validator: function (e) {
-          return /^([a-zA-Z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/.test(e);
-        },
-        message: email => `${email.value} is not a valid email!`
-      },
+      match: [/.+@.+\..+/, 'Must match an email address!'],
     },
     username: {
       type: String,
@@ -42,6 +38,23 @@ const userSchema = new Schema(
     },
   }
 );
+
+// hash user password
+userSchema.pre('save', async function (next) {
+  if (this.isNew || this.isModified('password')) {
+    const saltRounds = 10;
+    this.password = await bcrypt.hash(this.password, saltRounds);
+  }
+
+  next();
+});
+
+// method to compare and validate password for logging in
+userSchema.methods.isCorrectPassword = async function (password) {
+  return bcrypt.compare(password, this.password);
+  // return password === this.password;
+};
+
 
 // Create a virtual property `friendCount` that retrieves the length of the friends array field on query
 userSchema.virtual('friendCount').get(function () {

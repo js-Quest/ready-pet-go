@@ -26,7 +26,7 @@ const Login = (props) => {
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
+    // console.log(formState)
     try {
       const { data } = await login({
         variables: { ...formState },
@@ -84,6 +84,7 @@ const Login = (props) => {
       marginTop: "30px",
       border: "1px solid black",
       borderRadius: "10px",
+      cursor: 'pointer',
     },
     errorMessage: {
       color: 'white'
@@ -129,7 +130,6 @@ const Login = (props) => {
       > */}
 
           <button
-            className="btn btn-block btn-primary"
             style={styles.button}
             type="submit"
           >

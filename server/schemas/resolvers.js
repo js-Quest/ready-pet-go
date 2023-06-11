@@ -33,18 +33,19 @@ const resolvers = {
   Mutation: {
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
-      // check if user exists with email and credentials
-      if (!user) {
-        throw new AuthenticationError('Incorrect credentials.');
-      }
-      const correctPassword = await user.isCorrectPassword(password);
 
-      // check password
-      if (!correctPassword) {
-        throw new AuthenticationError('Incorrect credentials.');
+      if (!user) {
+        throw new AuthenticationError('No user found with this email address');
+      }
+
+      const correctPw = await user.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw new AuthenticationError('Incorrect credentials');
       }
 
       const token = signToken(user);
+
       return { token, user };
     },
     addUser: async (parent, args) => {

@@ -87,6 +87,7 @@ export default function Register() {
       marginTop: "30px",
       border: "1px solid black",
       borderRadius: "10px",
+      cursor: 'pointer',
     },
     errorMessage: {
       color: 'white'
@@ -138,7 +139,6 @@ export default function Register() {
       > */}
 
           <button
-            className="btn btn-block btn-primary"
             style={styles.button}
             type="submit"
           >
