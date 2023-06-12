@@ -25,6 +25,7 @@ function Footer() {
         paddingTop: '2em',
         paddingBottom: '2em',
       }}>
+
         <Grid item xs={2}>
           <img src={Logo} alt="pawprint" />
           <Typography>Ready. Pet. Go!</Typography>
