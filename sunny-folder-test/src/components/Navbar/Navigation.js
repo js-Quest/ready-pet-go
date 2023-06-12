@@ -14,7 +14,9 @@ import MailIcon from '@mui/icons-material/Mail';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import Divider from '@mui/material/Divider';
-import { ThemeContext } from '../providers/ThemeProvider';
+import { ThemeContext } from '../../providers/ThemeProvider';
+import './style.css';
+import LogoSmall from '../../images/logoSmall.png';
 
 
 function Navigation() {
@@ -64,10 +66,13 @@ function Navigation() {
       }}
       >
         <Toolbar>
+          <img src={LogoSmall} alt="pawprint"/>
           <Typography
             variant="h6"
             noWrap
             component="div"
+            fontFamily={'Sriracha'}
+            marginLeft={'18px'}
           >
             Ready. Pet. Go!
           </Typography>

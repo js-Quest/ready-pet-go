@@ -6,7 +6,7 @@ import FriendsList from './ChatFriendsList';
 import PendingInvitations from './PendingChatInvite';
 
 const MainContainer = styled('div')({
-  width: '25%',
+  width: '20%',
   height: '100%',
   display: 'flex',
   flexDirection: 'column',
