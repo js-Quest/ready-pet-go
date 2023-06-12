@@ -44,6 +44,8 @@ function Navigation()
       {isDesktop ?
         <nav>
           <a href="/" style={styles.nav}>Home</a>
+          <a href="/profile" style={styles.nav}>Profile</a>      
+          {/* ///added by Ki for Profile Page */}
           <a href="/dashboard" style={styles.nav}>Dashboard</a>
           <a href="product" style={styles.nav}>Products</a>
           <a href="#" style={styles.nav}><BsFillChatTextFill /></a>
