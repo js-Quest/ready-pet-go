@@ -1,5 +1,4 @@
 import React, { createContext, useState } from 'react';
-import Switch from '@mui/material/Switch';
 
 export const ThemeContext = createContext();
 
@@ -22,7 +21,7 @@ export const ThemeProvider = ({ children }) => {
         tertiary: "#EEB462",
         quaternary: '#534666',
         mainText: "#282828",
-        secondaryText: "#686B73"
+        secondaryText: "#FFFFFF"
       })
     } else {
       setColors({
@@ -38,7 +37,6 @@ export const ThemeProvider = ({ children }) => {
   return (
     <ThemeContext.Provider value={{ colors, toggleMode }}>
       {children}
-      <Switch checked={colors.primary === "#000000"} onChange={toggleMode} />
     </ThemeContext.Provider>
   );
 };
