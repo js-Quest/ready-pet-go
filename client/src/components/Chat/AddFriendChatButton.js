@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import PrimaryButton from './PrimaryButton';
+import PrimaryButton from '../PrimaryButton';
 import AddFriendChat from './AddFriendChat';
 
 const additionalStyles = {
