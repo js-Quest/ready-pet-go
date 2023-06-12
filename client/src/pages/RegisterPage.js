@@ -27,6 +27,10 @@ export default function Register() {
     });
   };
 
+  console.log('userform data')
+
+  console.log(userFormData);
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
@@ -34,8 +38,12 @@ export default function Register() {
       const { data } = await addUser({
         variables: { ...userFormData },
       });
+
       localStorage.setItem('email', userFormData.email)
       localStorage.setItem('username', userFormData.username)
+
+      console.log('this is data ');
+
       Auth.login(data.addUser.token);
     } catch (e) {
       console.error(e);
