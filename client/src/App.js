@@ -49,13 +49,14 @@ function App() {
       <Router>
         <Header />
         <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/chatpage" element={<ChatPage />} />
-            <Route path="/profile" element={<Profile />} />
-            {/* <Route path="/product" element={<ProductSearchResults />} /> */}
-            <Route path="/" element={<Navigate to="/login" />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/chatpage" element={<ChatPage />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/profiles/:username" element={<Profile />} />
+          {/* <Route path="/product" element={<ProductSearchResults />} /> */}
+          <Route path="/" element={<Navigate to="/login" />} />
         </Routes>
         {/* //need footer  */}
       </Router>
