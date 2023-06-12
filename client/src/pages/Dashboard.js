@@ -1,28 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 // import UploadImage from '../components/UploadImage';
 import PetCard from '../components/PetCard';
-import AddPet from '../components/AddPet';
+import PetForm from '../components/PetForm';
+import PetButton from '../components/PetButton';
 
-export default function Dashboard(setImage) {
-
-  // const styles = {
-  //   container: {
-  //     border: "2px solid black",
-  //     borderRadius: "50%",
-  //     width: "50px",
-  //     height: "50px",
-  //   }
-  // };
+export default function Dashboard() {
+  const [numCard, setNumCard] = useState(0);
 
   return (
     <div>
       <h1>Hello, User</h1>
       <div className="imageContainer">
-        <PetCard/>
-        <AddPet />
+       {/* map through card info */}
+       {/* Tutor Patrick Lake helped me with this map function */}
+        <PetCard />
+        {[...Array(numCard)].map((_,i) => <PetForm key={i}/>)}
+        <PetButton setShowCard={setNumCard}/>
       </div>
 
-      <button onClick={(image) => setImage(image)}>Save</button>
+      {/* <button onClick={(image) => setImage(image)}>Save</button> */}
     </div>
   )
 }
