@@ -47,7 +47,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <Navbar />
+        {/* <Navbar /> */}
         <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
