@@ -1,0 +1,12 @@
+.hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  max-width: 1500px;
+}
