@@ -23,6 +23,7 @@
     "joi": "^17.9.2",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.2.2",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "socket.io": "^4.6.2"
   }
 }

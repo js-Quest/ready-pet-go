@@ -3,12 +3,12 @@ import { styled } from "@mui/system";
 
 const MainContainer = styled('div')({
   position: 'absolute',
-  top: '0',
+  marginTop: '0px',
   right: '0',
   height: '48px',
   borderBottom: '1px solid black',
   backgroundColor: '#f7c297',
-  width: '67%',
+  width: '72%',
   marginLeft: '292px',
   display: 'flex',
   alignItems: 'center',
