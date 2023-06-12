@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 // Requiring the Pet schema to include in the pet array below
-const petSchema = require('./Pet')
+// const petSchema = require('./Pet')
 
 // Schema to create User model
 const userSchema = new Schema(
@@ -24,7 +24,18 @@ const userSchema = new Schema(
       minLength: 8,
       maxLength: 26
     },
-    pets: [petSchema],
+    pets: [
+      {
+        name: String,
+        breed: String,
+        age: Number,
+        bio: {
+          type: String,
+          maxlength: 280,
+        },
+        imageURL: String,
+      },
+    ],
     friends: [
       {
         type: Schema.Types.ObjectId,
