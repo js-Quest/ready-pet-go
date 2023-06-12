@@ -5,7 +5,6 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import Navbar from '../src/components/Navbar/Navigation'
 import "./App.css";
 
 import { setContext } from '@apollo/client/link/context';
@@ -15,6 +14,7 @@ import Dashboard from "./pages/Dashboard";
 import Register from "./pages/RegisterPage";
 import ChatPage from "./pages/ChatPage";
 import Header from "./components/Header";
+
 import Login from './pages/LoginPage';
 
 import {
@@ -47,7 +47,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        {/* <Navbar /> */}
+        <Header />
         <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
