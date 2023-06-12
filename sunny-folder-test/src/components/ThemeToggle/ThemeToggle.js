@@ -59,7 +59,7 @@ export default function SelectTheme() {
 
   return (
     <div>
-      <FormGroup>
+      <FormGroup sx={{ display: 'flex', alignContent: 'flex-end'}}>
         <FormControlLabel
           control={<MaterialUISwitch 
             sx={{ m: 1 }}

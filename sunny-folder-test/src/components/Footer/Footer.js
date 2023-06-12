@@ -18,32 +18,48 @@ function Footer() {
         marginTop: '20px',
       }}
     >
-      <Grid container spacing={3} columns={13} sx={{
+      <Grid container spacing={2} columns={13} sx={{
         width: '90%',
         marginLeft: 'auto',
         marginRight: 'auto',
         paddingTop: '2em',
         paddingBottom: '2em',
       }}>
-        <Grid item xs={4}>
+        <Grid item xs={2}>
           <img src={Logo} alt="pawprint" />
           <Typography>Ready. Pet. Go!</Typography>
         </Grid>
+
+        <Grid item xs={2}></Grid>
 
         <Grid item xs={3}>
           <Typography
             variant="h6"
             sx={{
-              textTransform: 'uppercase'
+              textTransform: 'uppercase',
+              '@media (max-width: 960px)': {
+                display: 'none', // Hide the h6 on medium+ screens
+              },
             }}
           >
             About Ready. Pet. Go!
           </Typography>
-          <Typography variant="subtitle1" marginLeft={'3px'}>Meet the Team</Typography>
-          <Typography variant="subtitle1" marginLeft={'3px'}>Contributions</Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              textTransform: 'uppercase',
+              '@media (min-width: 961px)': {
+                display: 'none', // Hide the h6 on xs and sm screens
+              },
+            }}
+          >
+            About
+          </Typography>
+          <Typography variant="subtitle1" marginLeft={'8px'}>Meet the Team</Typography>
+          <Typography variant="subtitle1" marginLeft={'8px'}>Contributions</Typography>
         </Grid>
 
-        <Grid item xs={3}>
+        <Grid item xs={2}>
           <Typography
             variant="h6"
             sx={{
@@ -52,8 +68,8 @@ function Footer() {
           >
             Contact
           </Typography>
-          <Typography variant="subtitle1" marginLeft={'3px'}>Email</Typography>
-          <Typography variant="subtitle1" marginLeft={'3px'}>Careers</Typography>
+          <Typography variant="subtitle1" marginLeft={'8px'}>Email</Typography>
+          <Typography variant="subtitle1" marginLeft={'8px'}>Careers</Typography>
         </Grid>
 
         <Grid item xs={3}>
@@ -65,8 +81,8 @@ function Footer() {
           >
             Learn More
           </Typography>
-          <Typography variant="subtitle1" marginLeft={'3px'}>GitHub</Typography>
-          <Typography variant="subtitle1" marginLeft={'3px'}>Contributions</Typography>
+          <Typography variant="subtitle1" marginLeft={'8px'}>GitHub</Typography>
+          <Typography variant="subtitle1" marginLeft={'8px'}>Contributions</Typography>
         </Grid>
       </Grid>
     </Container>
