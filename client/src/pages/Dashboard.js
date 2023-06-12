@@ -6,6 +6,8 @@ import PetButton from '../components/PetButton';
 
 export default function Dashboard() {
   const [numCard, setNumCard] = useState(0);
+  // have array of pets here and map it in the petCard
+  const [petArray, setPetArray] = useState([]);
 
   return (
     <div>
@@ -13,8 +15,8 @@ export default function Dashboard() {
       <div className="imageContainer">
        {/* map through card info */}
        {/* Tutor Patrick Lake helped me with this map function */}
-        <PetCard />
-        {[...Array(numCard)].map((_,i) => <PetForm key={i}/>)}
+        {petArray.map((item , i) => <PetCard petData={item} key={i} />)}
+        {[...Array(numCard)].map((_,i) => <PetForm petArray= {petArray} setPetArray = {setPetArray} key={i}/>)}
         <PetButton setShowCard={setNumCard}/>
       </div>
 
