@@ -24,18 +24,18 @@ const userSchema = new Schema(
       minLength: 8,
       maxLength: 26
     },
-    pets: [
-      {
-        name: String,
-        breed: String,
-        age: Number,
-        bio: {
-          type: String,
-          maxlength: 280,
-        },
-        imageURL: String,
-      },
-    ],
+    // pets: [
+    //   {
+    //     name: String,
+    //     breed: String,
+    //     age: Number,
+    //     bio: {
+    //       type: String,
+    //       maxlength: 280,
+    //     },
+    //     imageURL: String,
+    //   },
+    // ],
     friends: [
       {
         type: Schema.Types.ObjectId,
