@@ -12,7 +12,7 @@ const Wrapper = styled('div')({
 });
 
 
-export default function Dashboard() {
+export default function DashboardFrie() {
   return (
     <Wrapper>
       <SideBar />

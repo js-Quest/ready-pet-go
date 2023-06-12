@@ -1,35 +1,40 @@
 const express = require("express");
-// const http = require("http");
-// const cors = require("cors");
-// const mongoose = require("mongoose");
+const cors = require("cors");
 const path = require('path');
-require("dotenv").config();
-// const authRoutes = require('./routes/authRoutes.js');
 const { ApolloServer } = require('apollo-server-express');
 const { authMiddleware } = require('./utils/auth');
-const auth = require('./utils/auth');
 const db = require('./config/connection');
 const { typeDefs, resolvers } = require('./schemas');
+const socketServer = require('./socketServer');
 
-const PORT = process.env.PORT || process.env.API_PORT || 3001;
+const PORT = process.env.PORT  || 3001;
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  // context: authMiddleware,
+  context: authMiddleware,
 });
 
 //middleware
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.use(cors());
+app.use(cors());
+
+socketServer.registerSocketServer(server)
+
+// Serve static files from the 'build' directory inside the 'client' folder
+if(process.env.NODE_ENV === 'production'){
+  app.use(express.static(path.join(__dirname, '../client/build')));
+}
 
 
-// //register routes
-// app.use('/api/auth', authRoutes);
 
+// Route all other requests to the React app's 'index.html' file
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/'));
+});
  
-const startApolloServer = async () => {
+const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
   server.applyMiddleware({ app });
   
@@ -42,4 +47,6 @@ const startApolloServer = async () => {
   };
 
 
-  startApolloServer();
+
+
+  startApolloServer(typeDefs, resolvers);
