@@ -1,8 +1,9 @@
 import React from "react";
 import "./App.css";
-import Navigation from './components/Navigation';
+import Navigation from './components/Navbar/Navigation';
 import ThemeToggle from "./components/ThemeToggle/ThemeToggle";
 import { ThemeProvider } from "./providers/ThemeProvider";
+import Footer from "./components/Footer/Footer";
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
     <ThemeProvider>
       <Navigation />
         <ThemeToggle />
+        <Footer />
     </ThemeProvider>
   );
 }

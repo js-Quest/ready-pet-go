@@ -57,17 +57,13 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 export default function SelectTheme() {
   const {colors, toggleMode } = useContext(ThemeContext);
 
-  const handleChange = (event) => {
-    toggleMode(event);
-  };
-
   return (
     <div>
       <FormGroup>
         <FormControlLabel
           control={<MaterialUISwitch 
             sx={{ m: 1 }}
-            onChange={handleChange} 
+            onChange={toggleMode} 
             checked={colors.primary === '#000000'}
             />}
           label="Mode"
