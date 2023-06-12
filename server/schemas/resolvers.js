@@ -54,7 +54,46 @@ const resolvers = {
 
       return { token, user };
     },
-  }
+    addPet: async (parent, { userId, name,
+      breed, age, bio, imageURL }, context) => {
+      if (context.user) {
+        return User.findOneAndUpdate(
+          { _id: userId },
+          {
+            $addToSet: {
+              pets: {
+                name,
+                breed,
+                age,
+                bio,
+                imageURL,
+              },
+            },
+          },
+          {
+            new: true,
+          }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    removePet: async (parent, { userId, petId }, context) => {
+      if (context.user) {
+        return User.findOneAndUpdate(
+          { _id: userId },
+          {
+            $pull: {
+              pets: {
+                _id: petId,
+              },
+            },
+          },
+          { new: true }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+  },
 };
 
 module.exports = resolvers;
