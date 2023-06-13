@@ -53,7 +53,9 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/chatpage" element={<ChatPage />} />
-          <Route path="/profile" element={<Profile />} />
+          {/*  '/me' directs to personal homepage */}
+          <Route path="/me" element={<Profile />} />
+           {/* /profiles/:username will direct to OTHER profile pages, currently not being used */}
           <Route path="/profiles/:username" element={<Profile />} />
           {/* <Route path="/product" element={<ProductSearchResults />} /> */}
           <Route path="/" element={<Navigate to="/login" />} />
