@@ -1,4 +1,4 @@
-const { Product, User } = require('../models');
+const { Product, User, Pet } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
@@ -10,13 +10,18 @@ const resolvers = {
 
     //query user
     users: async () => {
-      return User.find();
+      return User.find().populate('pets')
     },
 
-    // //query one user
-    // user: async (parent, { userId }) => {
-    //   return User.findOne({ _id: userId });
-    // },
+    //query one user
+    user: async (parent, { userId }) => {
+      return User.findOne({ _id: userId });
+    },
+
+    // query pets
+    pets: async () => {
+      return Pet.find();
+    },
 
     me: async (parent, args, context) => {
       // check if users exist
@@ -54,29 +59,29 @@ const resolvers = {
 
       return { token, user };
     },
-    // addPet: async (parent, { userId, name,
-    //   breed, age, bio, imageURL }, context) => {
-    //   if (context.user) {
-    //     return User.findOneAndUpdate(
-    //       { _id: userId },
-    //       {
-    //         $addToSet: {
-    //           pets: {
-    //             name,
-    //             breed,
-    //             age,
-    //             bio,
-    //             imageURL,
-    //           },
-    //         },
-    //       },
-    //       {
-    //         new: true,
-    //       }
-    //     );
-    //   }
-    //   throw new AuthenticationError('You need to be logged in!');
-    // },
+
+    addPet: async (parent, { userId, name,
+      breed, age, bio }, context) => {
+      if (context.user) {
+        return User.findOneAndUpdate(
+          { _id: userId },
+          {
+            $addToSet: {
+              pets: {
+                name,
+                breed,
+                age,
+                bio
+              },
+            },
+          },
+          {
+            new: true,
+          }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
     // removePet: async (parent, { userId, petId }, context) => {
     //   if (context.user) {
     //     return User.findOneAndUpdate(
