@@ -7,6 +7,9 @@ query user($username: String!) {
      _id
     username
     email
+    bio
+    city
+    phoneNumber
     pets {
       _id
       name
@@ -25,6 +28,9 @@ export const QUERY_ME = gql`
     _id
     username
     email
+    bio
+    city
+    phoneNumber
     pets {
       _id
       name

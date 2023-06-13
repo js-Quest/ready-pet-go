@@ -11,6 +11,9 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
+    phoneNumber: Int
+    bio: String
+    city: String
     pets: [Pet]!
   }
   
