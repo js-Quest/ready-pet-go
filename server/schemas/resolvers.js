@@ -14,8 +14,8 @@ const resolvers = {
     },
 
     //query one user
-    user: async (parent, { userId }) => {
-      return User.findOne({ _id: userId });
+    user: async (parent, { username }) => {
+      return User.findOne({ username }).populate('pets')
     },
 
     // query pets
