@@ -25,3 +25,39 @@ export const ADD_USER = gql`
         }
     }
 `;
+
+// add pet mutation
+export const ADD_PET = gql`
+mutation addPet($name: String, $age: Int, $breed: String, $bio: String) {
+  addPet(name: $name, age: $age, breed: $breed, bio: $bio) {
+    _id
+    name
+    age
+    breed
+    bio
+  }
+}
+`;
+
+// update pet mutation
+export const UPDATE_PET = gql`
+mutation updatePet($updatePetId: ID!, $name: String, $age: Int, $breed: String, $bio: String) {
+  updatePet(id: $updatePetId, name: $name, age: $age, breed: $breed, bio: $bio) {
+    _id
+    name
+    age
+    breed
+    bio
+  }
+}
+`;
+
+// remove pet mutation
+export const REMOVE_PET = gql`
+mutation removePet($petId: ID!) {
+  removePet(petId: $petId) {
+    _id
+    name
+  }
+}
+`;
