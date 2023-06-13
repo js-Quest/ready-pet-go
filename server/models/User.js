@@ -1,7 +1,5 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
-// Requiring the Pet schema to include in the pet array below
-// const petSchema = require('./Pet')
 
 // Schema to create User model
 const userSchema = new Schema(
@@ -24,18 +22,12 @@ const userSchema = new Schema(
       minLength: 8,
       maxLength: 26
     },
-    // pets: [
-    //   {
-    //     name: String,
-    //     breed: String,
-    //     age: Number,
-    //     bio: {
-    //       type: String,
-    //       maxlength: 280,
-    //     },
-    //     imageURL: String,
-    //   },
-    // ],
+    pets: [
+      {
+      type: Schema.Types.ObjectId,
+      ref: 'pet'
+    }
+  ],
     friends: [
       {
         type: Schema.Types.ObjectId,
@@ -70,11 +62,6 @@ userSchema.methods.isCorrectPassword = async function (password) {
 // Create a virtual property `friendCount` that retrieves the length of the friends array field on query
 userSchema.virtual('friendCount').get(function () {
   return this.friends.length;
-});
-
-// Create a virtual property `petCount` that retrieves the length of the pet array field on query
-userSchema.virtual('petCount').get(function () {
-  return this.pets.length;
 });
 
 const User = model('user', userSchema);
