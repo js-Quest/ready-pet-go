@@ -53,7 +53,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/chatpage" element={<ChatPage />} />
-            {/* <Route path="/product" element={<ProductSearchResults />} /> */}
+            <Route path="/product" element={<allProducts />} />
             <Route path="/" element={<Navigate to="/login" />} />
         </Routes>
         {/* //need footer  */}
