@@ -1,0 +1,58 @@
+.petFooter {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+
+.dashboardContainer {
+  box-shadow: 8px 8px 5px #303030d1;
+  max-width: 98vw !important;
+  border: 1px solid #3030307f;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  padding-bottom: 2em;
+}
+
+.petPeeking {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 94%;
+  margin-bottom: -23px !important;
+}
+
+.dashboardHead {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: #cd7772b7;
+  height: 2.5em;
+  margin-top: 0;
+  width: inherit;
+  vertical-align: middle;
+}
+
+.userH1 {
+  text-align: center;
+}
+
+.changeBtn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50% !important;
+  margin-bottom: 1.5em !important;
+}
+
+#addPetContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboardDetailsBox {
+  max-width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #3030307f;
+}

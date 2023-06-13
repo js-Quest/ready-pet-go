@@ -5,11 +5,12 @@ import { styled } from "@mui/system";
 const BoxWrapper = styled("div")({
   //styling box here
   width: "100%",
-  height: "100vh",
+  height: 'auto',
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  background: "#1f98b4",
+  marginTop: '4em'
+  // background: "#1f98b4",
 });
 
 export default function AuthBox(props) {
