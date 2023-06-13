@@ -55,6 +55,7 @@ const Login = (props) => {
     textTransform: "uppercase",
     fontWeight: '600',
     fontSize: '16px',
+    marginTop: '5px'
   });
 
   const styles = {
@@ -71,7 +72,8 @@ const Login = (props) => {
       borderRadius: "10px",
       color: "black",
       background: "#D7DEDF",
-      margin: 0,
+      marginTop: "10px",
+      marginBottom: '10px',
       fontSize: "16px",
       padding: "0 5px",
     },
@@ -100,7 +102,7 @@ const Login = (props) => {
         Welcome Back!
       </Typography>
       {/* color light grey, sx used for styling */}
-      <Typography sx={{ color: '#b9bbbe' }}>
+      <Typography sx={{ color: '#b9bbbe', marginBottom: '5px' }}>
         Nice to see you bruh.
       </Typography>
       {data ? (

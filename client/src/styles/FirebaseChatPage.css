@@ -21,7 +21,7 @@ input {
 .App {
   width: 100%;
   min-height: 100vh;
-  background-color: #1c2c4c;
+  background-color: #138086;
   color: #4c768d;
 }
 
@@ -31,7 +31,7 @@ input {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #4c768d;
+  background-color: #DC8665;
   color: #242443;
   height: 60px;
 }
@@ -76,11 +76,11 @@ input {
 .chat-bubble {
   border-radius: 20px 20px 20px 0;
   padding: 15px;
-  background-color: #7cc5d9;
+  background-color: #EEB462;
   color: #1c2c4c;
   width: max-content;
   max-width: calc(100% - 50px);
-  box-shadow: -2px 2px 1px 1px #4c768d;
+  box-shadow: -2px 2px 1px 1px#DC8665;
   display: flex;
   align-items: flex-start;
   margin-bottom: 20px;
@@ -122,7 +122,7 @@ input {
   bottom: 0px;
   width: 100%;
   padding: 20px 30px;
-  background-color: #4c768d;
+  background-color: #DC8665;
   display: flex;
 }
 

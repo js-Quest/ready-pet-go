@@ -66,6 +66,7 @@ export default function Register() {
     textTransform: "uppercase",
     fontWeight: '600',
     fontSize: '16px',
+    marginTop: '5px'
   });
 
   const styles = {
@@ -82,7 +83,8 @@ export default function Register() {
       borderRadius: "10px",
       color: "black",
       background: "#D7DEDF",
-      margin: 0,
+      marginTop: "10px",
+      marginBottom: '10px',
       fontSize: "16px",
       padding: "0 5px",
     },
@@ -93,7 +95,7 @@ export default function Register() {
       fontSize: '16px',
       fontWeight: 500,
       height: '40px',
-      marginTop: "30px",
+      marginTop: "20px",
       border: "1px solid black",
       borderRadius: "10px",
       cursor: 'pointer',
