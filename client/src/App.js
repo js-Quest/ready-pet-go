@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Profiler } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -14,7 +14,7 @@ import Dashboard from "./pages/Dashboard";
 import Register from "./pages/RegisterPage";
 import ChatPage from "./pages/ChatPage";
 import Header from "./components/Header";
-
+import Profile from "./pages/Profile"
 import Login from './pages/LoginPage';
 import Firebase from "./pages/Firebase";
 
@@ -54,7 +54,9 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/chatpage" element={<ChatPage />} />
-            <Route path="/firebase" element={<Firebase />} />
+          <Route path="/firebase" element={<Firebase />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/profiles/:username" element={<Profile />} />
             {/* <Route path="/product" element={<ProductSearchResults />} /> */}
             <Route path="/" element={<Navigate to="/login" />} />
         </Routes>
