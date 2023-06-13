@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Typography } from '@mui/material';
-import InputWithLabel from './InputWithLabel';
-import PrimaryButton from './PrimaryButton';
+import InputWithLabel from '../InputWithLabel';
+import PrimaryButton from '../PrimaryButton';
 
 const validateEmail = (email) => {
   const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -20,7 +20,7 @@ export default function AddFriendChat({
   }
 
   const handleCloseChat = () => {
-    closeChatHandler(),
+    // closeChatHandler(),
     setEmail('');
   };
 
