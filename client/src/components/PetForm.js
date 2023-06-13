@@ -13,7 +13,6 @@ function PetForm({ petArray, setPetArray }) {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-
     setPetArray([...petArray, {
       name: name,
       age: age,
@@ -24,6 +23,7 @@ function PetForm({ petArray, setPetArray }) {
     setAge("");
     setBreed("");
     setBio("");
+    // do fetch request here
   };
 
   // each card needs to handle fetch request to submit form to database
