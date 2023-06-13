@@ -5,12 +5,17 @@ import { FaShoppingCart } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
+import Auth from '../utils/auth';
+import { Link } from "react-router-dom";
+
 const styles = {
   nav: {
     fontFamily: 'times',
     margin: '20px',
     fontSize: '20px',
-    padding: '10px'
+    padding: '10px',
+    textDecoration: 'none',
+    color: 'inherit'
   },
 }
 
@@ -33,6 +38,11 @@ function Navigation()
   const options = ['Home', 'Profile', 'Products', <BsFillChatTextFill />, <FaShoppingCart />];
   const defaultOption = options[0];
 
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
+
   if (!showMenu) {
     return <Dropdown options={options} value={defaultOption} />;
   }
@@ -43,11 +53,34 @@ function Navigation()
       {/* rendering full nav list for large screens */}
       {isDesktop ?
         <nav>
-          <a href="/" style={styles.nav}>Home</a>
+          <a href="/" style={styles.nav}>Home</a> 
           <a href="/dashboard" style={styles.nav}>Dashboard</a>
           <a href="product" style={styles.nav}>Products</a>
           <a href="#" style={styles.nav}><BsFillChatTextFill /></a>
-          <a href="#" style={styles.nav}><FaShoppingCart /></a></nav>
+          <a href="#" style={styles.nav}><FaShoppingCart /></a> 
+          {/* //conditonally rendering links for logout and profile if user is logged in, or login/signup if user is logged out */}
+          {Auth.loggedIn() ? (
+            <>
+              <Link className="btn btn-lg btn-info m-2" style={styles.nav} to="/me">
+                {Auth.getProfile().data.username}'s profile
+              </Link>
+              <button className="btn btn-lg btn-light m-2" style={styles.nav} onClick={logout}>
+                Logout
+              </button>
+            </>
+          ) : (
+            <>
+              <Link className="btn btn-lg btn-info m-2" style={styles.nav} to="/login">
+                Login
+              </Link>
+              <Link className="btn btn-lg btn-light m-2" style={styles.nav} to="/register">
+                Signup
+              </Link>
+            </>
+          )} 
+          
+          </nav>
+          
           // * { isLogged}
           // <a href="/login" style={styles.nav}>Login</a> */}
         :
