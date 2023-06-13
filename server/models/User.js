@@ -22,12 +22,22 @@ const userSchema = new Schema(
       minLength: 8,
       maxLength: 26
     },
+    phoneNumber: {
+      type: Number
+    },
+    bio: {
+      type: String,
+      maxLength: 200
+    },
+    city: {
+      type: String
+    },
     pets: [
       {
-      type: Schema.Types.ObjectId,
-      ref: 'pet'
-    }
-  ],
+        type: Schema.Types.ObjectId,
+        ref: 'pet'
+      }
+    ],
     friends: [
       {
         type: Schema.Types.ObjectId,
@@ -55,7 +65,6 @@ userSchema.pre('save', async function (next) {
 // method to compare and validate password for logging in
 userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
-  // return password === this.password;
 };
 
 
