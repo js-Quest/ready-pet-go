@@ -11,7 +11,7 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-    pets: [Pet]
+    pets: [Pet]!
   }
   
    type Pet {
@@ -39,8 +39,8 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addPet(name: String, breed: String, age: Int, bio: String): Pet 
+    removePet(petId: ID!): Pet 
   }
-
 
 
 `
