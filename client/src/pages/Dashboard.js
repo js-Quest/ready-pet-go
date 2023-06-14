@@ -54,7 +54,7 @@ export default function Dashboard() {
                 <div className="imageContainer" id='addPetContainer'>
                   {/* map through card info */}
                   {/* Tutor Patrick Lake helped me with this map function */}
-                  <PetCard />
+                  {/* <PetCard /> */}
                   {[...Array(numCard)].map((_, i) => <PetForm key={i} />)}
                   <Button
                     setShowCard={setNumCard}
