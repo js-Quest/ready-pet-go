@@ -8,6 +8,9 @@ import AuthBox from '../components/AuthBox';
 import RedirectInfo from '../components/RedirectInfo';
 import { styled } from '@mui/system';
 import Auth from '../utils/auth';
+// import Container from '@mui/material/Container';
+import PetFoot from '../images/petfoot.png';
+import './style.css';
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -73,7 +76,7 @@ const Login = (props) => {
       color: "black",
       background: "#D7DEDF",
       fontSize: "16px",
-      padding: "0 5px",
+      padding: "0 15px",
     },
     button: {
       background: 'grey',
@@ -92,67 +95,84 @@ const Login = (props) => {
     }
   }
 
-
-
   return (
-    <AuthBox>
-      <Typography variant='h5' sx={{ color: 'white' }}>
-        Welcome Back!
-      </Typography>
-      {/* color light grey, sx used for styling */}
-      <Typography sx={{ color: '#b9bbbe', marginBottom: '5px' }}>
-        Nice to see you bruh.
-      </Typography>
-      {data ? (
-        <p>
-          Success! You may now head{' '}
-          <Link to="/">back to the homepage.</Link>
-        </p>
-      ) : (
-        <form onSubmit={handleFormSubmit} style={styles.form}>
-          <Label>Email</Label>
-          <input style={styles.input}
-            name="email"
-            type="email"
-            placeholder="Example@email.com"
-            value={formState.email}
-            onChange={handleChange}
-          />
-          <Label>Password</Label>
-          <input style={styles.input}
-            name="password"
-            type="password"
-            placeholder="your password"
-            value={formState.password}
-            onChange={handleChange}
-          />
-          {/* <Tooltip */}
-          {/* title={!isFormValid ? getFormNotValidMessage() : getFormValidMessage()}
+    <div maxWidth={100}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        backgroundColor: '#fff',
+        height: 'auto'
+      }}>
+      <AuthBox>
+        <Typography variant='h5' sx={{ color: 'white' }}>
+          Welcome Back!
+        </Typography>
+        {/* color light grey, sx used for styling */}
+        <Typography sx={{ color: '#b9bbbe' }}>
+          Nice to see you bruh.
+        </Typography>
+        {data ? (
+          <p>
+            Success! You may now head{' '}
+            <Link to="/">back to the homepage.</Link>
+          </p>
+        ) : (
+          <form onSubmit={handleFormSubmit} style={styles.form}>
+            <Label>Email</Label>
+            <input style={styles.input}
+              name="email"
+              type="email"
+              placeholder="Example@email.com"
+              value={formState.email}
+              onChange={handleChange}
+            />
+            <Label>Password</Label>
+            <input style={styles.input}
+              name="password"
+              type="password"
+              placeholder="your password"
+              value={formState.password}
+              onChange={handleChange}
+            />
+            {/* <Tooltip */}
+            {/* title={!isFormValid ? getFormNotValidMessage() : getFormValidMessage()}
       > */}
 
-          <button
-            style={styles.button}
-            type="submit"
-          >
-            SUBMIT
-          </button>
+            <button
+              style={styles.button}
+              type="submit"
+            >
+              SUBMIT
+            </button>
 
-        </form>
-      )}
+          </form>
+        )}
 
-      {error && (
-        <div style={styles.errorMessage}>
-          {'Invalid credentials, try again'}
+        {error && (
+          <div style={styles.errorMessage}>
+            {'Invalid credentials. Try again.'}
+          </div>
+        )}
+        {/* </Tooltip> */}
+        <RedirectInfo
+          text="Don't have an account? "
+          redirectText=' Sign up!'
+          additionalStyles={{ marginTop: '5px' }}
+          redirectHandler={handlePushToRegisterPage}
+        />
+      </AuthBox>
+      <div className='loginFootPos'>
+        <img
+          src={PetFoot}
+          alt='pet-footer'
+          className='petPeekLogin'
+        />
+        <div className='loginFooter'>
+          <p>hello</p>
         </div>
-      )}
-      {/* </Tooltip> */}
-      <RedirectInfo
-        text='Want an account? '
-        redirectText='Create an account'
-        additionalStyles={{ marginTop: '5px' }}
-        redirectHandler={handlePushToRegisterPage}
-      />
-    </AuthBox>
+      </div>
+    </div>
   );
 };
 

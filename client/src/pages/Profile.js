@@ -50,7 +50,7 @@ export default function Profile() {
         <div className="imageContainer">
          {/* map through card info */}
          {/* Tutor Patrick Lake helped me with this map function */}
-         <p>THIS IS THE PROFIEL PAGE!</p>
+         <p>THIS IS THE PROFILE PAGE!</p>
           <PetCard />
           {[...Array(numCard)].map((_,i) => <PetForm key={i}/>)}
           <PetButton setShowCard={setNumCard}/>
