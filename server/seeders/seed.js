@@ -24,8 +24,8 @@ db.once('open', async () => {
     // }
     // for each pet in pets array need to send back id to user
 
-    await Pet.deleteMany({});
-    await Pet.create(petSeeds);
+    // await Pet.deleteMany({});
+    // await Pet.create(petSeeds);
 
     console.log('all done!');
     process.exit(0);
