@@ -23,7 +23,7 @@ const userSchema = new Schema(
       maxLength: 26
     },
     phoneNumber: {
-      type: Number
+      type: String
     },
     bio: {
       type: String,
