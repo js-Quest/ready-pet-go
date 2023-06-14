@@ -39,11 +39,13 @@ input {
 .sign-in {
   border: none;
   background-color: transparent;
+
 }
 
 .sign-in>img {
-  height: 30px;
+  height: 35px;
   width: auto;
+  border-radius: 12px;
 }
 
 .sign-out {
@@ -65,7 +67,7 @@ input {
 
 .welcome :is(h2, p, img) {
   margin-bottom: 20px;
-}
+} 
 
 /* chat component */
 .messages-wrapper {
