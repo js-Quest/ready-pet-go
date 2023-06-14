@@ -66,6 +66,7 @@ export default function Register() {
     textTransform: "uppercase",
     fontWeight: '600',
     fontSize: '16px',
+    marginTop: '5px'
   });
 
   const styles = {
@@ -82,9 +83,8 @@ export default function Register() {
       borderRadius: "10px",
       color: "black",
       background: "#D7DEDF",
-      margin: 0,
       fontSize: "16px",
-      padding: "0 5px",
+      padding: "0 15px",
     },
     button: {
       background: 'grey',
@@ -104,6 +104,14 @@ export default function Register() {
   }
 
   return (
+    <div maxWidth={100}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        backgroundColor: '#fff',
+        height: 'auto'
+      }}>
     <AuthBox>
       <Typography variant='h5' sx={{ color: 'white' }}>
         Create an Account
@@ -169,5 +177,12 @@ export default function Register() {
         redirectHandler={handlePushToLoginPage}
       />
     </AuthBox>
+      <div className='regFootPos'>
+
+        <div className='regFooter'>
+          <p>hello</p>
+        </div>
+      </div>
+    </div>
   )
 }

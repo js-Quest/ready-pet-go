@@ -4,11 +4,12 @@ const { signToken } = require('../utils/auth');
 
 const resolvers = {
   Query: {
+    // query all products
     products: async () => {
       return await Product.find({});
     },
 
-    //query user
+    //query all users
     users: async () => {
       return User.find().populate('pets')
     },
@@ -18,17 +19,18 @@ const resolvers = {
       return User.findOne({ username }).populate('pets')
     },
 
-    // query pets
+    // query all pets
     pets: async () => {
       return Pet.find();
     },
-
+    // query loggedin-in user and associated pet data
     me: async (parent, args, context) => {
       // check if users exist
-      if (context.user) { 
-        const userData = await User.findOne({ _id: context.user._id }).select(
-          '-__v -password'
-        );
+      if (context.user) {
+        const userData = await User.findOne({ _id: context.user._id }).
+          populate('pets').select(
+            '-__v -password'
+          );
         return userData;
       }
       throw new AuthenticationError('Not logged in.');
@@ -36,6 +38,7 @@ const resolvers = {
   },
 
   Mutation: {
+    // login mutation
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
 
@@ -53,13 +56,14 @@ const resolvers = {
 
       return { token, user };
     },
+
+    // add user mutation
     addUser: async (parent, args) => {
       const user = await User.create(args);
       const token = signToken(user);
 
       return { token, user };
     },
-
     updateUser: async (parent, args , context) => {
 
       if (context.user) {
@@ -94,6 +98,18 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
 
+    // update pet mutation
+    updatePet: async (parent, { id, name,
+      breed, age, bio }) => {
+      return await Pet.findOneAndUpdate(
+        { _id: id },
+        { name, breed, age, bio },
+        // Return the newly updated object instead of the original
+        { new: true }
+      )
+    },
+
+    // remove pet mutation
     removePet: async (parent, { petId }, context) => {
       if (context.user) {
 

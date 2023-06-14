@@ -31,6 +31,23 @@ export default function Profile() {
   // navigate to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return <Navigate to="/me" />;
+        // <Link className="btn btn-lg btn-info m-2" to="/me">
+        //         {Auth.getProfile().data.username}'s profile
+        //       </Link>
+        
+        // <h1>Hello, User</h1>
+        // <div className="imageContainer">
+        //  {/* map through card info */}
+        //  {/* Tutor Patrick Lake helped me with this map function */}
+        //  <p>THIS IS THE PROFILE PAGE!</p>
+        //   <PetCard />
+        //   {[...Array(numCard)].map((_,i) => <PetForm key={i}/>)}
+        //   <PetButton setShowCard={setNumCard}/>
+        // </div>
+  
+        {/* <button onClick={(image) => setImage(image)}>Save</button> */}
+      // </div>
+    // )
   }
 
   console.log(data)
