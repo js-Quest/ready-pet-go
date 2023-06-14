@@ -12,7 +12,6 @@ import { setContext } from '@apollo/client/link/context';
 import Dashboard from "./pages/Dashboard";
 // import ProductSearchResults from './pages/ProductSearchResults';
 import Register from "./pages/RegisterPage";
-import ChatPage from "./pages/ChatPage";
 import Header from "./components/Header";
 import Profile from "./pages/Profile"
 import Login from './pages/LoginPage';
@@ -53,7 +52,6 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/chatpage" element={<ChatPage />} />
           <Route path="/firebase" element={<Firebase />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/profiles/:username" element={<Profile />} />
