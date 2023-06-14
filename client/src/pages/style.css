@@ -1,4 +1,4 @@
-/* LOGIN & REGISTER PAGES */
+/* LOGIN PAGE */
 /* - - - - - - - - - - -  */
 
 .loginFootPos {
@@ -46,6 +46,54 @@
   margin-right: 0 !important;
 }
 
+
+/* REGISTER PAGE */
+/* - - - - - - - - - - -  */
+
+.regFootPos {
+  margin-top: 2em;
+}
+
+.petPeekReg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -65px;
+}
+
+@media (max-width: 600px) {
+  .petPeekReg {
+    width: 80% !important;
+    height: auto;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .petPeekReg {
+    width: 50% !important;
+    height: auto;
+  }
+}
+
+@media (min-width: 901px) {
+  .petPeekReg {
+    width: 40% !important;
+    height: auto;
+  }
+}
+
+.regFooter {
+  display: flex;
+  width: 100% !important;
+  height: 6em;
+  background-color: #138086 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
 
 /* DASHBOARD */
 /* - - - - - - - - - - -  */
