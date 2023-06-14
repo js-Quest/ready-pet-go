@@ -20,6 +20,7 @@ input {
 
 h1, h2 {
   font-family: "roboto";
+  margin-top: 0.5rem;
 }
 
 .App {
