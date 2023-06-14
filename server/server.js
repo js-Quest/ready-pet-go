@@ -32,6 +32,7 @@ if(process.env.NODE_ENV === 'production'){
 
 // Route all other requests to the React app's 'index.html' file
 app.get('/', (req, res) => {
+  // res.setHeader('Permissions-Policy', 'ch-ua-form-factor');
   res.sendFile(path.join(__dirname, '../client/'));
 });
  

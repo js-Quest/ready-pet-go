@@ -6,31 +6,17 @@ import { getFirestore } from "@firebase/firestore";
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBrAB9zPq5xij8nhCtOQulcjjyJ30WBYrE",
-  authDomain: "ready-pet-go-83a64.firebaseapp.com",
-  databaseURL: "https://ready-pet-go-83a64-default-rtdb.firebaseio.com",
-  projectId: "ready-pet-go-83a64",
-  storageBucket: "ready-pet-go-83a64.appspot.com",
-  messagingSenderId: "253577672022",
-  appId: "1:253577672022:web:143fc64601bfc5595412f7",
-  measurementId: "G-1ST0K8QBXY"
+  apiKey: "AIzaSyAknxq27LpwdFNrRFPoiXpc1-f5phMwwSU",
+  authDomain: "ready-pet-go-7b8cc.firebaseapp.com",
+  projectId: "ready-pet-go-7b8cc",
+  storageBucket: "ready-pet-go-7b8cc.appspot.com",
+  messagingSenderId: "472920348187",
+  appId: "1:472920348187:web:5e2bdeb436672647be8abe",
+  measurementId: "G-NM9C9NSX2Z"
 };
 
-// function getFirebaseConfig() {
-//   if (!config || !config.apiKey) {
-//     throw new Error('No Firebase configuration object provided.' + '\n' +
-//       'Add your web app\'s configuration object to firebase-config.js');
-//   } else {
-//     return config;
-//   }
-// }
-
 // Initialize Firebase
-const app = initializeApp(firebaseConfig, {
-  experimentalForceLongPolling: true, // this line
-  useFetchStreams: false, // and this line 
-}
-  );
+const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider();

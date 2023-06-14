@@ -16,7 +16,7 @@ import ChatPage from "./pages/ChatPage";
 import Header from "./components/Header";
 import Profile from "./pages/Profile"
 import Login from './pages/LoginPage';
-import Firebase from "./pages/Firebase";
+import Firebase from "./pages/FirebasePage";
 
 import {
   ApolloProvider,
