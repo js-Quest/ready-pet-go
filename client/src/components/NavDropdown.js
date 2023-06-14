@@ -5,6 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { BsFillChatTextFill } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import auth from "../utils/auth"
 
 
 function Dropdown() {
@@ -16,6 +17,11 @@ function Dropdown() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  const handleCloseLogout = () => {
+    auth.logout();
+    setAnchorEl(null);
+  }
 
   return (
     <div>
@@ -45,6 +51,8 @@ function Dropdown() {
         <MenuItem onClick={handleClose}><Link to="/firebase"><BsFillChatTextFill /></Link>
         </MenuItem>
         <MenuItem onClick={handleClose}><Link to="#"><FaShoppingCart /></Link>
+        </MenuItem>
+        <MenuItem onClick={handleCloseLogout}><Link to="/login">Logout</Link>
         </MenuItem>
       </Menu>
     </div >
