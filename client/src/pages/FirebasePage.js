@@ -5,9 +5,18 @@ import "../styles/FirebaseChatPage.css"
 import NavBar from '../components/FirebaseChat/NavBar';
 import ChatBox from '../components/FirebaseChat/ChatBox';
 import Welcome from '../components/FirebaseChat/Welcome';
+import Auth from '../utils/auth'
+import { Link } from 'react-router-dom';
 
 export default function FirebasePage() {
   const [user] = useAuthState(auth);
+  // get token
+  const token = Auth.loggedIn() ? Auth.getToken() : null;
+  if (!token) {
+    return (
+      <p>You must <Link to="/login">LOG IN</Link> to use PuppyChat</p>
+    );
+  }
   return (
     <div className="App">
       <NavBar />

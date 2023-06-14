@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { BsFillChatTextFill } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import auth from "../utils/auth"
+import Auth from "../utils/auth"
 
 
 function Dropdown() {
@@ -19,9 +19,12 @@ function Dropdown() {
   };
 
   const handleCloseLogout = () => {
-    auth.logout();
+    Auth.logout();
     setAnchorEl(null);
   }
+
+  // get token
+  const token = Auth.loggedIn() ? Auth.getToken() : null;
 
   return (
     <div>
@@ -54,8 +57,13 @@ function Dropdown() {
         </MenuItem>
         <MenuItem onClick={handleClose}><Link to="#"><FaShoppingCart /></Link>
         </MenuItem>
+      {!token ? (
+        <MenuItem onClick={handleClose}><Link to="/login">Login</Link>
+        </MenuItem>
+        ) : (
         <MenuItem onClick={handleCloseLogout}><Link to="/login">Logout</Link>
         </MenuItem>
+        )}
       </Menu>
     </div >
   );
