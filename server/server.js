@@ -5,7 +5,8 @@ const { ApolloServer } = require('apollo-server-express');
 const { authMiddleware } = require('./utils/auth');
 const db = require('./config/connection');
 const { typeDefs, resolvers } = require('./schemas');
-// const socketServer = require('./socketServer');
+require('dotenv').config()
+const socketServer = require('./socketServer');
 
 const PORT = process.env.PORT  || 3001;
 const server = new ApolloServer({
@@ -18,9 +19,9 @@ const server = new ApolloServer({
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.use(cors());
+app.use(cors());
 
-// socketServer.registerSocketServer(server)
+socketServer.registerSocketServer(server)
 
 // Serve static files from the 'build' directory inside the 'client' folder
 if(process.env.NODE_ENV === 'production'){
@@ -31,6 +32,7 @@ if(process.env.NODE_ENV === 'production'){
 
 // Route all other requests to the React app's 'index.html' file
 app.get('/', (req, res) => {
+  // res.setHeader('Permissions-Policy', 'ch-ua-form-factor');
   res.sendFile(path.join(__dirname, '../client/'));
 });
  

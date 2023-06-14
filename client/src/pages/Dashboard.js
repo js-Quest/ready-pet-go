@@ -16,6 +16,8 @@ import Box from '@mui/material/Box';
 
 export default function Dashboard() {
   const [numCard, setNumCard] = useState(0);
+  // have array of pets here and map it in the petCard
+  const [petArray, setPetArray] = useState([]);
 
   return (
     <div>

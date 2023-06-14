@@ -1,18 +1,15 @@
 import React from 'react';
-import { IconContext } from "react-icons";
-import { FaPaw } from "react-icons/fa";
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+
 
 const styles = {
   container: {
-    width: "100px",
-    height: "100px",
-    border: "4px solid #2ecacd",
-    borderRadius: "50%",
+    width: "50px",
+    height: "50px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
     margin: "20px",
-    backgroundColor: "lightBlue",
   }
 }
 
@@ -21,12 +18,9 @@ function PetButton({setShowCard}) {
     <>
       <button type='submit' onClick={() => setShowCard((prev) => prev += 1)}>
         <div style={styles.container}>
-          <IconContext.Provider value={{ fontSize: "100px" }} >
-            <FaPaw style={{ fontSize: "60px", color: "#808080" }} />
-          </IconContext.Provider >
+          <AddCircleOutlineIcon sx={{ fontSize: 65, color: "#6eb9dc" }} />
         </div>
       </button>
-      {/* <button onClick={}>Save</button> */}
     </>
   )
 }

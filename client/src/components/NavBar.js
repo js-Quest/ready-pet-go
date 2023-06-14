@@ -56,7 +56,7 @@ function Navigation()
           <a href="/" style={styles.nav}>Home</a> 
           <a href="/dashboard" style={styles.nav}>Dashboard</a>
           <a href="product" style={styles.nav}>Products</a>
-          <a href="#" style={styles.nav}><BsFillChatTextFill /></a>
+          <a href="/firebase" style={styles.nav}><BsFillChatTextFill /></a>
           <a href="#" style={styles.nav}><FaShoppingCart /></a> 
           {/* //conditonally rendering links for logout and profile if user is logged in, or login/signup if user is logged out */}
           {Auth.loggedIn() ? (
