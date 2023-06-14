@@ -46,6 +46,8 @@ function Dropdown() {
         </MenuItem>
        <MenuItem onClick={handleClose}><Link to="/dashboard">Dashboard</Link>
         </MenuItem>
+       <MenuItem onClick={handleClose}><Link to="/me">Profile</Link>
+        </MenuItem>
         <MenuItem onClick={handleClose}><Link to="/product">Products</Link>
         </MenuItem>
         <MenuItem onClick={handleClose}><Link to="/firebase"><BsFillChatTextFill /></Link>
