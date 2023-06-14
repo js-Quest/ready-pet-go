@@ -64,8 +64,23 @@ const resolvers = {
 
       return { token, user };
     },
+    updateUser: async (parent, args , context) => {
 
-    // add pet mutation
+      if (context.user) {
+        return User.findOneAndUpdate(
+          { _id: context.user._id },
+          {
+          ...args 
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+ 
     addPet: async (parent, { name,
       breed, age, bio }, context) => {
       if (context.user) {
