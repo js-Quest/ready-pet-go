@@ -4,7 +4,8 @@ const data = {
       name: "JW Pet Chompion Dog Toy",
       slug: "jw-pet-chompion-dog-toy",
       category: "Dog Toy",
-      image: "/images/jwpetBone.jpg", // 679px × 829px
+      image:
+        "https://res.cloudinary.com/dtfbwnsv7/image/upload/v1686761223/jwpetBone_dvz4gd.jpg", // 679px × 829px
       price: 11.99,
       countInStock: 10,
       brand: "JW Pet",
@@ -17,7 +18,8 @@ const data = {
       name: "JW Pet Chompion Dog Toy",
       slug: "jw-pet-chompion-dog-toy",
       category: "Dog Toy",
-      image: "/images/jwpetBone.jpg", // 679px × 829px
+      image:
+        "https://res.cloudinary.com/dtfbwnsv7/image/upload/v1686761223/jwpetBone_dvz4gd.jpg", // 679px × 829px
       price: 11.99,
       countInStock: 10,
       brand: "JW Pet",
@@ -30,7 +32,8 @@ const data = {
       name: "JW Pet Chompion Dog Toy",
       slug: "jw-pet-chompion-dog-toy",
       category: "Dog Toy",
-      image: "/images/jwpetBone.jpg", // 679px × 829px
+      image:
+        "https://res.cloudinary.com/dtfbwnsv7/image/upload/v1686761223/jwpetBone_dvz4gd.jpg", // 679px × 829px
       price: 11.99,
       countInStock: 10,
       brand: "JW Pet",
@@ -43,7 +46,8 @@ const data = {
       name: "JW Pet Chompion Dog Toy",
       slug: "jw-pet-chompion-dog-toy",
       category: "Dog Toy",
-      image: "/images/jwpetBone.jpg", // 679px × 829px
+      image:
+        "https://res.cloudinary.com/dtfbwnsv7/image/upload/v1686761223/jwpetBone_dvz4gd.jpg", // 679px × 829px
       price: 11.99,
       countInStock: 10,
       brand: "JW Pet",
