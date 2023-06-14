@@ -9,7 +9,7 @@ const BoxWrapper = styled("div")({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  marginTop: '4em'
+  marginTop: '3em'
   // background: "#1f98b4",
 });
 
@@ -18,8 +18,8 @@ export default function AuthBox(props) {
     <BoxWrapper>
       <Box
         sx={{
-          width: 700,
-          height: 400,
+          width: ['80%', 700],
+          height: ['auto', 400],
           background: "#36393f", //dark grey
           borderRadius: "10px",
           boxShadow: "0 2px 10px 0 rgb(0 0 0 / 20%)",

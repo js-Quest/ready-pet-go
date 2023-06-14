@@ -8,7 +8,7 @@ import AuthBox from '../components/AuthBox';
 import RedirectInfo from '../components/RedirectInfo';
 import { styled } from '@mui/system';
 import Auth from '../utils/auth';
-import Container from '@mui/material/Container';
+// import Container from '@mui/material/Container';
 import PetFoot from '../images/petfoot.png';
 import './style.css';
 
@@ -96,11 +96,10 @@ const Login = (props) => {
   }
 
   return (
-    <Container maxWidth='100'
+    <div maxWidth={100}
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        // marginTop: '20px',
         justifyContent: 'center',
         backgroundColor: '#fff',
         height: 'auto'
@@ -163,13 +162,17 @@ const Login = (props) => {
           redirectHandler={handlePushToRegisterPage}
         />
       </AuthBox>
-      <div className='petFooter'>
+      <div className='loginFootPos'>
         <img
           src={PetFoot}
           alt='pet-footer'
+          className='petPeekLogin'
         />
+        <div className='loginFooter'>
+          <p>hello</p>
+        </div>
       </div>
-    </Container>
+    </div>
   );
 };
 

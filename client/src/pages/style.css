@@ -1,9 +1,54 @@
-.petFooter {
-  display: flex;
-  justify-content: center;
+/* LOGIN & REGISTER PAGES */
+/* - - - - - - - - - - -  */
+
+.loginFootPos {
   margin-top: 2em;
 }
 
+.petPeekLogin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -65px;
+}
+
+@media (max-width: 600px) {
+  .petPeekLogin {
+    width: 80% !important;
+    height: auto;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .petPeekLogin {
+    width: 50% !important;
+    height: auto;
+  }
+}
+
+@media (min-width: 901px) {
+  .petPeekLogin {
+    width: 40% !important;
+    height: auto;
+  }
+}
+
+.loginFooter {
+  display: flex;
+  width: 100% !important;
+  height: 6em;
+  background-color: #138086 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+
+/* DASHBOARD */
+/* - - - - - - - - - - -  */
 .dashboardContainer {
   box-shadow: 8px 8px 5px #303030d1;
   max-width: 98vw !important;
