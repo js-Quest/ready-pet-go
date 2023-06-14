@@ -17,9 +17,10 @@ export default function AuthBox(props) {
   return (
     <BoxWrapper>
       <Box
+        className='authBox'
         sx={{
-          width: ['80%', 700],
-          height: ['auto', 400],
+          width: [400, 700],
+          height: ['auto', 'auto'],
           background: "#36393f", //dark grey
           borderRadius: "10px",
           boxShadow: "0 2px 10px 0 rgb(0 0 0 / 20%)",

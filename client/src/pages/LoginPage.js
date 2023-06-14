@@ -58,7 +58,8 @@ const Login = (props) => {
     textTransform: "uppercase",
     fontWeight: '600',
     fontSize: '16px',
-    marginTop: '5px'
+    marginTop: '15px',
+    marginBottom: '5px',
   });
 
   const styles = {
@@ -66,7 +67,9 @@ const Login = (props) => {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
-
+      paddingLeft: '1em',
+      paddingRight: '1em',
+      paddingTop: '0.5em'
     },
     input: {
       flexGrow: 1,
@@ -79,16 +82,19 @@ const Login = (props) => {
       padding: "0 15px",
     },
     button: {
-      background: 'grey',
-      color: 'white',
+      background: '#EEB462',
+      color: '#36393F',
       textTransform: 'none',
-      fontSize: '16px',
-      fontWeight: 500,
+      fontSize: '18px',
+      fontWeight: 700,
       height: '40px',
+      width: '500px !important',
       marginTop: "30px",
       border: "1px solid black",
       borderRadius: "10px",
       cursor: 'pointer',
+      marginRight: '4em',
+      marginLeft: '4em',
     },
     errorMessage: {
       color: 'white'
@@ -105,12 +111,12 @@ const Login = (props) => {
         height: 'auto'
       }}>
       <AuthBox>
-        <Typography variant='h5' sx={{ color: 'white' }}>
+        <Typography variant='h5' sx={{ color: 'white', textAlign: 'center' }}>
           Welcome Back!
         </Typography>
         {/* color light grey, sx used for styling */}
-        <Typography sx={{ color: '#b9bbbe' }}>
-          Nice to see you bruh.
+        <Typography sx={{ color: '#b9bbbe', textAlign: 'center' }}>
+          Nice to see you, bruh.
         </Typography>
         {data ? (
           <p>
@@ -158,7 +164,7 @@ const Login = (props) => {
         <RedirectInfo
           text="Don't have an account? "
           redirectText=' Sign up!'
-          additionalStyles={{ marginTop: '5px' }}
+          additionalStyles={{ marginTop: '40px', marginLeft: 'auto', marginRight: '10px' }}
           redirectHandler={handlePushToRegisterPage}
         />
       </AuthBox>

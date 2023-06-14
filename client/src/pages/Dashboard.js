@@ -52,9 +52,9 @@ export default function Dashboard() {
               <Box className='dashboardDetailsBox'>
                 <h3>Some other info</h3>
                 <div className="imageContainer" id='addPetContainer'>
-                  {/* map through card info */}
+                  {/* map through card info
                   {/* Tutor Patrick Lake helped me with this map function */}
-                  <PetCard />
+                  {/* <PetCard /> */}
                   {[...Array(numCard)].map((_, i) => <PetForm key={i} />)}
                   <Button
                     setShowCard={setNumCard}
