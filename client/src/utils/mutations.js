@@ -28,9 +28,22 @@ export const ADD_USER = gql`
     }
 `;
 
+export const UPDATE_USER = gql`
+      mutation updateUser($username: String, $email: String, $phoneNumber: String, $bio: String, $city: String) {
+        updateUser(username: $username, email: $email, phoneNumber: $phoneNumber, bio: $bio, city: $city) {
+          _id
+          username
+          email
+          phoneNumber
+          city
+          bio
+        }
+      }
+`;
+
 // add pet mutation
 export const ADD_PET = gql`
-mutation addPet($name: String, $age: Int, $breed: String, $bio: String) {
+mutation addPet($name: String, $age: String, $breed: String, $bio: String) {
   addPet(name: $name, age: $age, breed: $breed, bio: $bio) {
     _id
     name
@@ -43,7 +56,7 @@ mutation addPet($name: String, $age: Int, $breed: String, $bio: String) {
 
 // update pet mutation
 export const UPDATE_PET = gql`
-mutation updatePet($updatePetId: ID!, $name: String, $age: Int, $breed: String, $bio: String) {
+mutation updatePet($updatePetId: ID!, $name: String, $age: String, $breed: String, $bio: String) {
   updatePet(id: $updatePetId, name: $name, age: $age, breed: $breed, bio: $bio) {
     _id
     name

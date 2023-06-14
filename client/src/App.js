@@ -53,7 +53,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/firebase" element={<Firebase />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/me" element={<Profile />} />
             <Route path="/profiles/:username" element={<Profile />} />
             {/* <Route path="/product" element={<ProductSearchResults />} /> */}
             <Route path="/" element={<Navigate to="/login" />} />

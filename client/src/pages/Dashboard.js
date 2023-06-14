@@ -2,22 +2,26 @@ import React, { useState } from 'react';
 // import UploadImage from '../components/UploadImage';
 import PetCard from '../components/PetCard';
 import PetForm from '../components/PetForm';
-// import PetButton from '../components/PetButton';
+import PetButton from '../components/PetButton';
 import Footer from '../components/Footer/Footer';
-import AddRoundedIcon from '@mui/icons-material/AddRounded';
-import Button from '@mui/material/Button';
+// import AddRoundedIcon from '@mui/icons-material/AddRounded';
+// import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import './style.css';
 import PetPeek1 from '../images/peeking1.png';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 // import Divider from '@mui/material/Divider';
+import { useQuery } from '@apollo/client';
+import { QUERY_PETS } from '../utils/queries';
 
 
 export default function Dashboard() {
   const [numCard, setNumCard] = useState(0);
   // have array of pets here and map it in the petCard
   const [petArray, setPetArray] = useState([]);
+  const { data } = useQuery(QUERY_PETS);
+  const pets = data?.pets || [];
 
   return (
     <div>
@@ -28,7 +32,7 @@ export default function Dashboard() {
         />
       </div>
       <Container className='dashboardContainer'>
-        <h1 className='dashboardHead'>Dashboard & Sht.</h1>
+        <h1 className='dashboardHead'>Dashboard</h1>
         <Box sx={{ 
           flexGrow: 1, 
           maxWidth: '95%', 
@@ -52,28 +56,24 @@ export default function Dashboard() {
               <Box className='dashboardDetailsBox'>
                 <h3>Some other info</h3>
                 <div className="imageContainer" id='addPetContainer'>
-                  {/* map through card info */}
+                  {/* map through card info
                   {/* Tutor Patrick Lake helped me with this map function */}
-                  {/* <PetCard /> */}
-                  {[...Array(numCard)].map((_, i) => <PetForm key={i} />)}
-                  <Button
+
+                  {/* <PetCard />  */}
+                  {pets.map((item , i) => <PetCard petData={item} key={i} />)}
+                 {[...Array(numCard)].map((_,i) => <PetForm petArray= {petArray} setPetArray = {setPetArray} key={i}/>)}
+                   {/* <PetButton setShowCard={setNumCard}/> */}
+                  <PetButton
                     setShowCard={setNumCard}
                     variant='text'
                     className='changeBtn'
                   >
-                    <AddRoundedIcon sx={{
-                      width: '45px',
-                      height: 'auto',
-                      color: '#656565'
-                    }}
-                    />
-                  </Button>
+                  </PetButton>
                 </div>
               </Box>
             </Grid>
           </Grid>
         </Box>
-
 
         {/* <button onClick={(image) => setImage(image)}>Save</button> */}
       </Container>

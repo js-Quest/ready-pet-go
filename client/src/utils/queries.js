@@ -42,6 +42,19 @@ export const QUERY_ME = gql`
 }
 `;
 
+// query all pets
+export const QUERY_PETS = gql`
+query allPets {
+  pets {
+    _id
+    name
+    age
+    breed
+    bio
+  }
+}
+`;
+
 // export const QUERY_PRODUCTS = gql`
 //   query getProducts($category: ID) {
 //     products(category: $category) {

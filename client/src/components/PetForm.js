@@ -4,14 +4,32 @@ import CardContent from '@mui/material/CardContent';
 // import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import UploadImage from './UploadImage';
+import { useMutation } from '@apollo/client';
+import { ADD_PET } from '../utils/mutations';
+import { QUERY_ME } from '../utils/queries';
 
-function PetForm({ petArray, setPetArray }) {
+
+const PetForm = ({ petArray, setPetArray }) => {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
-  const [breed, setBreed] = useState('');
+  const [breed, setBreed] = useState(''); 
   const [bio, setBio] = useState('');
 
-  const handleFormSubmit = (e) => {
+  const [addPet, { error }] = useMutation(ADD_PET, {
+    update(cache, { data: { addPet } }) {
+      try {
+      // update me object's cache
+      const { me } = cache.readQuery({ query: QUERY_ME });
+      cache.writeQuery({
+        query: QUERY_ME,
+        data: { me: { ...me, pets: [...me.pets, addPet] } },
+      });
+    } catch (err) {
+      console.error(err)
+    }
+ } });
+
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
     setPetArray([...petArray, {
       name: name,
@@ -19,11 +37,20 @@ function PetForm({ petArray, setPetArray }) {
       breed: breed,
       bio: bio
     }])
-    setName("");
-    setAge("");
-    setBreed("");
-    setBio("");
-    // do fetch request here
+    try {
+      const { data } = await addPet({
+        variables: {
+          name, age, breed, bio
+        },
+      });
+
+      setName("");
+      setAge("");
+      setBreed("");
+      setBio("");
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   // each card needs to handle fetch request to submit form to database
