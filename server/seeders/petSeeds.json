@@ -1,20 +1,20 @@
 [
-  {
+  { 
     "name": "Boo",
     "breed": "Calico",
-    "age": 2,
+    "age": "2",
     "bio": "I'm shy, but I love belly rubs and treats!"
-  },
-  {
-    "name": "Rory",
-    "breed": "Calico",
-    "age": 2,
-    "bio": "I love pumpkin, attention, and open doors!"
-  },
-  {
-    "name": "Maci",
-    "breed": "Toy Poodle",
-    "age": 13,
-    "bio": "I love licking the floors and sunbathing!"
   }
+  // {
+  //   "name": "Rory",
+  //   "breed": "Calico",
+  //   "age": "2",
+  //   "bio": "I love pumpkin, attention, and open doors!"
+  // },
+  // {
+  //   "name": "Maci",
+  //   "breed": "Toy Poodle",
+  //   "age": "13",
+  //   "bio": "I love licking the floors and sunbathing!"
+  // }
 ]

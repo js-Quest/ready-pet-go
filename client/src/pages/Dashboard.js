@@ -12,12 +12,16 @@ import PetPeek1 from '../images/peeking1.png';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 // import Divider from '@mui/material/Divider';
+import { useQuery } from '@apollo/client';
+import { QUERY_PETS } from '../utils/queries';
 
 
 export default function Dashboard() {
   const [numCard, setNumCard] = useState(0);
   // have array of pets here and map it in the petCard
   const [petArray, setPetArray] = useState([]);
+  const { data } = useQuery(QUERY_PETS);
+  const pets = data?.pets || [];
 
   return (
     <div>
@@ -28,7 +32,7 @@ export default function Dashboard() {
         />
       </div>
       <Container className='dashboardContainer'>
-        <h1 className='dashboardHead'>Dashboard & Sht.</h1>
+        <h1 className='dashboardHead'>Dashboard</h1>
         <Box sx={{ 
           flexGrow: 1, 
           maxWidth: '95%', 
@@ -56,7 +60,7 @@ export default function Dashboard() {
                   {/* Tutor Patrick Lake helped me with this map function */}
 
                   {/* <PetCard />  */}
-                  {petArray.map((item , i) => <PetCard petData={item} key={i} />)}
+                  {pets.map((item , i) => <PetCard petData={item} key={i} />)}
                  {[...Array(numCard)].map((_,i) => <PetForm petArray= {petArray} setPetArray = {setPetArray} key={i}/>)}
                    {/* <PetButton setShowCard={setNumCard}/> */}
                   <PetButton
@@ -70,7 +74,6 @@ export default function Dashboard() {
             </Grid>
           </Grid>
         </Box>
-
 
         {/* <button onClick={(image) => setImage(image)}>Save</button> */}
       </Container>
