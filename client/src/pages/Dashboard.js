@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 // import UploadImage from '../components/UploadImage';
 import PetCard from '../components/PetCard';
 import PetForm from '../components/PetForm';
-// import PetButton from '../components/PetButton';
+import PetButton from '../components/PetButton';
 import Footer from '../components/Footer/Footer';
-import AddRoundedIcon from '@mui/icons-material/AddRounded';
-import Button from '@mui/material/Button';
+// import AddRoundedIcon from '@mui/icons-material/AddRounded';
+// import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import './style.css';
 import PetPeek1 from '../images/peeking1.png';
@@ -54,20 +54,16 @@ export default function Dashboard() {
                 <div className="imageContainer" id='addPetContainer'>
                   {/* map through card info */}
                   {/* Tutor Patrick Lake helped me with this map function */}
-                  <PetCard />
-                  {[...Array(numCard)].map((_, i) => <PetForm key={i} />)}
-                  <Button
+                  {/* <PetCard />  */}
+                  {petArray.map((item , i) => <PetCard petData={item} key={i} />)}
+                 {[...Array(numCard)].map((_,i) => <PetForm petArray= {petArray} setPetArray = {setPetArray} key={i}/>)}
+                   {/* <PetButton setShowCard={setNumCard}/> */}
+                  <PetButton
                     setShowCard={setNumCard}
                     variant='text'
                     className='changeBtn'
                   >
-                    <AddRoundedIcon sx={{
-                      width: '45px',
-                      height: 'auto',
-                      color: '#656565'
-                    }}
-                    />
-                  </Button>
+                  </PetButton>
                 </div>
               </Box>
             </Grid>
