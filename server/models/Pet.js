@@ -4,7 +4,7 @@ const { Schema, model } = require('mongoose');
 const petSchema = new Schema(
   {
     name: String,
-    age: Number,
+    age: String,
     breed: String,
     bio: {
       type: String,
