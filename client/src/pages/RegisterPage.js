@@ -66,6 +66,7 @@ export default function Register() {
     textTransform: "uppercase",
     fontWeight: '600',
     fontSize: '16px',
+    marginTop: '5px'
   });
 
   const styles = {
@@ -82,7 +83,6 @@ export default function Register() {
       borderRadius: "10px",
       color: "black",
       background: "#D7DEDF",
-      margin: 0,
       fontSize: "16px",
       padding: "0 15px",
     },

@@ -14,14 +14,15 @@ const NavBar = () => {
 
   const signOut = () => {
     auth.signOut();
+    window.location.replace('/dashboard')
   };
 
   return (
     <nav className="nav-bar">
-      <h1>Puppy Chat</h1>
+      <h1>PuppyChat</h1>
       {user ? (
         <button onClick={signOut} className="sign-out" type="button">
-          Sign Out
+          Exit Chat
         </button>
       ) : (
         <button className="sign-in">
