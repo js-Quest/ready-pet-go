@@ -6,7 +6,7 @@ import store from './store/store';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import './index.css'; 
-import 'bootstrap/dist/css/bootstrap.min.css';
+ 
 
 const container = document.getElementById('root');
 const root = createRoot(container);

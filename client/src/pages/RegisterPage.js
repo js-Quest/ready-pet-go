@@ -38,6 +38,10 @@ export default function Register() {
       const { data } = await addUser({
         variables: { ...userFormData },
       });
+
+      localStorage.setItem('email', userFormData.email)
+      localStorage.setItem('username', userFormData.username)
+
       console.log('this is data ');
 
       Auth.login(data.addUser.token);

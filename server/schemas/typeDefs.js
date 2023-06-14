@@ -11,9 +11,20 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-    
+    phoneNumber: String
+    city: String
+    bio: String
+    pets: [Pet]!
   }
   
+   type Pet {
+    _id: ID
+    name: String
+    age: Int
+    breed: String
+    bio: String
+  }
+
   type Auth {
     token: ID!
     user: User
@@ -24,14 +35,16 @@ const typeDefs = gql`
     user(username: String!): User
     users: [User]
     products: [Product]
+    pets: [Pet]
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    
+    addPet(name: String, breed: String, age: Int, bio: String): Pet 
+    removePet(petId: ID!): Pet 
+    updateUser(username: String, email: String, phoneNumber: String, bio: String, city: String): User
   }
-
 
 
 `

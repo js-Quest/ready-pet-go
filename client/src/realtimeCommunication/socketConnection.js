@@ -2,7 +2,7 @@ import io from 'socket.io-client';
 
 let socket = null;
 
-export const connectWithSocketServer = () => {
+const connectWithSocketServer = () => {
   socket = io('http://localhost:3001');
 
   socket.on('connect', () => {
@@ -10,3 +10,5 @@ export const connectWithSocketServer = () => {
     console.log(socket.id);
   })
 };
+
+export default connectWithSocketServer

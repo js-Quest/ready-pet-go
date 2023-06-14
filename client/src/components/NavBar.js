@@ -13,7 +13,9 @@ const styles = {
     fontFamily: 'times',
     margin: '20px',
     fontSize: '20px',
-    padding: '10px'
+    padding: '10px',
+    textDecoration: 'none',
+    color: 'inherit'
   },
 }
 
