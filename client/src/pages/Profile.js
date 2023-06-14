@@ -9,9 +9,7 @@ import { useMutation } from '@apollo/client';
 
 import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
-import { UPDATE_USER } from '../utils/mutations';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { UPDATE_USER } from '../utils/mutations'; 
 
 export default function Profile() { 
   const [editProf, editProfile] = useState(false);

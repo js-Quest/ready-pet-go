@@ -77,7 +77,6 @@ export default function Dashboard() {
 
         {/* <button onClick={(image) => setImage(image)}>Save</button> */}
       </Container>
-      <Footer />
     </div>
   )
 }
