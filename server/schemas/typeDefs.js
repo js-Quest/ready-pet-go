@@ -54,14 +54,6 @@ const typeDefs = gql`
     updatePet(id: ID!, photoURL: String, name: String, breed: String, age: String, bio: String): Pet  
     removePet(petId: ID!): Pet 
     updateUser(username: String, email: String, phoneNumber: String, bio: String, city: String): User
-    removePet(petId: ID!): Pet
-    updateUser(
-      username: String
-      email: String
-      phoneNumber: String
-      bio: String
-      city: String
-    ): User
   }
 `;
 
