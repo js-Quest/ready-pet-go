@@ -1,11 +1,11 @@
 const express = require("express");
 const cors = require("cors");
 const path = require('path');
+require('dotenv').config()
 const { ApolloServer } = require('apollo-server-express');
 const { authMiddleware } = require('./utils/auth');
 const db = require('./config/connection');
 const { typeDefs, resolvers } = require('./schemas');
-require('dotenv').config()
 const socketServer = require('./socketServer');
 
 const PORT = process.env.PORT  || 3001;
