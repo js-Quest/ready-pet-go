@@ -56,26 +56,26 @@ function App() {
       <Router>
         <Header />
         <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/firebase" element={<Firebase />} />
-            <Route path="/me" element={<Profile />} />
-            <Route path="/profiles/:username" element={<Profile />} />
+          <Route path="/me" element={<Profile />} />
+          <Route path="/profiles/:username" element={<Profile />} />
 
-            {/* <Route path="/product" element={<ProductSearchResults />} /> */}
-            <Route path="/productOnHome" element={<ProductOnHome />} />
-            <Route path="/product" element={<ProductList />} />
-            <Route path="/healthcare" element={<Healthcare />} />
-            
-            <Route path="/home" element={<Home />} />
-            {/* <Route path="/product" element={<ProductSearchResults />} /> */}
-            <Route path="/" element={<Navigate to="/home" />} />
+          {/* <Route path="/product" element={<ProductSearchResults />} /> */}
+          <Route path="/productOnHome" element={<ProductOnHome />} />
+          <Route path="/product" element={<ProductList />} />
+          <Route path="/healthcare" element={<Healthcare />} />
 
-            {/* quiz componenent needs route so i can use navigation hook in Register page */}
-            <Route path="/quiz" element={<Quiz/>} />
+          <Route path="/home" element={<Home />} />
+          {/* <Route path="/product" element={<ProductSearchResults />} /> */}
+          <Route path="/" element={<Navigate to="/home" />} />
+
+          {/* quiz componenent needs route so i can use navigation hook in Register page */}
+          <Route path="/quiz" element={<Quiz />} />
         </Routes>
-        <Footer/>
+        <Footer />
       </Router>
     </ApolloProvider>
   );
