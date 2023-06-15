@@ -43,7 +43,7 @@ export const UPDATE_USER = gql`
 
 // add pet mutation
 export const ADD_PET = gql`
-mutation addPet($name: String, $age: Int, $breed: String, $bio: String) {
+mutation addPet($name: String, $age: String, $breed: String, $bio: String) {
   addPet(name: $name, age: $age, breed: $breed, bio: $bio) {
     _id
     name
@@ -56,7 +56,7 @@ mutation addPet($name: String, $age: Int, $breed: String, $bio: String) {
 
 // update pet mutation
 export const UPDATE_PET = gql`
-mutation updatePet($updatePetId: ID!, $name: String, $age: Int, $breed: String, $bio: String) {
+mutation updatePet($updatePetId: ID!, $name: String, $age: String, $breed: String, $bio: String) {
   updatePet(id: $updatePetId, name: $name, age: $age, breed: $breed, bio: $bio) {
     _id
     name

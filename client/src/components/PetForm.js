@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import UploadImage from './UploadImage';
 import { useMutation } from '@apollo/client';
 import { ADD_PET } from '../utils/mutations';
-import { QUERY_PETS, QUERY_ME } from '../utils/queries';
+import { QUERY_ME } from '../utils/queries';
 
 
 const PetForm = ({ petArray, setPetArray }) => {
@@ -18,25 +18,16 @@ const PetForm = ({ petArray, setPetArray }) => {
   const [addPet, { error }] = useMutation(ADD_PET, {
     update(cache, { data: { addPet } }) {
       try {
-        const { pets } = cache.readQuery({ query: QUERY_PETS });
-
-        cache.writeQuery({
-          query: QUERY_PETS,
-          data: { pets: [addPet, ...pets] },
-        });
-      } catch (e) {
-        console.error(e);
-      }
-
       // update me object's cache
       const { me } = cache.readQuery({ query: QUERY_ME });
       cache.writeQuery({
         query: QUERY_ME,
         data: { me: { ...me, pets: [...me.pets, addPet] } },
       });
-    },
-  });
-
+    } catch (err) {
+      console.error(err)
+    }
+ } });
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();

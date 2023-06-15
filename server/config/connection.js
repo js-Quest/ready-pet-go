@@ -8,7 +8,7 @@ mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://SunnyOh:finn@practice.w
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }
-)
+);
 
 // Export connection
 module.exports = mongoose.connection;
