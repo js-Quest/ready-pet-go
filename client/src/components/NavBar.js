@@ -2,8 +2,6 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { BsFillChatTextFill } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
-import { FaBars } from "react-icons/fa";
-// import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
 import Auth from '../utils/auth';
 import { Link } from "react-router-dom";
@@ -21,14 +19,13 @@ const styles = {
   },
 }
 
-function Navigation() {
-
-  // referenced Stack Overflow for the code to set window states and effects https://stackoverflow.com/questions/46586165/react-conditionally-render-based-on-viewport-size
-
-  const [isDesktop, setDesktop] = useState(window.innerWidth > 900);
+function Navigation()
+// referenced Stack Overflow for the code to set window states and effects https://stackoverflow.com/questions/46586165/react-conditionally-render-based-on-viewport-size
+{
+  const [isDesktop, setDesktop] = useState(window.innerWidth > 1250);
   
   const updateMedia = () => {
-    setDesktop(window.innerWidth > 900);
+    setDesktop(window.innerWidth > 1250);
   };
   // adding event listener to run updateMedia on a page resize; if window is resized to smaller screen size, event listener is removed 
   useEffect(() => {
@@ -52,11 +49,11 @@ function Navigation() {
   if (!showMenu) {
     return <Dropdown />;
   }
-  
+
   const handleRedirect = (url) => {
     window.open(url, '_blank');
   };
-  
+
   // returning the navigation menu conditionally
   return (
     <div>
@@ -68,6 +65,7 @@ function Navigation() {
           <a href="/product" style={styles.nav}>Products</a>
           <a href="/firebase" style={styles.nav} target="_blank"><BsFillChatTextFill /></a>
           <a href="#" style={styles.nav}><FaShoppingCart /></a>
+
           {/* //conditonally rendering links for logout and profile if user is logged in, or login/signup if user is logged out */}
           {Auth.loggedIn() ? (
             <>
