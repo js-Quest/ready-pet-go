@@ -9,7 +9,7 @@ mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://rxs291:Never5660217!@cl
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }
-)
+);
 
 // Export connection
 module.exports = mongoose.connection;

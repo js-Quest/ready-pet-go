@@ -12,6 +12,7 @@ query user($username: String!) {
     phoneNumber
     pets {
       _id
+      photoURL
       name
       breed
       age
@@ -33,6 +34,7 @@ export const QUERY_ME = gql`
     phoneNumber
     pets {
       _id
+      photoURL
       name
       breed
       age
@@ -47,6 +49,7 @@ export const QUERY_PETS = gql`
 query allPets {
   pets {
     _id
+    photoURL
     name
     age
     breed
@@ -79,17 +82,20 @@ query allPets {
 //   }
 // `;
 
-// export const QUERY_ALL_PRODUCTS = gql`
-//   {
-//     products {
-//       _id
-//       name
-//       description
-//       price
-//       quantity
-//       category {
-//         name
-//       }
-//     }
-//   }
-// `;
+export const QUERY_ALL_PRODUCTS = gql`
+  {
+    products {
+      _id
+      name
+      slug
+      category
+      image
+      price
+      countInStock
+      brand
+      rating
+      numReviews
+      description
+    }
+  }
+`;

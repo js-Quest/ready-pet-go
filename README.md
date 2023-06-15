@@ -9,3 +9,4 @@ App for pet-owners, including e-commerce and social platforms. Created by Jessic
 - [Geeks for Geeks](https://www.geeksforgeeks.org/how-to-upload-image-and-preview-it-using-reactjs/#)
 - [Mozilla File Inputs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file)
 - [MUI React Menu](https://mui.com/material-ui/react-menu/)
+- [Cloudinary Image Upload Connection Tutorial](https://www.youtube.com/watch?v=paiO6M2wBqE&t=7s)
