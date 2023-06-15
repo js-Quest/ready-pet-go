@@ -28,6 +28,11 @@ export default function Dashboard() {
   const { data } = useQuery(QUERY_PETS);
   const pets = data?.pets || [];
   
+  
+  useEffect(() => {
+    setPetData(data?.pets)
+  }, [data])
+  
   // get token
   const token = Auth.loggedIn() ? Auth.getToken() : null;
   if (!token) {
@@ -35,11 +40,6 @@ export default function Dashboard() {
       <p>You must <Link to="/login">LOG IN</Link> to see the Dashboard</p>
     );
   }
-
-  useEffect(() => {
-    setPetData(data?.pets)
-  }, [data])
-
   return (
     <div>
       <div className='petPeeking'>
