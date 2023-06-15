@@ -7,10 +7,13 @@ import Box from '@mui/material/Box';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
 import HelpIcon from '@mui/icons-material/Help';
+import { useLocation } from "react-router-dom";
 import './style.css'
 
 function Footer() {
-
+  const { pathname } = useLocation();
+  if (pathname === "/firebase") return null;
+  
   return (
     <Container maxWidth='100'
       sx={{
