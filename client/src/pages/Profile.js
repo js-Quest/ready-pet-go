@@ -256,8 +256,8 @@ export default function Profile() {
                     height: "2px",
                     width: '20%',
                     border: "none",
-                    marginTop: '1em',
-                    marginBottom: '1em',
+                    marginTop: '0.4em',
+                    marginBottom: '1.3em',
                   }}
                 />
                 <Typography sx={{ fontSize: '1.5rem' }}>Email :</Typography>
@@ -268,8 +268,8 @@ export default function Profile() {
                     height: "2px",
                     width: '30%',
                     border: "none",
-                    marginTop: '1em',
-                    marginBottom: '1em',
+                    marginTop: '0.4em',
+                    marginBottom: '1.3em',
                   }}
                 />
                 <Typography sx={{ fontSize: '1.5rem' }}>City, ST :</Typography>
@@ -280,8 +280,8 @@ export default function Profile() {
                     height: "2px",
                     width: '40%',
                     border: "none",
-                    marginTop: '1em',
-                    marginBottom: '1em',
+                    marginTop: '0.4em',
+                    marginBottom: '1.3em',
                   }}
                 />
                 <Typography sx={{ fontSize: '1.5rem' }}>Phone Number :</Typography>
@@ -292,8 +292,8 @@ export default function Profile() {
                     height: "2px",
                     width: '50%',
                     border: "none",
-                    marginTop: '1em',
-                    marginBottom: '1em',
+                    marginTop: '0.4em',
+                    marginBottom: '1.3em',
                   }}
                 />
                 <Typography sx={{ fontSize: '1.5rem' }}>My Bio :</Typography>
@@ -304,8 +304,8 @@ export default function Profile() {
                     height: "2px",
                     width: '60%',
                     border: "none",
-                    marginTop: '1em',
-                    marginBottom: '1em',
+                    marginTop: '0.4em',
+                    marginBottom: '1.3em',
                   }}
                 />
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
