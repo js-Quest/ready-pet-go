@@ -6,7 +6,7 @@ import { QUERY_ALL_PRODUCTS } from '../utils/queries';
 import { useQuery } from "@apollo/client";
 
 function ProductList() {
-  const { loading, data } = useQuery(QUERY_ALL_PRODUCTS);
+  const {loading, data} = useQuery(QUERY_ALL_PRODUCTS);
   const products = data?.products || [];
   
   // get token
