@@ -23,10 +23,10 @@ const styles = {
 function Navigation()
 // referenced Stack Overflow for the code to set window states and effects https://stackoverflow.com/questions/46586165/react-conditionally-render-based-on-viewport-size
 {
-  const [isDesktop, setDesktop] = useState(window.innerWidth > 1200);
+  const [isDesktop, setDesktop] = useState(window.innerWidth > 900);
 
   const updateMedia = () => {
-    setDesktop(window.innerWidth > 1200);
+    setDesktop(window.innerWidth > 900);
   };
   // adding event listener to run updateMedia on a page resize; if window is resized to smaller screen size, event listener is removed 
   useEffect(() => {
@@ -36,8 +36,8 @@ function Navigation()
 
   // using state to be able to show menu items on click
   const [showMenu, setShowMenu] = useState(true)
-  const options = ['Home', 'Profile', 'Products', <BsFillChatTextFill />, <FaShoppingCart />];
-  const defaultOption = options[0];
+  // const options = ['Home', 'Profile', 'Products', <BsFillChatTextFill />, <FaShoppingCart />];
+  // const defaultOption = options[0];
 
   const logout = (event) => {
     event.preventDefault();
@@ -87,7 +87,7 @@ function Navigation()
         :
         // rendering dropdown bars for small screens 
         <nav><a href="#" style={styles.nav}>
-          <FaBars onClick={() => setShowMenu(!showMenu)} />
+          <Dropdown onClick={() => setShowMenu(!showMenu)} />
         </a></nav>
       }
     </div>

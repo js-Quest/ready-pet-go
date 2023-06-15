@@ -31,7 +31,11 @@ export default function Profile() {
     variables: { username: userParam },
   });
 
-
+  if (!data){
+    return (
+      <p>You must <Link to="/login">LOG IN</Link> to view your Profile!</p>
+    )
+  }
   const user = data?.me || data?.user || {};
   // navigate to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {

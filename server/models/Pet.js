@@ -3,6 +3,7 @@ const { Schema, model } = require('mongoose');
 // creating pet schema
 const petSchema = new Schema(
   {
+    photoURL: String,
     name: String,
     age: String,
     breed: String,

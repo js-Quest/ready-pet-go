@@ -4,7 +4,9 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { BsFillChatTextFill } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Auth from "../utils/auth"
 
 
 function Dropdown() {
@@ -17,6 +19,14 @@ function Dropdown() {
     setAnchorEl(null);
   };
 
+  const handleCloseLogout = () => {
+    Auth.logout();
+    setAnchorEl(null);
+  }
+
+  // get token
+  const token = Auth.loggedIn() ? Auth.getToken() : null;
+
   return (
     <div>
       <Button
@@ -25,7 +35,7 @@ function Dropdown() {
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-      >Menu
+      ><FaBars style={{fontSize: "20px"}} />
       </Button>
       <Menu
         id="basic-menu"
@@ -40,12 +50,21 @@ function Dropdown() {
         </MenuItem>
        <MenuItem onClick={handleClose}><Link to="/dashboard">Dashboard</Link>
         </MenuItem>
+       <MenuItem onClick={handleClose}><Link to="/me">Profile</Link>
+        </MenuItem>
         <MenuItem onClick={handleClose}><Link to="/product">Products</Link>
         </MenuItem>
         <MenuItem onClick={handleClose}><Link to="/firebase"><BsFillChatTextFill /></Link>
         </MenuItem>
         <MenuItem onClick={handleClose}><Link to="#"><FaShoppingCart /></Link>
         </MenuItem>
+      {!token ? (
+        <MenuItem onClick={handleClose}><Link to="/login">Login</Link>
+        </MenuItem>
+        ) : (
+        <MenuItem onClick={handleCloseLogout}><Link to="/login">Logout</Link>
+        </MenuItem>
+        )}
       </Menu>
     </div >
   );
