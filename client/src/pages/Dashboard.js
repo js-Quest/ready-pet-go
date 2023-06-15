@@ -15,10 +15,10 @@ import { useQuery } from '@apollo/client';
 import Auth from '../utils/auth'
 import { Link } from 'react-router-dom';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
-import { Button } from 'bootstrap';
 import { useParams } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
+import {Button} from '@mui/material';
 import UploadWidget from '../components/UploadWidget';
 
 export default function Dashboard() {
@@ -43,6 +43,9 @@ export default function Dashboard() {
 console.log(petData)
   }, [petData])
 
+  const handleChange = () => {
+    window.location.replace('/login');
+  }
   // get token
   const token = Auth.loggedIn() ? Auth.getToken() : null;
   if (!token) {
@@ -50,15 +53,26 @@ console.log(petData)
       <Container className='errorContainer'>
         <h1 className='errorHead'>Hold Up!</h1>
         <Box className='errorBox'>
-          {/* <div className='errorDiv'> */}
         <h2 className='errorText'
           >Please <Link to="/login" className='errorLink'>LOGIN</Link> to see the Dashboard!
         </h2>
-        <button className='errorLogin'>
-          LOGIN
-        </button>
-
-          {/* </div> */}
+          <Button sx={{
+            background: '#B6B3B2',
+            color: '#36393F',
+            textTransform: 'none',
+            fontSize: '16px',
+            fontWeight: 700,
+            height: '40px',
+            width: '50%',
+            marginTop: '50px',
+            border: '1px solid black',
+            borderRadius: '10px',
+            cursor: 'pointer',
+          }}
+            onClick={handleChange}
+          >
+            LOGIN
+          </Button>
         </Box>
       </Container>
     );

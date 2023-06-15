@@ -31,7 +31,9 @@ export default function Profile() {
     variables: { username: userParam },
   });
 
-
+  const handleLoginError = () => {
+    window.location.replace('/login');
+  }
 
   if (!data){
     return (
@@ -41,9 +43,23 @@ export default function Profile() {
           <h2 className='errorText'
           >Please <Link to="/login" className='errorLink'>LOGIN</Link> to view your Profile!
           </h2>
-          <button className='errorLogin'>
+          <Button sx={{
+            background: '#B6B3B2',
+            color: '#36393F',
+            textTransform: 'none',
+            fontSize: '16px',
+            fontWeight: 700,
+            height: '40px',
+            width: '50%',
+            marginTop: '50px',
+            border: '1px solid black',
+            borderRadius: '10px',
+            cursor: 'pointer',
+          }}
+            onClick={handleLoginError}
+          >
             LOGIN
-          </button>
+          </Button>
         </Box>
       </Container>
     )
