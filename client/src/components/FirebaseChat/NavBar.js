@@ -19,21 +19,13 @@ const NavBar = () => {
 
   return (
     <nav className="nav-bar">
-      <h1>PuppyChat</h1>
       {user ? (
         <button onClick={signOut} className="sign-out" type="button">
           Exit Chat
         </button>
-      ) : (
-        <button className="sign-in">
-          <img
-            onClick={googleSignIn}
-            src={GoogleSignin}
-            alt="sign in with google"
-            type="button"
-          />
-        </button>
-      )}
+      ) : (null)
+
+      }
     </nav>
   );
 };

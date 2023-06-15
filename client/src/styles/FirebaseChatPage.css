@@ -10,7 +10,7 @@ html,
 body {
   max-width: 100vw;
   font-size: 16px;
-  font-family: sans-serif;
+  /* font-family: sans-serif; */
 }
 
 button,
@@ -18,10 +18,15 @@ input {
   cursor: pointer;
 }
 
+h1, h2 {
+  font-family: "roboto";
+  margin-top: 0.5rem;
+}
+
 .App {
   width: 100%;
   min-height: 100vh;
-  background-color: #138086;
+  background-color: rgb(255, 255, 255);
   color: #4c768d;
 }
 
@@ -29,9 +34,7 @@ input {
 .nav-bar {
   padding: 10px 30px;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #DC8665;
+  background-color: rgb(255, 255, 255);
   color: #242443;
   height: 60px;
 }
@@ -39,21 +42,20 @@ input {
 .sign-in {
   border: none;
   background-color: transparent;
-
+  margin-top: 2px;
 }
 
 .sign-in>img {
   height: 35px;
   width: auto;
-  border-radius: 12px;
 }
 
 .sign-out {
   padding: 5px 10px;
   border-radius: 5px;
-  color: #88dded;
-  border: 1px solid #1c2c4c;
-  background-color: #1c2c4c;
+  color: #EEB462;
+  border: 1px solid #534666;
+  background-color: #534666;
   font-weight: 600;
 }
 
@@ -61,13 +63,18 @@ input {
 .welcome {
   padding: 30px;
   text-align: center;
-  margin-top: 40px;
-  color: #7cc5d9;
+  color: #138086;
 }
 
-.welcome :is(h2, p, img) {
-  margin-bottom: 20px;
+.welcome :is(h2, img) {
+  margin-bottom: 2%;
+  margin-top: 5%;
 } 
+
+.welcome-message {
+  color: #138086;
+  margin-top: 8%;
+}
 
 /* chat component */
 .messages-wrapper {
@@ -78,11 +85,11 @@ input {
 .chat-bubble {
   border-radius: 20px 20px 20px 0;
   padding: 15px;
-  background-color: #EEB462;
+  background-color: #ece1fb;
   color: #1c2c4c;
   width: max-content;
   max-width: calc(100% - 50px);
-  box-shadow: -2px 2px 1px 1px#DC8665;
+  box-shadow: -2px 2px 1px 1px#534666;
   display: flex;
   align-items: flex-start;
   margin-bottom: 20px;
@@ -91,8 +98,9 @@ input {
 .chat-bubble.right {
   margin-left: auto;
   border-radius: 20px 20px 0 20px;
-  background-color: #fff;
-  box-shadow: -2px 2px 1px 1px #88dded;
+  background-color: #b2f4f8;
+  box-shadow: -2px 2px 1px 1px #138086;
+  border-style: 2px solid #138086;
 }
 
 .chat-bubble__left {
@@ -110,7 +118,7 @@ input {
 }
 
 .user-message {
-  word-break: break-all;
+  word-break: break-word;
 }
 
 .message-time {

@@ -10,13 +10,13 @@ import "./App.css";
 import { setContext } from '@apollo/client/link/context';
 // import LoginPage from "./authPages/LoginPage/LoginPage";
 import Dashboard from "./pages/Dashboard";
-// import ProductSearchResults from './pages/ProductSearchResults';
 import Register from "./pages/RegisterPage";
 import Header from "./components/Header";
 import Footer from "./components/Footer/Footer";
 import Profile from "./pages/Profile"
 import Login from './pages/LoginPage';
 import Firebase from "./pages/FirebasePage";
+import ProductList from './pages/productList'
 import Home from "./pages/Home";
 import Healthcare from "./pages/Healthcare";
 import ProductOnHome from "./pages/ProductOnHome";
@@ -59,13 +59,15 @@ function App() {
           <Route path="/firebase" element={<Firebase />} />
             <Route path="/me" element={<Profile />} />
             <Route path="/profiles/:username" element={<Profile />} />
-            {/* <Route path="/product" element={<ProductSearchResults />} /> */}
             <Route path="/productOnHome" element={<ProductOnHome />} />
+            <Route path="/product" element={<ProductList />} />
             <Route path="/healthcare" element={<Healthcare />} />
+            
             <Route path="/home" element={<Home />} />
+            {/* <Route path="/product" element={<ProductSearchResults />} /> */}
             <Route path="/" element={<Navigate to="/home" />} />
-        </Routes> 
-        <Footer />
+        </Routes>
+        <Footer/>
       </Router>
     </ApolloProvider>
   );
