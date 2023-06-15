@@ -9,9 +9,7 @@ import { useMutation } from '@apollo/client';
 
 import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
-import { UPDATE_USER } from '../utils/mutations';
-import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { UPDATE_USER } from '../utils/mutations'; 
 
 export default function Profile() { 
   const [editProf, editProfile] = useState(false);
@@ -26,7 +24,11 @@ export default function Profile() {
     variables: { username: userParam },
   });
 
-
+  if (!data){
+    return (
+      <p>You must <Link to="/login">LOG IN</Link> to view your Profile!</p>
+    )
+  }
   const user = data?.me || data?.user || {};
   // navigate to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {

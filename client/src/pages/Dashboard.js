@@ -14,6 +14,9 @@ import Box from '@mui/material/Box';
 // import Divider from '@mui/material/Divider';
 import { useQuery } from '@apollo/client';
 import { QUERY_PETS } from '../utils/queries';
+import Auth from '../utils/auth'
+import { Link } from 'react-router-dom';
+
 
 
 export default function Dashboard() {
@@ -24,6 +27,14 @@ export default function Dashboard() {
 
   const { data } = useQuery(QUERY_PETS);
   const pets = data?.pets || [];
+  
+  // get token
+  const token = Auth.loggedIn() ? Auth.getToken() : null;
+  if (!token) {
+    return (
+      <p>You must <Link to="/login">LOG IN</Link> to see the Dashboard</p>
+    );
+  }
 
   useEffect(() => {
     setPetData(data?.pets)
@@ -83,7 +94,6 @@ export default function Dashboard() {
 
         {/* <button onClick={(image) => setImage(image)}>Save</button> */}
       </Container>
-      <Footer />
     </div>
   )
 }
