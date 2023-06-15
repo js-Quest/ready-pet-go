@@ -20,9 +20,9 @@ import ElGato from '../images/cat1.png';
 
 export default function Profile() {
   const [editProf, editProfile] = useState(false);
-  const [formState, setFormState] = useState({ email: '', city: '', bio: '', username: '', phoneNumber: '' });
-
+  const [formState, setFormState] = useState({ email: '', city: '', bio: '', username: '', phoneNumber: '' }); 
   const [updateUser, { error }] = useMutation(UPDATE_USER);
+
 
 
   const { username: userParam } = useParams();
@@ -30,6 +30,10 @@ export default function Profile() {
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
   });
+
+  const handleLoginError = () => {
+    window.location.replace('/login');
+  }
 
   if (!data){
     return (
@@ -39,37 +43,34 @@ export default function Profile() {
           <h2 className='errorText'
           >Please <Link to="/login" className='errorLink'>LOGIN</Link> to view your Profile!
           </h2>
-          <button className='errorLogin'>
+          <Button sx={{
+            background: '#B6B3B2',
+            color: '#36393F',
+            textTransform: 'none',
+            fontSize: '16px',
+            fontWeight: 700,
+            height: '40px',
+            width: '50%',
+            marginTop: '50px',
+            border: '1px solid black',
+            borderRadius: '10px',
+            cursor: 'pointer',
+          }}
+            onClick={handleLoginError}
+          >
             LOGIN
-          </button>
+          </Button>
         </Box>
       </Container>
     )
   }
+  
   const user = data?.me || data?.user || {};
   // navigate to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-    return <Navigate to="/me" />;
-    // <Link className="btn btn-lg btn-info m-2" to="/me">
-    //         {Auth.getProfile().data.username}'s profile
-    //       </Link>
-
-    // <h1>Hello, User</h1>
-    // <div className="imageContainer">
-    //  {/* map through card info */}
-    //  {/* Tutor Patrick Lake helped me with this map function */}
-    //  <p>THIS IS THE PROFILE PAGE!</p>
-    //   <PetCard />
-    //   {[...Array(numCard)].map((_,i) => <PetForm key={i}/>)}
-    //   <PetButton setShowCard={setNumCard}/>
-    // </div>
-
-    {/* <button onClick={(image) => setImage(image)}>Save</button> */ }
-    // </div>
-    // )
+    return <Navigate to="/me" />; 
   }
-
-  console.log(data)
+ 
 
   if (loading) {
     return <div>Loading...</div>;
@@ -133,6 +134,10 @@ export default function Profile() {
     editProfile(false)
   };
 
+  console.log(userParam)
+  console.log(data)
+  console.log(user)
+ 
 
   return (
     <div>
@@ -143,7 +148,7 @@ export default function Profile() {
         />
       </div>
       <Container className='dashboardContainer'>
-        <h1 className='dashboardHead'>{user.username}'s Profile</h1>
+        <h1 className='dashboardHead'>{userParam? userParam:user.username}'s Profile</h1>
 
         {/* HUMAN INFO */}
         <Box sx={{
@@ -168,6 +173,7 @@ export default function Profile() {
           >
             Account Details
           </Typography>
+
           {editProf ? (
             <Box sx={{
               marginTop: '2em'
@@ -182,7 +188,7 @@ export default function Profile() {
                       placeholder="Username"
                       name="username"
                       type="text"
-                      value={formState.username || data.me.username}
+                      value={formState.username || user.username}
                       onChange={handleChange}
                     />
                   </Grid>
@@ -194,7 +200,7 @@ export default function Profile() {
                       placeholder="Username"
                       name="email"
                       type="text"
-                      value={formState.email || data.me.email}
+                      value={formState.email || user.email}
                       onChange={handleChange}
                     />
                   </Grid>
@@ -206,7 +212,7 @@ export default function Profile() {
                       placeholder="City, ST"
                       name="city"
                       type="text"
-                      value={formState.city || data.me.city}
+                      value={formState.city || user.city}
                       onChange={handleChange}
                     />
                   </Grid>
@@ -218,7 +224,7 @@ export default function Profile() {
                       placeholder="###-###-####"
                       name="phoneNumber"
                       type="text"
-                      value={formState.phoneNumber || data.me.phoneNumber}
+                      value={formState.phoneNumber || user.phoneNumber}
                       onChange={handleChange}
                     />
                   </Grid>
@@ -230,7 +236,7 @@ export default function Profile() {
                       placeholder="About me..."
                       name="bio"
                       type="text"
-                      value={formState.bio || data.me.bio}
+                      value={formState.bio || user.bio}
                       onChange={handleChange}
                       sx={{ width: ['80%'] }}
                     />
@@ -259,7 +265,7 @@ export default function Profile() {
               <Box maxWidth={'100%'} sx={{ paddingLeft: '2.8em', paddingRight: '2.8em' }}>
                 <br />
                 <Typography sx={{ fontSize: '1.5rem' }}>Username :</Typography>
-                <Typography sx={{ paddingLeft: '1em', fontSize: '1.2rem' }}>{data.me.username}</Typography>
+                <Typography sx={{ paddingLeft: '1em', fontSize: '1.2rem' }}>{user.username}</Typography>
                 <hr
                   style={{
                     background: "#CD7672",
@@ -271,7 +277,7 @@ export default function Profile() {
                   }}
                 />
                 <Typography sx={{ fontSize: '1.5rem' }}>Email :</Typography>
-                <Typography sx={{ paddingLeft: '1em', fontSize: '1.2rem' }}>{data.me.email}</Typography>
+                <Typography sx={{ paddingLeft: '1em', fontSize: '1.2rem' }}>{user.email}</Typography>
                 <hr
                   style={{
                     background: "#534666",
@@ -283,7 +289,7 @@ export default function Profile() {
                   }}
                 />
                 <Typography sx={{ fontSize: '1.5rem' }}>City, ST :</Typography>
-                <Typography sx={{ paddingLeft: '1em', fontSize: '1.2rem' }}>{data.me.city}</Typography>
+                <Typography sx={{ paddingLeft: '1em', fontSize: '1.2rem' }}>{user.city}</Typography>
                 <hr
                   style={{
                     background: "#DC8665",
@@ -295,7 +301,7 @@ export default function Profile() {
                   }}
                 />
                 <Typography sx={{ fontSize: '1.5rem' }}>Phone Number :</Typography>
-                <Typography sx={{ paddingLeft: '1em', fontSize: '1.2rem' }}>{data.me.phoneNumber}</Typography>
+                <Typography sx={{ paddingLeft: '1em', fontSize: '1.2rem' }}>{user.phoneNumber}</Typography>
                 <hr
                   style={{
                     background: "#138086",
@@ -307,7 +313,7 @@ export default function Profile() {
                   }}
                 />
                 <Typography sx={{ fontSize: '1.5rem' }}>My Bio :</Typography>
-                <Typography sx={{ paddingLeft: '1em', fontSize: '1.2rem' }}>{data.me.bio}</Typography>
+                <Typography sx={{ paddingLeft: '1em', fontSize: '1.2rem' }}>{user.bio}</Typography>
                 <hr
                   style={{
                     background: "#EEB462",
@@ -318,9 +324,11 @@ export default function Profile() {
                     marginBottom: '1.3em',
                   }}
                 />
+                {data.me &&
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                   <Button variant='contained' type="click" onClick={editFormState} sx={{ backgroundColor: '#36393F', width: '9rem', marginLeft: 'auto' }}>Update</Button>
                 </Box>
+                }
               </Box>
             )}
         </Box>
