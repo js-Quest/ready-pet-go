@@ -1,55 +1,50 @@
 [
   {
-    "product": "JW Pet Chompion Dog Toy",
-    "price": 8.99
+    "name": "Ready, Puppy, Go!",
+    "slug": "ready-puppy-go",
+    "category": "Dog Toy",
+    "image": "https://res.cloudinary.com/dtfbwnsv7/image/upload/v1686770098/dog_1_yltkox.png", 
+    "price": 15.99,
+    "countInStock": 10,
+    "brand": "JW Pet",
+    "rating": 4,
+    "numReviews": 10,
+    "description": "The idea of a dumbbell-shape has a lot to do with dogs you might call champion chewers. You and your dog will appreciate the Chompions durability and its textured nubs to help keep teeth clean, stimulate gums and promote oral health. An exceptional teething, fetch and tug toy."
   },
   {
-    "product": "Multipet Lamb Chop Squeaky Plush Dog Toy",
-    "price": 5.33
+    "name": "Ready, Kitty, Go!",
+    "slug": "ready-kitty-go",
+    "category": "Dog Toy",
+    "image": "https://res.cloudinary.com/dtfbwnsv7/image/upload/v1686769682/cat_2_u5lnwq.png", 
+    "price": 15.99,
+    "countInStock": 10,
+    "brand": "JW Pet",
+    "rating": 4,
+    "numReviews": 10,
+    "description": "The idea of a dumbbell-shape has a lot to do with dogs you might call champion chewers. You and your dog will appreciate the Chompions durability and its textured nubs to help keep teeth clean, stimulate gums and promote oral health. An exceptional teething, fetch and tug toy."
   },
   {
-    "product": "ZippyPaws Hedgehog Plush Dog Toy, Large",
-    "price": 8.99
+    "name": "JW Pet Chompion Dog Toy",
+    "slug": "jw-pet-chompion-dog-toy",
+    "category": "Dog Toy",
+    "image": "https://res.cloudinary.com/dtfbwnsv7/image/upload/v1686761223/jwpetBone_dvz4gd.jpg", 
+    "price": 11.99,
+    "countInStock": 10,
+    "brand": "JW Pet",
+    "rating": 4,
+    "numReviews": 10,
+    "description": "The idea of a dumbbell-shape has a lot to do with dogs you might call champion chewers. You and your dog will appreciate the Chompions durability and its textured nubs to help keep teeth clean, stimulate gums and promote oral health. An exceptional teething, fetch and tug toy."
   },
   {
-    "product": "Frisco Plush with Inside Rope Squeaking Cow Dog Toy",
-    "price": 8.57
-  },
-  {
-    "product": "Stella & Chewy's Stella's Super Beef Meal Mixers Freeze-Dried Raw Dog Food Topper",
-    "price": 44.99
-  },
-  {
-    "product": "Blue Dog Bakery Softies Peanut Butter Dog Treats, 16.2-oz box",
-    "price": 4.19
-  },
-  {
-    "product": "Friskies Party Mix Natural Yums With Real Chicken Flavor Crunchy Cat Treats",
-    "price": 3.79
-  },
-  {
-    "product": "Frisco Bird with Feathers Teaser Wand Cat Toy with Catnip",
-    "price": 5.94
-  },
-  {
-    "product": "Pet Fit For Life 7 Piece Replacement Feather Pack for Wand Cat Toy",
-    "price": 10.95
-  },
-  {
-    "product": "Frisco Floral Dog & Cat Bow Tie",
-    "price": 6.99
-  },
-  {
-    "product": "Disney Mickey Mouse & Minnie Mouse Sweet As Can Be Reversible Dog & Cat Bandana",
-    "price": 8.99
-  },
-  {
-    "product": "Frisco Taco 'Bout Cute Dog & Cat Bandana, Medium/Large",
-    "price": 7.57
-  },
-  {
-    "product": "Frisco Wake Up Positive Dog & Cat Bandana",
-    "price": 7.99
+    "name": "JW Pet Chompion Dog Toy",
+    "slug": "jw-pet-chompion-dog-toy",
+    "category": "Dog Toy",
+    "image": "https://res.cloudinary.com/dtfbwnsv7/image/upload/v1686761223/jwpetBone_dvz4gd.jpg", 
+    "price": 11.99,
+    "countInStock": 10,
+    "brand": "JW Pet",
+    "rating": 4,
+    "numReviews": 10,
+    "description": "The idea of a dumbbell-shape has a lot to do with dogs you might call champion chewers. You and your dog will appreciate the Chompions durability and its textured nubs to help keep teeth clean, stimulate gums and promote oral health. An exceptional teething, fetch and tug toy."
   }
-  
 ]
