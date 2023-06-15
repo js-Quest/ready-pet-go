@@ -7,7 +7,7 @@ import { useMutation } from '@apollo/client';
 import { ADD_PET } from '../utils/mutations';
 
 
-const PetForm = ({ petData, setPetData,  }) => {
+const PetForm = ({ petData, setPetData, setShowCard }) => {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
   const [breed, setBreed] = useState(''); 
@@ -44,7 +44,7 @@ useEffect(() => {
       setPetData([...petData, {
         ...data.addPet
       }])
-
+      setShowCard(0)
       setName("");
       setAge("");
       setBreed("");
