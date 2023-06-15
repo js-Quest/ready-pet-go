@@ -34,14 +34,14 @@ export default function Home() {
             <br />
             <div >
                 <h1>HealthCare</h1> 
-                <h3>This is a place holder!</h3>
+                <p>pet healthcare is crucial for maintaining pets' overall well-being, preventing diseases, detecting health issues early, controlling parasites, promoting longevity, and addressing behavioral concerns. It allows pet owners to provide their furry companions with a happy, healthy, and fulfilling life.</p>
                 <p>
                 <Link
                   className="text-light"
                   to={`/healthcare`}
                 > <br />
                   <span style={{ fontSize: '1rem' }}>
-                    testing to see if this works
+                    Please see our additional information here!
                   </span>
                 </Link>
                 </p>
@@ -51,14 +51,14 @@ export default function Home() {
 
             <div>
                 <h1>Recommend Starting Accessories</h1> 
-                <h3>This is a place holder!</h3>
+                <p>pet accessories contribute to the well-being, safety, and enjoyment of pets. They provide comfort, promote health and hygiene, facilitate identification, offer enrichment and exercise opportunities, assist with travel, and allow for personalization. By investing in appropriate and quality pet accessories, owners can enhance their pets' lives and strengthen the bond between humans and animals.</p>
                 <p>
                 <Link
                   className="text-light"
                   to={`/productOnHome`}
                 > <br />
                   <span style={{ fontSize: '1rem' }}>
-                    also testing this! 
+                    Check out our recommdations!
                   </span>
                 </Link>
                 </p>

@@ -110,7 +110,7 @@ const Quiz = () => {
             setFormState({ email: '', city: '', bio: '', username: '', phoneNumber: '' }); 
             ////replace this console log with render new page
             console.log('quiz complete!')
-            window.location.assign('/dashboard');
+            window.location.assign('/home');
         }
 
 
