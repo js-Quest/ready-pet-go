@@ -27,6 +27,13 @@ class AuthService {
     return localStorage.getItem('id_token');
   }
 
+  signUp(idToken) {
+    // Saves user token to localStorage
+    localStorage.setItem('id_token', idToken);
+
+    window.location.assign('/quiz');
+  }
+
   login(idToken) {
     // Saves user token to localStorage
     localStorage.setItem('id_token', idToken);
@@ -39,6 +46,7 @@ class AuthService {
     localStorage.removeItem('id_token');
     localStorage.removeItem('username');
     localStorage.removeItem('email');
+    localStorage.removeItem('userInfo');
     // this will reload the page and reset the state of the application
     window.location.assign('/');
   }

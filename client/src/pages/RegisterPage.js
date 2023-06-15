@@ -9,6 +9,7 @@ import AuthBox from '../components/AuthBox';
 import RedirectInfo from '../components/RedirectInfo';
 import { styled } from '@mui/system';
 
+
 export default function Register() {
 
   const [userFormData, setUserFormData] = useState({
@@ -21,9 +22,9 @@ export default function Register() {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setUserFormData({ 
-      ...userFormData, 
-      [name]: value 
+    setUserFormData({
+      ...userFormData,
+      [name]: value
     });
   };
 
@@ -44,7 +45,10 @@ export default function Register() {
 
       console.log('this is data ');
 
-      Auth.login(data.addUser.token);
+
+
+      Auth.signUp(data.addUser.token);
+
     } catch (e) {
       console.error(e);
     }
@@ -56,7 +60,9 @@ export default function Register() {
     });
   };
 
-  const navigate = useNavigate();
+ 
+
+  const navigate = useNavigate(); 
   const handlePushToLoginPage = () => {
     navigate('/login')
   };
@@ -118,71 +124,74 @@ export default function Register() {
         backgroundColor: '#fff',
         height: 'auto'
       }}>
-    <AuthBox>
-      <Typography variant='h5' sx={{ color: 'white', textAlign: 'center' }}>
-        Create an Account
-      </Typography>
-      {/* color light grey, sx used for styling */}
-      {/* <Typography sx={{ color: '#b9bbbe' }}>
+      <AuthBox>
+        <Typography variant='h5' sx={{ color: 'white', textAlign: 'center' }}>
+          Create an Account
+        </Typography>
+        {/* color light grey, sx used for styling */}
+        {/* <Typography sx={{ color: '#b9bbbe' }}>
         We are glad you're here!
       </Typography> */}
-      {data ? (
-        <p>
-          Success! You may now head{' '}
-          <Link to="/">back to the homepage.</Link>
-        </p>
-      ) : (
-        <form onSubmit={handleFormSubmit} style={styles.form}>
-          <Label>Email</Label>
-          <input style={styles.input}
-            name="email"
-            type="email"
-            placeholder="Example@email.com"
-            value={userFormData.email}
-            onChange={handleInputChange}
-          />
-          <Label>Username</Label>
-          <input style={styles.input}
-            name="username"
-            type="username"
-            placeholder="ExampleName"
-            value={userFormData.username}
-            onChange={handleInputChange}
-          />
-          <Label>Password</Label>
-          <input style={styles.input}
-            name="password"
-            type="password"
-            placeholder="password must be at least 8 characters"
-            value={userFormData.password}
-            onChange={handleInputChange}
-          />
-          {/* <Tooltip */}
-          {/* title={!isFormValid ? getFormNotValidMessage() : getFormValidMessage()}
+        {data ? (
+  
+          <p>
+            Success! You may now head{' '}
+            <Link to="/">back to the homepage.</Link>
+          </p>
+        ) : (
+          <form onSubmit={handleFormSubmit} style={styles.form}>
+            <Label>Email</Label>
+            <input style={styles.input}
+              name="email"
+              type="email"
+              placeholder="Example@email.com"
+              value={userFormData.email}
+              onChange={handleInputChange}
+            />
+            <Label>Username</Label>
+            <input style={styles.input}
+              name="username"
+              type="username"
+              placeholder="ExampleName"
+              value={userFormData.username}
+              onChange={handleInputChange}
+            />
+            <Label>Password</Label>
+            <input style={styles.input}
+              name="password"
+              type="password"
+              placeholder="password must be at least 8 characters"
+              value={userFormData.password}
+              onChange={handleInputChange}
+            />
+            {/* <Tooltip */}
+            {/* title={!isFormValid ? getFormNotValidMessage() : getFormValidMessage()}
       > */}
 
-          <button
-            style={styles.button}
-            type="submit"
-          >
-            SUBMIT
-          </button>
-        </form>
-      )}
+            <button
+              style={styles.button}
+              type="submit"
+            >
+              SUBMIT
+            </button>
+          </form>
+        )}
 
-      {error && (
-        <div style={styles.errorMessage}>
-          {'Invalid credentials, username or email may already exist!'}
-        </div>
-      )}
-      {/* </Tooltip> */}
-      <RedirectInfo
-        text='Already a member? '
-        redirectText='Login Here'
+        {error && (
+          <div style={styles.errorMessage}>
+            {'Invalid credentials, username or email may already exist!'}
+          </div>
+        )}
+        {/* </Tooltip> */}
+
+        <RedirectInfo
+          text='Already a member? '
+          redirectText='Login Here'
+          
           additionalStyles={{ marginTop: '40px', marginLeft: 'auto', marginRight: '10px' }}
-        redirectHandler={handlePushToLoginPage}
-      />
-    </AuthBox>
+          redirectHandler={handlePushToLoginPage}
+        />
+      </AuthBox>
       <div className='regFootPos'>
 
         <div className='regFooter'>

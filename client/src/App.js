@@ -22,6 +22,7 @@ import Healthcare from "./pages/Healthcare";
 import ProductOnHome from "./pages/ProductOnHome";
 
 import ProductList from './pages/productList'
+import Quiz from "./components/Quiz";
 
 import {
   ApolloProvider,
@@ -64,15 +65,17 @@ function App() {
 
             {/* <Route path="/product" element={<ProductSearchResults />} /> */}
             <Route path="/productOnHome" element={<ProductOnHome />} />
-            <Route path="/healthcare" element={<Healthcare />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/" element={<Navigate to="/home" />} />
             <Route path="/product" element={<ProductList />} />
-           
-        </Routes>
-<Footer />
-    
+            <Route path="/healthcare" element={<Healthcare />} />
+            
+            <Route path="/home" element={<Home />} />
+            {/* <Route path="/product" element={<ProductSearchResults />} /> */}
+            <Route path="/" element={<Navigate to="/home" />} />
 
+            {/* quiz componenent needs route so i can use navigation hook in Register page */}
+            <Route path="/quiz" element={<Quiz/>} />
+        </Routes>
+        <Footer/>
       </Router>
     </ApolloProvider>
   );
