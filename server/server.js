@@ -6,7 +6,6 @@ const { ApolloServer } = require('apollo-server-express');
 const { authMiddleware } = require('./utils/auth');
 const db = require('./config/connection');
 const { typeDefs, resolvers } = require('./schemas');
-const socketServer = require('./socketServer');
 
 const PORT = process.env.PORT  || 3001;
 const server = new ApolloServer({
@@ -21,7 +20,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());
 
-socketServer.registerSocketServer(server)
 
 // Serve static files from the 'build' directory inside the 'client' folder
 if(process.env.NODE_ENV === 'production'){
