@@ -36,8 +36,8 @@ function Navigation()
 
   // using state to be able to show menu items on click
   const [showMenu, setShowMenu] = useState(true)
-  const options = ['Home', 'Profile', 'Products', <BsFillChatTextFill />, <FaShoppingCart />];
-  const defaultOption = options[0];
+  // const options = ['Home', 'Profile', 'Products', <BsFillChatTextFill />, <FaShoppingCart />];
+  // const defaultOption = options[0];
 
   const logout = (event) => {
     event.preventDefault();
@@ -87,7 +87,7 @@ function Navigation()
         :
         // rendering dropdown bars for small screens 
         <nav><a href="#" style={styles.nav}>
-          <FaBars onClick={() => setShowMenu(!showMenu)} />
+          <Dropdown onClick={() => setShowMenu(!showMenu)} />
         </a></nav>
       }
     </div>
