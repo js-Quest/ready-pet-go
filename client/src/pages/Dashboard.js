@@ -14,6 +14,7 @@ import Box from '@mui/material/Box';
 import { useQuery } from '@apollo/client';
 import Auth from '../utils/auth'
 import { Link } from 'react-router-dom';
+import { Button } from 'bootstrap';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import { Button } from 'bootstrap';
 import { useParams } from 'react-router-dom';
