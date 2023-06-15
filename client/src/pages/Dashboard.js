@@ -118,7 +118,7 @@ console.log(petData)
                   {/* Tutor Patrick Lake helped me with this map function to map through petCard info to show all pets */}
                   {petData.map((item, i) => <PetCard pet={item} petData={petData} setPetData={setPetData} key={i} />)}
                   {/* array to render new PetForm whenever PetButton is clicked */}
-                  {[...Array(numCard)].map((_, i) => <PetForm petData={petData} setPetData={setPetData} key={i} />)}
+                  {[...Array(numCard)].map((_, i) => <PetForm petData={petData} setPetData={setPetData} key={i} setShowCard={setNumCard} />)}
                   <PetButton
                     setShowCard={setNumCard}
                     variant='text'
