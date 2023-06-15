@@ -1,8 +1,6 @@
 /* AUTHBOX */
 /* - - - - - - - - - - -  */
-.authBox {
-  
-}
+.authBox {}
 
 /* LOGIN PAGE */
 /* - - - - - - - - - - -  */
@@ -101,15 +99,17 @@
   margin-right: 0 !important;
 }
 
-/* DASHBOARD */
+/* PROFILE */
 /* - - - - - - - - - - -  */
 .dashboardContainer {
-  box-shadow: 8px 8px 5px #303030d1;
+  display: flex;
+  box-shadow: 8px 8px 5px #3030309e;
   max-width: 98vw !important;
-  border: 1px solid #3030307f;
+  border: 1px solid #3d3d3dbd;
   padding-left: 0px !important;
   padding-right: 0px !important;
   padding-bottom: 2em;
+  border-radius: 12px;
 }
 
 .petPeeking {
@@ -120,16 +120,32 @@
   margin-bottom: -23px !important;
 }
 
+.catReach {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 0px !important;
+  height: 0px !important;
+}
+
+.catReach img {
+  /* height: 50%;
+  width: auto; */
+}
+
 .dashboardHead {
   display: flex;
   justify-content: center;
   text-align: center;
   align-items: center;
-  background-color: #cd7772b7;
+  background-color: #534666;
+  color: rgba(255, 255, 255, 0.653);
   height: 2.5em;
   margin-top: 0;
   width: inherit;
   vertical-align: middle;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
 .userH1 {
@@ -141,6 +157,7 @@
   height: 50px;
   border-radius: 50% !important;
   margin-bottom: 1.5em !important;
+  background-color: none;
 }
 
 #addPetContainer {
