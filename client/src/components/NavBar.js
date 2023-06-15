@@ -42,18 +42,17 @@ function Navigation()
     event.preventDefault();
     Auth.logout();
   };
-
   const { pathname } = useLocation();
   if (pathname === "/firebase") return null;
   
   if (!showMenu) {
     return <Dropdown />;
   }
-
+  
   const handleRedirect = (url) => {
     window.open(url, '_blank');
   };
-
+  
   // returning the navigation menu conditionally
   return (
     <div>
@@ -64,8 +63,7 @@ function Navigation()
           {/* <a href="/dashboard" style={styles.nav}>Dashboard</a> */}
           <a href="/product" style={styles.nav}>Products</a>
           <a href="/firebase" style={styles.nav} target="_blank"><BsFillChatTextFill /></a>
-          <a href="#" style={styles.nav}><FaShoppingCart /></a>
-
+          <a href="#" style={styles.nav}><FaShoppingCart /></a> 
           {/* //conditonally rendering links for logout and profile if user is logged in, or login/signup if user is logged out */}
           {Auth.loggedIn() ? (
             <>
