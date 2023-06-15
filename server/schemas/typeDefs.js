@@ -1,11 +1,19 @@
-const { gql } = require('apollo-server-express');
+const { gql } = require("apollo-server-express");
 
 const typeDefs = gql`
   type Product {
     _id: ID
-    product: String
-    price: Float 
-  } 
+    name: String
+    slug: String
+    category: String
+    image: String
+    price: Float
+    countInStock: Float
+    brand: String
+    rating: Float
+    numReviews: Float
+    description: String
+  }
 
   type User {
     _id: ID
@@ -16,8 +24,8 @@ const typeDefs = gql`
     bio: String
     pets: [Pet]!
   }
-  
-   type Pet {
+
+  type Pet {
     _id: ID
     name: String
     age: String
@@ -42,12 +50,22 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
     addPet(name: String, breed: String, age: String, bio: String): Pet
-    updatePet(id: ID!, name: String, breed: String, age: String, bio: String): Pet  
-    removePet(petId: ID!): Pet 
-    updateUser(username: String, email: String, phoneNumber: String, bio: String, city: String): User
+    updatePet(
+      id: ID!
+      name: String
+      breed: String
+      age: String
+      bio: String
+    ): Pet
+    removePet(petId: ID!): Pet
+    updateUser(
+      username: String
+      email: String
+      phoneNumber: String
+      bio: String
+      city: String
+    ): User
   }
-
-
-`
+`;
 
 module.exports = typeDefs;
