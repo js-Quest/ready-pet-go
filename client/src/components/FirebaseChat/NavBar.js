@@ -13,7 +13,8 @@ const NavBar = () => {
 
   const signOut = () => {
     auth.signOut();
-    window.location.replace('/dashboard')
+    // window.location.replace('/dashboard')
+    window.close();
   };
 
   return (
