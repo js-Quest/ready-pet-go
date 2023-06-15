@@ -79,17 +79,20 @@ query allPets {
 //   }
 // `;
 
-// export const QUERY_ALL_PRODUCTS = gql`
-//   {
-//     products {
-//       _id
-//       name
-//       description
-//       price
-//       quantity
-//       category {
-//         name
-//       }
-//     }
-//   }
-// `;
+export const QUERY_ALL_PRODUCTS = gql`
+  {
+    products {
+      _id
+      name
+      slug
+      category
+      image
+      price
+      countInStock
+      brand
+      rating
+      numReviews
+      description
+    }
+  }
+`;
