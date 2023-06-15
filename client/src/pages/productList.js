@@ -6,12 +6,16 @@ import { QUERY_ALL_PRODUCTS } from '../utils/queries';
 import { useQuery } from "@apollo/client";
 
 function ProductList() {
-  const { loading, data } = useQuery(QUERY_ALL_PRODUCTS);
-  const products = data?.products || [];
-
   // get token
   const token = Auth.loggedIn() ? Auth.getToken() : null;
   if (!token) {
+    return (
+      <p>You must <Link to="/login">LOG IN</Link> to view Products!</p>
+    );
+  }
+  const { loading, data } = useQuery(QUERY_ALL_PRODUCTS);
+  const products = data?.products || [];
+
 
   return (
     <div>
