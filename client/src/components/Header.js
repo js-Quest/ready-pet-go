@@ -1,10 +1,11 @@
 import React from "react";
 import NavBar from "./NavBar";
 // import AnimatedLogo from "./Logo";
+import { useLocation } from "react-router-dom";
 
 const styles = {
   heading: {
-    background: '#aed8e6',
+    background: '#138086',
     lineHeight: 1.0,
     color: '#656565',
     padding: '20px 20px',
@@ -19,6 +20,9 @@ const styles = {
 }
 
 function Header() {
+  const { pathname } = useLocation();
+  if (pathname === "/firebase") return null;
+
   return (
     <header className="app-header" style={styles.heading}>
       <h1 style={styles.title}>Ready, Pet, Go!</h1>
