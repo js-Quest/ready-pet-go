@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 mongoose.connect(
   process.env.MONGO_URI ||
-    "mongodb+srv://lorenagracex:1989@practice.htuojqk.mongodb.net/chatAppDB",
+    "mongodb://localhost:27017/chatAppDB",
 
   {
     useNewUrlParser: true,
