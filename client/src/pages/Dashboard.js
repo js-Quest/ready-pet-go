@@ -13,10 +13,13 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 // import Divider from '@mui/material/Divider';
 import { useQuery } from '@apollo/client';
-import { QUERY_PETS } from '../utils/queries';
+// import { QUERY_PETS } from '../utils/queries';
 import Auth from '../utils/auth'
 import { Link } from 'react-router-dom';
 import { Button } from 'bootstrap';
+import { QUERY_USER, QUERY_ME, QUERY_PETS } from '../utils/queries';
+import { useParams } from 'react-router-dom';
+
 
 
 
@@ -26,14 +29,26 @@ export default function Dashboard() {
   const [petArray, setPetArray] = useState([]);
   const [petData, setPetData] = useState([])
 
-  const { data } = useQuery(QUERY_PETS);
-  const pets = data?.pets || [];
-  
+  // const { data } = useQuery(QUERY_PETS);
+  // const pets = data?.pets || [];
+
+  const { username: userParam } = useParams();
+
+  const {  data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+    variables: { username: userParam },
+  });
+
+  const user = data?.me || data?.user || {};
   
   useEffect(() => {
-    setPetData(data?.pets)
+    user?.pets ? setPetData(user.pets) : setPetArray([]);
+    console.log(user)
   }, [data])
   
+  useEffect(() => {
+console.log(petData)
+  }, [petData])
+
   // get token
   const token = Auth.loggedIn() ? Auth.getToken() : null;
   if (!token) {
@@ -91,7 +106,7 @@ export default function Dashboard() {
                   {/* Tutor Patrick Lake helped me with this map function */}
 
                   {/* <PetCard />  */}
-                  {pets.map((item, i) => <PetCard petData={item} key={i} />)}
+                  {petData.map((item, i) => <PetCard petData={item} key={i} />)}
                   {[...Array(numCard)].map((_, i) => <PetForm petArray={petArray} setPetArray={setPetArray} key={i} />)}
                   {/* <PetButton setShowCard={setNumCard}/> */}
                   <PetButton
