@@ -120,6 +120,19 @@
   margin-bottom: -23px !important;
 }
 
+.catReach {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 0px !important;
+  height: 0px !important;
+}
+
+.catReach img {
+  /* height: 50%;
+  width: auto; */
+}
+
 .dashboardHead {
   display: flex;
   justify-content: center;

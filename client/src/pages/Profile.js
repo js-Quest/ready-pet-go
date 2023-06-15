@@ -15,6 +15,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import './style.css';
 import { TextField, Button, Grid } from '@mui/material';
+import ElGato from '../images/cat1.png';
 
 
 export default function Profile() {
@@ -314,7 +315,7 @@ export default function Profile() {
           border: '5px solid',
           borderColor: '#dee2e6',
           borderRadius: '5px',
-          paddingBottom: 3,
+          // paddingBottom: 3,
           maxWidth: '75%',
           marginLeft: 'auto',
           marginRight: 'auto',
@@ -342,13 +343,22 @@ export default function Profile() {
               paddingLeft: '3em',
               paddingRight: '3em',
               paddingTop: '1em',
-              paddingBottom: '1em',
+              paddingBottom: '3em',
             }}
           >
+            Jean shorts JOMO YOLO VHS marfa ugh, thundercats scenester cliche tote bag unicorn fit occupy. Leggings fashion axe cloud bread, chia green juice copper mug hashtag cardigan taxidermy meditation hell of. Shabby chic disrupt vaporware, hell of paleo you probably haven't heard of them pinterest migas. Meggings franzen hexagon fam marfa. You probably haven't heard of them taiyaki artisan banh mi echo park. Gorpcore hammock enamel pin plaid trust fund venmo. Activated charcoal YOLO gastropub tilde marfa. 
+            <br></br>
+            <br></br>
             Jean shorts JOMO YOLO VHS marfa ugh, thundercats scenester cliche tote bag unicorn fit occupy. Leggings fashion axe cloud bread, chia green juice copper mug hashtag cardigan taxidermy meditation hell of. Shabby chic disrupt vaporware, hell of paleo you probably haven't heard of them pinterest migas. Meggings franzen hexagon fam marfa. You probably haven't heard of them taiyaki artisan banh mi echo park. Gorpcore hammock enamel pin plaid trust fund venmo. Activated charcoal YOLO gastropub tilde marfa.
           </Typography>
+        <div className='catReach'>
+          <img
+            src={ElGato}
+            alt='CatSneezins'
+            style={{ marginLeft: '-8em', marginBottom: '-.4em'}}
+          />
+        </div>
         </Box>
-
       </Container >
     </div>
   )
