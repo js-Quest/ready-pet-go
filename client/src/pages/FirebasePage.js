@@ -7,6 +7,8 @@ import ChatBox from '../components/FirebaseChat/ChatBox';
 import Welcome from '../components/FirebaseChat/Welcome';
 import Auth from '../utils/auth'
 import { Link } from 'react-router-dom';
+import './style.css'
+import { Container, Box } from '@mui/material';
 
 export default function FirebasePage() {
   const [user] = useAuthState(auth);
@@ -14,7 +16,17 @@ export default function FirebasePage() {
   const token = Auth.loggedIn() ? Auth.getToken() : null;
   if (!token) {
     return (
-      <p>You must <Link to="/login">LOG IN</Link> to use PuppyChat</p>
+      <Container className='errorContainer'>
+        <h1 className='errorHead'>Hold Up!</h1>
+        <Box className='errorBox'>
+          <h2 className='errorText'
+          >Please <Link to="/login" className='errorLink'>LOGIN</Link> to join PuppyChat!
+          </h2>
+          <button className='errorLogin'>
+            LOGIN
+          </button>
+        </Box>
+      </Container>
     );
   }
   return (

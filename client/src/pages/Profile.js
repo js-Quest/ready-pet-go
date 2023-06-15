@@ -33,7 +33,17 @@ export default function Profile() {
 
   if (!data){
     return (
-      <p>You must <Link to="/login">LOG IN</Link> to view your Profile!</p>
+      <Container className='errorContainer'>
+        <h1 className='errorHead'>Hold Up!</h1>
+        <Box className='errorBox'>
+          <h2 className='errorText'
+          >Please <Link to="/login" className='errorLink'>LOGIN</Link> to view your Profile!
+          </h2>
+          <button className='errorLogin'>
+            LOGIN
+          </button>
+        </Box>
+      </Container>
     )
   }
   const user = data?.me || data?.user || {};

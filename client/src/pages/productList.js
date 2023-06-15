@@ -4,6 +4,8 @@ import data from '../data';
 import Auth from '../utils/auth'
 import { QUERY_ALL_PRODUCTS } from '../utils/queries';
 import { useQuery } from "@apollo/client";
+import './style.css'
+import { Container, Box } from '@mui/material';
 
 function ProductList() {
   const {loading, data} = useQuery(QUERY_ALL_PRODUCTS);
@@ -13,7 +15,17 @@ function ProductList() {
   const token = Auth.loggedIn() ? Auth.getToken() : null;
   if (!token) {
     return (
-      <p>You must <Link to="/login">LOG IN</Link> to view Products!</p>
+      <Container className='errorContainer'>
+        <h1 className='errorHead'>Hold Up!</h1>
+        <Box className='errorBox'>
+          <h2 className='errorText'
+          >Please <Link to="/login" className='errorLink'>LOGIN</Link> to view Products!
+          </h2>
+          <button className='errorLogin'>
+            LOGIN
+          </button>
+        </Box>
+      </Container>
     );
   }
 

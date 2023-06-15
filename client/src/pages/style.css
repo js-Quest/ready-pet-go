@@ -172,3 +172,73 @@
   margin-right: auto;
   border: 1px solid #3030307f;
 }
+
+/* Access Error Message */
+/* - - - - - - - - - - -  */
+.errorLink {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.5rem !important;
+  color: #0b4548;
+}
+
+.errorText {
+  text-align: center;
+  color: #0b4548;
+  font-weight: 600;
+  padding-left: 7%;
+  padding-right: 7%;
+  line-height: 3rem;
+}
+
+
+.errorContainer {
+  margin-top: 15%;
+  margin-bottom: 15%;
+  display: flex;
+  box-shadow: 8px 8px 5px #3030309e;
+  max-width: 60vw !important;
+  border: 1px solid #3d3d3dbd;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  border-radius: 12px;
+}
+
+.errorBox {
+  height: 45vh !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.errorHead {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: #EEB462;
+  color: #36393F;
+  height: 2.5em;
+  margin-top: 0;
+  width: inherit;
+  vertical-align: middle;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.errorLogin {
+  background: #b6afa5;
+  color: #36393F;
+  text-transform: none;
+  font-size: 18px;
+  font-weight: 700;
+  height: 40px;
+  width: 50%;
+  margin-top: 50px;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+  
+  
