@@ -15,6 +15,7 @@ import { useQuery } from '@apollo/client';
 import Auth from '../utils/auth'
 import { Link } from 'react-router-dom';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
+import { Button } from 'bootstrap';
 import { useParams } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
@@ -46,7 +47,20 @@ console.log(petData)
   const token = Auth.loggedIn() ? Auth.getToken() : null;
   if (!token) {
     return (
-      <p>You must <Link to="/login">LOG IN</Link> to see the Dashboard</p>
+      <Container className='errorContainer'>
+        <h1 className='errorHead'>Hold Up!</h1>
+        <Box className='errorBox'>
+          {/* <div className='errorDiv'> */}
+        <h2 className='errorText'
+          >Please <Link to="/login" className='errorLink'>LOGIN</Link> to see the Dashboard!
+        </h2>
+        <button className='errorLogin'>
+          LOGIN
+        </button>
+
+          {/* </div> */}
+        </Box>
+      </Container>
     );
   }
   return (
