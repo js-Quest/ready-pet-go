@@ -4,6 +4,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { BsFillChatTextFill } from "react-icons/bs";
 import { FaShoppingCart } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Auth from "../utils/auth"
 
@@ -34,7 +35,7 @@ function Dropdown() {
         aria-haspopup="true"
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
-      >Menu
+      ><FaBars style={{fontSize: "20px"}} />
       </Button>
       <Menu
         id="basic-menu"
