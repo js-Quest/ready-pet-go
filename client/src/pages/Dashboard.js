@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import UploadImage from '../components/UploadImage';
 import PetCard from '../components/PetCard';
 import PetForm from '../components/PetForm';
 import PetButton from '../components/PetButton';
@@ -13,23 +12,18 @@ import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 // import Divider from '@mui/material/Divider';
 import { useQuery } from '@apollo/client';
-// import { QUERY_PETS } from '../utils/queries';
 import Auth from '../utils/auth'
 import { Link } from 'react-router-dom';
-import { QUERY_USER, QUERY_ME, QUERY_PETS } from '../utils/queries';
+import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import { useParams } from 'react-router-dom';
-
-
-
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
+import UploadWidget from '../components/UploadWidget';
 
 export default function Dashboard() {
   const [numCard, setNumCard] = useState(0);
-  // have array of pets here and map it in the petCard
   const [petArray, setPetArray] = useState([]);
   const [petData, setPetData] = useState([])
-
-  // const { data } = useQuery(QUERY_PETS);
-  // const pets = data?.pets || [];
 
   const { username: userParam } = useParams();
 
@@ -63,6 +57,11 @@ console.log(petData)
           alt='peeking'
         />
       </div>
+      {/* avatar area
+       <Stack direction="row" spacing={2}>
+        <Avatar alt="Remy Sharp" sx={{ width: 80, height: 80 }} src="/static/images/avatar/1.jpg" ></Avatar>
+      </Stack> */}
+
       <Container className='dashboardContainer'>
         <h1 className='dashboardHead'>Dashboard</h1>
         <Box sx={{
@@ -88,13 +87,10 @@ console.log(petData)
               <Box className='dashboardDetailsBox'>
                 <h3>Some other info</h3>
                 <div className="imageContainer" id='addPetContainer'>
-                  {/* map through card info
-                  {/* Tutor Patrick Lake helped me with this map function */}
-
-                  {/* <PetCard />  */}
-                  {petData.map((item, i) => <PetCard petData={item} key={i} />)}
-                  {[...Array(numCard)].map((_, i) => <PetForm petArray={petArray} setPetArray={setPetArray} key={i} />)}
-                  {/* <PetButton setShowCard={setNumCard}/> */}
+                  {/* Tutor Patrick Lake helped me with this map function to map through petCard info to show all pets */}
+                  {petData.map((item, i) => <PetCard pet={item} petData={petData} setPetData={setPetData} key={i} />)}
+                  {/* array to render new PetForm whenever PetButton is clicked */}
+                  {[...Array(numCard)].map((_, i) => <PetForm petData={petData} setPetData={setPetData} key={i} />)}
                   <PetButton
                     setShowCard={setNumCard}
                     variant='text'
@@ -106,8 +102,6 @@ console.log(petData)
             </Grid>
           </Grid>
         </Box>
-
-        {/* <button onClick={(image) => setImage(image)}>Save</button> */}
       </Container>
     </div>
   )
