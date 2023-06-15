@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 // import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import UploadImage from './UploadImage';
+import UploadWidget from './UploadWidget';
 import { useMutation } from '@apollo/client';
 import { ADD_PET } from '../utils/mutations';
 import { QUERY_ME } from '../utils/queries';
@@ -14,6 +14,11 @@ const PetForm = ({ petArray, setPetArray }) => {
   const [age, setAge] = useState('');
   const [breed, setBreed] = useState(''); 
   const [bio, setBio] = useState('');
+  const [photoURL, setPhotoURL] = useState('')
+  
+useEffect(() => {
+  console.log(photoURL)
+}, [photoURL])
 
   const [addPet, { error }] = useMutation(ADD_PET, {
     update(cache, { data: { addPet } }) {
@@ -32,6 +37,7 @@ const PetForm = ({ petArray, setPetArray }) => {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     setPetArray([...petArray, {
+      photoURL: photoURL,
       name: name,
       age: age,
       breed: breed,
@@ -40,7 +46,7 @@ const PetForm = ({ petArray, setPetArray }) => {
     try {
       const { data } = await addPet({
         variables: {
-          name, age, breed, bio
+          photoURL, name, age, breed, bio
         },
       });
 
@@ -56,10 +62,9 @@ const PetForm = ({ petArray, setPetArray }) => {
   // each card needs to handle fetch request to submit form to database
   return (
     <Card sx={{ maxWidth: 250 }}>
-      <UploadImage />
+      <UploadWidget setPhotoURL={setPhotoURL} />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" >
-          {name}
           <input value={name}
             onChange={(e) => setName(e.target.value)}
             type="text"
@@ -67,22 +72,21 @@ const PetForm = ({ petArray, setPetArray }) => {
 
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Age: {age}
+          Age: 
           <input value={age}
             onChange={(e) => setAge(e.target.value)}
             type="text"
             placeholder="2"></input>
-
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Breed: {breed}
+          Breed: 
           <input value={breed}
             onChange={(e) => setBreed(e.target.value)}
             type="text"
             placeholder="Poodle"></input>
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Bio: {bio}
+          Bio: 
           <input value={bio}
             onChange={(e) => setBio(e.target.value)}
             type="text"
