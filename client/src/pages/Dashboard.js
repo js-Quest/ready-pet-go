@@ -14,7 +14,6 @@ import Box from '@mui/material/Box';
 import { useQuery } from '@apollo/client';
 import Auth from '../utils/auth'
 import { Link } from 'react-router-dom';
-import { Button } from 'bootstrap';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import { useParams } from 'react-router-dom';
 import Avatar from '@mui/material/Avatar';
@@ -119,7 +118,7 @@ console.log(petData)
                   {/* Tutor Patrick Lake helped me with this map function to map through petCard info to show all pets */}
                   {petData.map((item, i) => <PetCard pet={item} petData={petData} setPetData={setPetData} key={i} />)}
                   {/* array to render new PetForm whenever PetButton is clicked */}
-                  {[...Array(numCard)].map((_, i) => <PetForm petData={petData} setPetData={setPetData} key={i} />)}
+                  {[...Array(numCard)].map((_, i) => <PetForm petData={petData} setPetData={setPetData} key={i} setShowCard={setNumCard} />)}
                   <PetButton
                     setShowCard={setNumCard}
                     variant='text'
