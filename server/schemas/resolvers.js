@@ -81,11 +81,11 @@ const resolvers = {
       throw new AuthenticationError('You need to be logged in!');
     },
  
-    addPet: async (parent, { name,
+    addPet: async (parent, { photoURL, name,
       breed, age, bio }, context) => {
       if (context.user) {
         const pet = await Pet.create({
-          name, breed, age, bio,
+          photoURL, name, breed, age, bio,
         });
 
         await User.findOneAndUpdate(
@@ -99,11 +99,11 @@ const resolvers = {
     },
 
     // update pet mutation
-    updatePet: async (parent, { id, name,
+    updatePet: async (parent, { id, photoURL, name,
       breed, age, bio }) => {
       return await Pet.findOneAndUpdate(
         { _id: id },
-        { name, breed, age, bio },
+        { photoURL, name, breed, age, bio },
         // Return the newly updated object instead of the original
         { new: true }
       )
