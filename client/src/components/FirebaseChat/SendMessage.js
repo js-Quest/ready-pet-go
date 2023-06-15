@@ -36,7 +36,7 @@ const SendMessage = ({ scroll }) => {
         value={message}
         onChange={(e) => setMessage(e.target.value)}
       />
-      <button type="submit">Send</button>
+      <button type="submit" style={{ backgroundColor: '#534666', border: '2px solid #EEB462', fontSize: '16px', fontWeight: '400', color: '#eeb462'}}>Send</button>
     </form>
   );
 };
