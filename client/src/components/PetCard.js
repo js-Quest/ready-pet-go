@@ -8,7 +8,7 @@ import { useMutation } from '@apollo/client';
 import { REMOVE_PET } from '../utils/mutations';
 
 // read-only render of the PetCard
-function PetCard({ petData }) {
+function PetCard({ petData, setPetData, pet }) {
   console.log(petData)
 
   const [removePet, { error }] = useMutation(REMOVE_PET)
@@ -17,9 +17,11 @@ function PetCard({ petData }) {
     // need to update state after delete
     await removePet({
       variables: {
-        petId: petData._id
+        petId: pet._id
       }
     })
+
+    setPetData(petData.filter((item) => item._id !== pet._id))
   }
 
   return (
@@ -27,19 +29,19 @@ function PetCard({ petData }) {
       <CardContent>
         <CardMedia
           sx={{ height: 140 }}
-          image={petData.photoURL}
+          image={pet.photoURL}
         />
         <Typography gutterBottom variant="h5" component="div" >
-          {petData.name}
+          {pet.name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Age: {petData.age}
+          Age: {pet.age}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Breed: {petData.breed}
+          Breed: {pet.breed}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Bio: {petData.bio}
+          Bio: {pet.bio}
         </Typography>
       </CardContent>
       <button onClick={handleDelete}>

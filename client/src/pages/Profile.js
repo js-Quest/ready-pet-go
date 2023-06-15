@@ -35,7 +35,17 @@ export default function Profile() {
 
   if (!data){
     return (
-      <p>You must <Link to="/login">LOG IN</Link> to view your Profile!</p>
+      <Container className='errorContainer'>
+        <h1 className='errorHead'>Hold Up!</h1>
+        <Box className='errorBox'>
+          <h2 className='errorText'
+          >Please <Link to="/login" className='errorLink'>LOGIN</Link> to view your Profile!
+          </h2>
+          <button className='errorLogin'>
+            LOGIN
+          </button>
+        </Box>
+      </Container>
     )
   }
   
@@ -246,8 +256,8 @@ export default function Profile() {
                     height: "2px",
                     width: '20%',
                     border: "none",
-                    marginTop: '1em',
-                    marginBottom: '1em',
+                    marginTop: '0.4em',
+                    marginBottom: '1.3em',
                   }}
                 />
                 <Typography sx={{ fontSize: '1.5rem' }}>Email :</Typography>
@@ -258,8 +268,8 @@ export default function Profile() {
                     height: "2px",
                     width: '30%',
                     border: "none",
-                    marginTop: '1em',
-                    marginBottom: '1em',
+                    marginTop: '0.4em',
+                    marginBottom: '1.3em',
                   }}
                 />
                 <Typography sx={{ fontSize: '1.5rem' }}>City, ST :</Typography>
@@ -270,8 +280,8 @@ export default function Profile() {
                     height: "2px",
                     width: '40%',
                     border: "none",
-                    marginTop: '1em',
-                    marginBottom: '1em',
+                    marginTop: '0.4em',
+                    marginBottom: '1.3em',
                   }}
                 />
                 <Typography sx={{ fontSize: '1.5rem' }}>Phone Number :</Typography>
@@ -282,8 +292,8 @@ export default function Profile() {
                     height: "2px",
                     width: '50%',
                     border: "none",
-                    marginTop: '1em',
-                    marginBottom: '1em',
+                    marginTop: '0.4em',
+                    marginBottom: '1.3em',
                   }}
                 />
                 <Typography sx={{ fontSize: '1.5rem' }}>My Bio :</Typography>
@@ -294,8 +304,8 @@ export default function Profile() {
                     height: "2px",
                     width: '60%',
                     border: "none",
-                    marginTop: '1em',
-                    marginBottom: '1em',
+                    marginTop: '0.4em',
+                    marginBottom: '1.3em',
                   }}
                 />
                 {data.me &&

@@ -26,17 +26,20 @@ h1, h2 {
 .App {
   width: 100%;
   min-height: 100vh;
-  background-color: rgb(255, 255, 255);
+  background-color: #36393F;
   color: #4c768d;
 }
 
 /* navbar */
 .nav-bar {
-  padding: 10px 30px;
+  padding: 1.2em 0.9em;
   display: flex;
-  background-color: rgb(255, 255, 255);
-  color: #242443;
-  height: 60px;
+  background-color: #DC8665;
+  color: #36393F;
+}
+
+.chatLogo {
+  box-shadow: -1px 1px 5px 3px #36393F62
 }
 
 .sign-in {
@@ -50,14 +53,17 @@ h1, h2 {
   width: auto;
 }
 
-.sign-out {
+/* .sign-out {
+  display: flex;
+  align-items: flex-end;
   padding: 5px 10px;
   border-radius: 5px;
   color: #EEB462;
   border: 1px solid #534666;
   background-color: #534666;
   font-weight: 600;
-}
+} */
+
 
 /* welcome page */
 .welcome {
@@ -85,6 +91,19 @@ h1, h2 {
 .chat-bubble {
   border-radius: 20px 20px 20px 0;
   padding: 15px;
+  background-color: #fff9f1;
+  color: #36393F;;
+  width: max-content;
+  max-width: calc(100% - 50px);
+  box-shadow: -3px 3px 1px 1px#EEB462;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+/* .chat-bubble {
+  border-radius: 20px 20px 20px 0;
+  padding: 15px;
   background-color: #ece1fb;
   color: #1c2c4c;
   width: max-content;
@@ -93,15 +112,23 @@ h1, h2 {
   display: flex;
   align-items: flex-start;
   margin-bottom: 20px;
-}
+} */
 
 .chat-bubble.right {
+  margin-left: auto;
+  border-radius: 20px 20px 0 20px;
+  background-color: #f7e9e3;
+  box-shadow: -3px 3px 1px 1px #DC8665;
+  border-style: 2px solid #DC8665;
+}
+
+/* .chat-bubble.right {
   margin-left: auto;
   border-radius: 20px 20px 0 20px;
   background-color: #b2f4f8;
   box-shadow: -2px 2px 1px 1px #138086;
   border-style: 2px solid #138086;
-}
+} */
 
 .chat-bubble__left {
   width: 35px;
