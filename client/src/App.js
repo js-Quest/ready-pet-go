@@ -15,14 +15,16 @@ import Header from "./components/Header";
 import Footer from "./components/Footer/Footer";
 import Profile from "./pages/Profile"
 import Login from './pages/LoginPage';
-import Firebase from "./pages/FirebasePage";
-
+import Firebase from "./pages/FirebasePage"; 
 import Home from "./pages/Home";
 import Healthcare from "./pages/Healthcare";
-import ProductOnHome from "./pages/ProductOnHome";
-
+import ProductOnHome from "./pages/ProductOnHome"; 
 import ProductList from './pages/productList'
 import Quiz from "./components/Quiz";
+
+
+// WORK IN PROGRESS
+import MeetUps from "./pages/MeetUps";
 
 import {
   ApolloProvider,
@@ -74,6 +76,7 @@ function App() {
 
           {/* quiz componenent needs route so i can use navigation hook in Register page */}
           <Route path="/quiz" element={<Quiz />} />
+          <Route path="/meetUps" element={<MeetUps />} />
         </Routes>
         <Footer />
       </Router>
