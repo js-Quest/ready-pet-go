@@ -5,6 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Auth from "../utils/auth"
+import styled from '@emotion/styled';
 
 const styles = {
   items: {
@@ -35,6 +36,9 @@ function Dropdown() {
   return (
     <div>
       <Button
+      sx={{
+        color: 'white'
+      }}
         id="basic-button"
         aria-controls={open ? 'basic-menu' : undefined}
         aria-haspopup="true"
