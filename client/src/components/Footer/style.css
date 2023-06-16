@@ -1,5 +1,7 @@
-h2 {
-  font-family: 'Sriracha', cursive;
-  color: #EEB462;
-  font-size: 30px;
+.crouch {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 0px !important;
+  height: 0px !important;
 }
