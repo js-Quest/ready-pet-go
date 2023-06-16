@@ -85,10 +85,6 @@ console.log(petData)
           alt='peeking'
         />
       </div>
-      {/* avatar area
-       <Stack direction="row" spacing={2}>
-        <Avatar alt="Remy Sharp" sx={{ width: 80, height: 80 }} src="/static/images/avatar/1.jpg" ></Avatar>
-      </Stack> */}
 
       <Container className='dashboardContainer'>
         <h1 className='dashboardHead'>Dashboard</h1>

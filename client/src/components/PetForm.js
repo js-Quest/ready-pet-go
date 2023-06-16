@@ -19,18 +19,6 @@ useEffect(() => {
 }, [profilePicture])
 
   const [addPet, { error }] = useMutation(ADD_PET)
-//     update(cache, { data: { addPet } }) {
-//       try {
-//       // update me object's cache
-//       const { me } = cache.readQuery({ query: QUERY_ME });
-//       cache.writeQuery({
-//         query: QUERY_ME,
-//         data: { me: { ...me, pets: [...me.pets, addPet] } },
-//       });
-//     } catch (err) {
-//       console.error(err)
-//     }
-//  } });
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
