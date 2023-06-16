@@ -168,16 +168,6 @@ const Login = (props) => {
           redirectHandler={handlePushToRegisterPage}
         />
       </AuthBox>
-      <div className='loginFootPos'>
-        <img
-          src={PetFoot}
-          alt='pet-footer'
-          className='petPeekLogin'
-        />
-        <div className='loginFooter'>
-          <p>hello</p>
-        </div>
-      </div>
     </div>
   );
 };

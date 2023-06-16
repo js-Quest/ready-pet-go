@@ -8,26 +8,27 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
 import HelpIcon from '@mui/icons-material/Help';
 import { useLocation } from "react-router-dom";
+import Kitten from '../../images/cat2-small.png';
 import './style.css'
 
 function Footer() {
   const { pathname } = useLocation();
   if (pathname === "/firebase") return null;
-  
+
   return (
     <Container maxWidth='100'
       sx={{
         display: 'flex',
         backgroundColor: '#138086',
-        marginTop: '20px',
+        marginTop: '2em',
       }}
     >
       <Grid container spacing={2} columns={14} sx={{
-        width: '90%',
+        width: '98%',
         marginLeft: 'auto',
         marginRight: 'auto',
-        paddingTop: '2em',
-        paddingBottom: '2em',
+        paddingTop: '1.6em',
+        paddingBottom: '1.6em',
       }}>
 
         <Grid item xs={2}>
@@ -89,8 +90,8 @@ function Footer() {
           <Typography variant="subtitle1" marginLeft={'8px'}>GitHub</Typography>
           <Typography variant="subtitle1" marginLeft={'8px'}>Contributions</Typography>
         </Grid>
-        
-        <Grid item xs={3} sx={{ 
+
+        <Grid item xs={3} sx={{
           justifyContent: 'center',
           alignItems: 'end'
         }}>
@@ -99,16 +100,17 @@ function Footer() {
             flexDirection: 'column',
             border: '3px dashed #EEB462',
             borderRadius: '10px',
-            padding: '1em',
+            padding: '0.6em',
             justifyContent: 'center',
             alignItems: 'center'
           }}>
-            <Typography>I am a box</Typography>
+            <Typography sx={{ fontSize: '28px', color: '#000', marginBottom: '0.4em' }}>Stay in touch!</Typography>
             <div>
-            <GitHubIcon />
-            <EmailIcon />
-            <HelpIcon />
+              <GitHubIcon sx={{ fontSize: '32px', marginRight: '12px' }} />
+              <EmailIcon sx={{ fontSize: '32px', marginRight: '12px' }} />
+              <HelpIcon sx={{ fontSize: '32px' }} />
             </div>
+
           </Box>
         </Grid>
       </Grid>
