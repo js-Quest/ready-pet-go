@@ -28,12 +28,45 @@ export default function Home() {
         marginTop: '-1.8em',
         paddingBottom: '1em'
       }}>
-        <Typography variant='h3' sx={{ backgroundColor: '#ffffff9f', width: '14em', textAlign: 'center', color: '#36393F', fontSize: '58px', paddingTop: '5px', paddingBottom: '5px' }}>Welcome Fellow Pet People! </Typography>
+        <Typography
+          variant='h3'
+          sx={{
+            backgroundColor: '#ffffff9f',
+            width: '14em', textAlign: 'center',
+            color: '#36393F',
+            fontSize: { xs: '38px', md: '48px', lg: '58px' },
+            paddingTop: '5px',
+            paddingBottom: '5px'
+          }}
+        >
+          Welcome Fellow Pet People!
+        </Typography>
       </Box>
 
-      <div style={{ display: 'flex', marginLeft: 'auto', marginRight: 'auto', textAlign: 'center', justifyContent: 'center', alignItems: 'center', paddingBottom: '1em' }}>
-        <Typography variant='h5' sx={{ width: '70%', textAlign: 'center', color: '#36393F', paddingTop: '5px', paddingBottom: '5px', fontSize: '26px' }}>At Ready, Pet, Go!, our mission is simple: <i>to be a trusted companion for pet owners</i>. <br></br>We provide comprehensive guidance and support to prospective, new, and long-time pet parents.</Typography>
-      </div>
+      <Box sx={{
+        display: 'flex',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        textAlign: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingBottom: '1em'
+      }}
+      >
+        <Typography
+          variant='h5'
+          sx={{
+            width: {xs: '100%', md: '70%'},
+            textAlign: 'center',
+            color: '#36393F',
+            paddingTop: '5px',
+            paddingBottom: '5px',
+            fontSize: { xs: '20px', md: '23px', lg: '26px' },
+          }}
+        >
+          At Ready, Pet, Go!, our mission is simple: <i>to be a trusted companion for pet owners</i>. <br></br>We provide comprehensive guidance and support to prospective, new, and long-time pet parents.
+        </Typography>
+      </Box>
 
       <Box sx={{
         flexGrow: 1,
@@ -45,7 +78,10 @@ export default function Home() {
         <Grid container spacing={1}
           justifyContent='space-evenly'
           alignItems='flex-start'>
-          <Card sx={{ maxWidth: 360 }}>
+          <Card sx={{ 
+            maxWidth: { xs: '98%', md: '60%', lg: 360 } 
+            }}
+            >
             <CardMedia
               component="img"
               height="auto"
@@ -57,7 +93,16 @@ export default function Home() {
               }}
             />
             <CardContent>
-              <Typography gutterBottom variant="h5" component="div" sx={{ color: '#36393F', fontSize: '24px', textAlign: 'center' }}>
+              <Typography
+                gutterBottom
+                variant="h5"
+                component="div"
+                sx={{
+                  color: '#36393F',
+                  fontSize: '24px',
+                  textAlign: 'center'
+                }}
+              >
                 Guidance
               </Typography>
               <Typography variant="body1" color="text.secondary">
@@ -73,7 +118,11 @@ export default function Home() {
               </Typography>
             </CardContent>
           </Card>
-          <Card sx={{ maxWidth: 360 }}>
+
+          <Card sx={{ 
+            maxWidth: { xs: '98%', md: '60%', lg: 360 } 
+            }}
+            >
             <CardMedia
               component="img"
               height="auto"
@@ -102,7 +151,10 @@ export default function Home() {
               </Typography>
             </CardContent>
           </Card>
-          <Card sx={{ maxWidth: 360 }}>
+          <Card sx={{ 
+            maxWidth: { xs: '98%', md: '60%', lg: 360 } 
+            }}
+            >
             <CardMedia
               component="img"
               height="auto"
@@ -134,7 +186,7 @@ export default function Home() {
         </Grid>
       </Box>
 
-      <Box sx={{ marginTop: '2.8em', width: '80%', marginLeft: 'auto', marginRight: 'auto' }}>
+      <Box sx={{ marginTop: '2.8em', width: {xs: '100%', md: '80%'}, marginLeft: 'auto', marginRight: 'auto' }}>
         <Card sx={{ display: 'flex', marginBottom: '0.5em' }}>
           <CardContent sx={{ display: 'flex', alignItems: 'center' }}>
             <Typography>
