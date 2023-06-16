@@ -71,11 +71,11 @@ function Navigation()
       {/* rendering full nav list for large screens */}
       {isDesktop ?
         <nav>
-          <a href="/" style={styles.nav}><HomeIcon /></a>
-          {/* <a href="/dashboard" style={styles.nav}>Dashboard</a> */}
-          <Link to="/product" style={styles.nav}><ShoppingBasketIcon /></Link>
-          <a href="/firebase" style={styles.nav} target="_blank"><BsFillChatTextFill /></a>
-          <a href="#" style={styles.nav}><FaShoppingCart /></a> 
+          <Link to="/" style={styles.nav}>Home</Link>
+          {/* <a to="/dashboard" style={styles.nav}>Dashboard</a> */}
+          <Link to="/product" style={styles.nav}>Products</Link>
+          <Link to="/firebase" style={styles.nav} target="_blank"><BsFillChatTextFill /></Link>
+          <Link to="#" style={styles.nav}><FaShoppingCart /></Link> 
           {/* //conditonally rendering links for logout and profile if user is logged in, or login/signup if user is logged out */}
           {Auth.loggedIn() ? (
             <>
