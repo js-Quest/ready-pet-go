@@ -24,7 +24,7 @@ import Quiz from "./components/Quiz";
 
 
 // WORK IN PROGRESS
-import MeetUps from "./pages/MeetUps";
+import MeetUp from "./pages/MeetUp";
 
 import {
   ApolloProvider,
@@ -76,7 +76,7 @@ function App() {
 
           {/* quiz componenent needs route so i can use navigation hook in Register page */}
           <Route path="/quiz" element={<Quiz />} />
-          <Route path="/meetUps" element={<MeetUps />} />
+          <Route path="/meetUp" element={<MeetUp />} />
         </Routes>
         <Footer />
       </Router>

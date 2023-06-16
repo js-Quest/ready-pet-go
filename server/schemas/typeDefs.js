@@ -23,6 +23,22 @@ const typeDefs = gql`
     city: String
     bio: String
     pets: [Pet]!
+    meetUp: [MeetUp]!
+  }
+
+  type MeetUp {
+    _id: ID
+    meetUpText: String
+    meetUpAuthor: String
+    createdAt: String
+    comments: [Comment]!
+  }
+
+  type Comment {
+    _id: ID
+    commentText: String
+    commentAuthor: String
+    createdAt: String
   }
 
   type Pet {
@@ -45,6 +61,8 @@ const typeDefs = gql`
     users: [User]
     products: [Product]
     pets: [Pet]
+    meetUps(username: String): [MeetUp]
+    meetUp(meetUpId: ID!): MeetUp
   }
 
   type Mutation {
@@ -54,6 +72,11 @@ const typeDefs = gql`
     updatePet(id: ID!, photoURL: String, name: String, breed: String, age: String, bio: String): Pet  
     removePet(petId: ID!): Pet 
     updateUser(username: String, email: String, phoneNumber: String, bio: String, city: String): User
+
+    addMeetUp(meetUpText: String!): MeetUp
+    addComment(meetUpId: ID!, commentText: String!): MeetUp
+    removeMeetUp(meetUpId: ID!): MeetUp
+    removeComment(meetUpId: ID!, commentId: ID!): MeetUp
   }
 `;
 

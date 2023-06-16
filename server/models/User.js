@@ -38,10 +38,10 @@ const userSchema = new Schema(
         ref: 'pet'
       }
     ],
-    friends: [
+    meetUp: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'user'
+        ref: 'meetUp'
       },
     ],
   },

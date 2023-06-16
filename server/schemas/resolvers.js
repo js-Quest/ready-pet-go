@@ -1,4 +1,4 @@
-const { Product, User, Pet } = require('../models');
+const { Product, User, Pet, MeetUp } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
@@ -11,12 +11,12 @@ const resolvers = {
 
     //query all users
     users: async () => {
-      return User.find().populate('pets')
+      return User.find().populate('pets').populate('meetUps')
     },
 
     //query one user
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('pets')
+      return User.findOne({ username }).populate('pets').populate('meetUps')
     },
 
     // query all pets
@@ -28,12 +28,19 @@ const resolvers = {
       // check if users exist
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id }).
-          populate('pets').select(
+          populate('pets').populate('meetUps').select(
             '-__v -password'
           );
         return userData;
       }
       throw new AuthenticationError('Not logged in.');
+    },
+    meetUps: async (parent, { username }) => {
+      const params = username ? { username } : {};
+      return MeetUp.find(params).sort({ createdAt: -1 });
+    },
+    meetUp: async (parent, { meetUpId }) => {
+      return MeetUp.findOne({ _id: meetUpId });
     },
   },
 
@@ -125,7 +132,74 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
+    addMeetUp: async (parent, { meetUpText }, context) => {
+      if (context.user) {
+        const meetUp = await MeetUp.create({
+          meetUpText,
+          meetUpAuthor: context.user.username,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $addToSet: { meetUps: meetUp._id } }
+        );
+
+        return meetUp;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    addComment: async (parent, { meetUpId, commentText }, context) => {
+      if (context.user) {
+        return MeetUp.findOneAndUpdate(
+          { _id: meetUpId },
+          {
+            $addToSet: {
+              comments: { commentText, commentAuthor: context.user.username },
+            },
+          },
+          {
+            new: true,
+            runValidators: true,
+          }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    removeMeetUp: async (parent, { meetUpId }, context) => {
+      if (context.user) {
+        const meetUp = await MeetUp.findOneAndDelete({
+          _id: meetUpId,
+          meetUpAuthor: context.user.username,
+        });
+
+        await User.findOneAndUpdate(
+          { _id: context.user._id },
+          { $pull: { meetUps: meetUp._id } }
+        );
+
+        return meetUp;
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
+    removeComment: async (parent, { meetUpId, commentId }, context) => {
+      if (context.user) {
+        return MeetUp.findOneAndUpdate(
+          { _id: meetUpId },
+          {
+            $pull: {
+              comments: {
+                _id: commentId,
+                commentAuthor: context.user.username,
+              },
+            },
+          },
+          { new: true }
+        );
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
   },
+  
 };
 
 module.exports = resolvers;
