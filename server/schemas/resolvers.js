@@ -28,7 +28,7 @@ const resolvers = {
       // check if users exist
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id }).
-          populate('pets').populate('meetUps').select(
+          populate('pets').select(
             '-__v -password'
           );
         return userData;
