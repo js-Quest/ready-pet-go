@@ -32,32 +32,19 @@ function Footer() {
         paddingBottom: '1.6em',
       }}>
 
-        <Grid item xs={2}>
+        <Grid item xs={2} sx={{ textAlign: 'center', marginRight: '2em' }}>
           <img src={Logo} alt="pawprint" />
-          <Typography>Ready. Pet. Go!</Typography>
+          <Typography variant="h6">Ready, Pet, Go!</Typography>
         </Grid>
 
-        <Grid item xs={1}></Grid>
+        <Grid item xs={1.5}></Grid>
 
-        <Grid item xs={3}>
+        <Grid item xs={2}>
           <Typography
             variant="h6"
             sx={{
               textTransform: 'uppercase',
-              '@media (max-width: 960px)': {
-                display: 'none', // Hide the h6 on medium+ screens
-              },
-            }}
-          >
-            About Ready. Pet. Go!
-          </Typography>
-          <Typography
-            variant="h6"
-            sx={{
-              textTransform: 'uppercase',
-              '@media (min-width: 961px)': {
-                display: 'none', // Hide the h6 on xs and sm screens
-              },
+              fontSize: { xs: '1rem', md: '1.1rem', lg: '1.25rem' },
             }}
           >
             About
@@ -65,41 +52,87 @@ function Footer() {
           <Link
             className="footLink"
             variant="subtitle1"
-            marginLeft={'8px'}
             href="/about"
-            >
+            marginLeft={{ xs: '5px', md: '6px', lg: '8px' }}
+            sx={{
+              fontSize: { xs: '14px', md: '15px', lg: '16px' },
+            }}
+          >
             Meet the Team
           </Link>
-          <Typography variant="subtitle1" marginLeft={'8px'}>Contributions</Typography>
+          <Typography
+            variant="subtitle1"
+            marginLeft={{ xs: '5px', md: '6px', lg: '8px' }}
+            sx={{
+              fontSize: { xs: '14px', md: '15px', lg: '16px' },
+            }}
+          >
+            Contributions
+          </Typography>
         </Grid>
 
         <Grid item xs={2}>
           <Typography
             variant="h6"
             sx={{
-              textTransform: 'uppercase'
+              textTransform: 'uppercase',
+              fontSize: { xs: '1rem', md: '1.1rem', lg: '1.25rem' },
             }}
           >
             Contact
           </Typography>
-          <Typography variant="subtitle1" marginLeft={'8px'}>Email</Typography>
-          <Typography variant="subtitle1" marginLeft={'8px'}>Careers</Typography>
+          <Typography
+            variant="subtitle1"
+            marginLeft={{ xs: '5px', md: '6px', lg: '8px' }}
+            sx={{
+              fontSize: { xs: '14px', md: '15px', lg: '16px' },
+            }}
+          >
+            Email
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            marginLeft={{ xs: '5px', md: '6px', lg: '8px' }}
+            sx={{
+              fontSize: { xs: '14px', md: '15px', lg: '16px' },
+            }}
+          >
+            Careers</Typography>
         </Grid>
 
-        <Grid item xs={3}>
+        <Grid item xs={2}>
           <Typography
             variant="h6"
             sx={{
-              textTransform: 'uppercase'
+              textTransform: 'uppercase',
+              fontSize: { xs: '1rem', md: '1.1rem', lg: '1.25rem' },
             }}
           >
             Learn More
           </Typography>
-          <Typography variant="subtitle1" marginLeft={'8px'}>GitHub</Typography>
-          <Typography variant="subtitle1" marginLeft={'8px'}>Contributions</Typography>
+          <Typography
+            variant="subtitle1"
+            marginLeft={{ xs: '5px', md: '6px', lg: '8px' }}
+            sx={{
+              fontSize: { xs: '14px', md: '15px', lg: '16px' },
+            }}
+          >
+            GitHub
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            marginLeft={{ xs: '5px', md: '6px', lg: '8px' }}
+            sx={{
+              fontSize: { xs: '14px', md: '15px', lg: '16px' },
+            }}
+          >
+            Privacy Policy
+          </Typography>
         </Grid>
 
-        <Grid item xs={3} sx={{
+        <Grid item xs={1.5}></Grid>
+
+        <Grid item xs={2} sx={{
           justifyContent: 'center',
           alignItems: 'end'
         }}>
@@ -110,15 +143,15 @@ function Footer() {
             borderRadius: '10px',
             padding: '0.6em',
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
+            textAlign: 'center'
           }}>
-            <Typography sx={{ fontSize: '28px', color: '#000', marginBottom: '0.4em' }}>Stay in touch!</Typography>
-            <div>
-              <GitHubIcon sx={{ fontSize: '32px', marginRight: '12px' }} />
-              <EmailIcon sx={{ fontSize: '32px', marginRight: '12px' }} />
-              <HelpIcon sx={{ fontSize: '32px' }} />
-            </div>
-
+            <Typography sx={{ fontSize: '24px', color: '#000', marginBottom: '0.4em' }}>Stay in touch!</Typography>
+            <Box sx={{ display: 'flex', justifyContent: 'space-evenly', gap: '6px' }}>
+              <GitHubIcon sx={{ fontSize: '30px' }} />
+              <EmailIcon sx={{ fontSize: '30px' }} />
+              <HelpIcon sx={{ fontSize: '30px' }} />
+            </Box>
           </Box>
         </Grid>
       </Grid>
