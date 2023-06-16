@@ -49,9 +49,9 @@ function Footer() {
           >
             About
           </Typography>
-          <Link
-            className="footLink"
+          <Typography
             variant="subtitle1"
+            className="footLink"
             href="/about"
             marginLeft={{ xs: '5px', md: '6px', lg: '8px' }}
             sx={{
@@ -59,9 +59,11 @@ function Footer() {
             }}
           >
             Meet the Team
-          </Link>
+          </Typography>
           <Typography
             variant="subtitle1"
+            className="footLink"
+            href="/"
             marginLeft={{ xs: '5px', md: '6px', lg: '8px' }}
             sx={{
               fontSize: { xs: '14px', md: '15px', lg: '16px' },
@@ -83,6 +85,8 @@ function Footer() {
           </Typography>
           <Typography
             variant="subtitle1"
+            className="footLink"
+            href="/"
             marginLeft={{ xs: '5px', md: '6px', lg: '8px' }}
             sx={{
               fontSize: { xs: '14px', md: '15px', lg: '16px' },
@@ -92,6 +96,8 @@ function Footer() {
           </Typography>
           <Typography
             variant="subtitle1"
+            className="footLink"
+            href="/"
             marginLeft={{ xs: '5px', md: '6px', lg: '8px' }}
             sx={{
               fontSize: { xs: '14px', md: '15px', lg: '16px' },
@@ -112,6 +118,8 @@ function Footer() {
           </Typography>
           <Typography
             variant="subtitle1"
+            className="footLink"
+            href="/"
             marginLeft={{ xs: '5px', md: '6px', lg: '8px' }}
             sx={{
               fontSize: { xs: '14px', md: '15px', lg: '16px' },
@@ -121,6 +129,8 @@ function Footer() {
           </Typography>
           <Typography
             variant="subtitle1"
+            className="footLink"
+            href="/"
             marginLeft={{ xs: '5px', md: '6px', lg: '8px' }}
             sx={{
               fontSize: { xs: '14px', md: '15px', lg: '16px' },
@@ -136,21 +146,39 @@ function Footer() {
           justifyContent: 'center',
           alignItems: 'end'
         }}>
-          <Box sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            border: '3px dashed #EEB462',
-            borderRadius: '10px',
-            padding: '0.6em',
-            justifyContent: 'center',
-            alignItems: 'center',
-            textAlign: 'center'
-          }}>
-            <Typography sx={{ fontSize: '24px', color: '#000', marginBottom: '0.4em' }}>Stay in touch!</Typography>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              border: '3px dashed #EEB462',
+              borderRadius: '10px',
+              padding: '0.6em',
+              justifyContent: 'center',
+              alignItems: 'center',
+              textAlign: 'center',
+              width: { xs: '100%' }
+            }}>
+            <Typography sx={{ 
+              fontSize: { xs: '16px', md: '20px', lg: '24px'}, 
+              color: '#000', 
+              marginBottom: '0.4em' 
+              }}
+              >
+                Stay in touch!
+                </Typography>
             <Box sx={{ display: 'flex', justifyContent: 'space-evenly', gap: '6px' }}>
-              <GitHubIcon sx={{ fontSize: '30px' }} />
-              <EmailIcon sx={{ fontSize: '30px' }} />
-              <HelpIcon sx={{ fontSize: '30px' }} />
+              <GitHubIcon sx={{ 
+                fontSize: { xs: '18px', md: '24px', lg: '30px' } 
+                }} 
+                />
+              <EmailIcon sx={{ 
+                fontSize: { xs: '18px', md: '24px', lg: '30px' }
+                }} 
+                />
+              <HelpIcon sx={{ 
+                fontSize: { xs: '18px', md: '24px', lg: '30px' }
+                }} 
+                />
             </Box>
           </Box>
         </Grid>

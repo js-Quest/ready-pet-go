@@ -12,5 +12,6 @@
 }
 
 .footLink:hover {
-  color: #EEB462 !important
+  color: #EEB462 !important;
+  cursor: pointer;
 }
