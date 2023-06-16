@@ -33,7 +33,7 @@ const styles = {
 function Navigation()
 // referenced Stack Overflow for the code to set window states and effects https://stackoverflow.com/questions/46586165/react-conditionally-render-based-on-viewport-size
 {
-  const [isDesktop, setDesktop] = useState(window.innerWidth > 1250);
+  const [isDesktop, setDesktop] = useState(window.innerWidth > 975);
   
   const updateMedia = () => {
     setDesktop(window.innerWidth > 975);
