@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3001",
+  "engines": {
+    "node": "16.18.0"
+  },
   "dependencies": {
     "@apollo/client": "^3.7.15",
     "@emotion/react": "^11.11.0",
