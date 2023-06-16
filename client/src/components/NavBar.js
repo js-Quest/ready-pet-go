@@ -13,7 +13,7 @@ const styles = {
     fontFamily: 'times',
     margin: '20px',
     fontSize: '20px',
-    padding: '20px',
+    padding: '10px',
     textDecoration: 'none',
     color: 'inherit'
   },
@@ -33,10 +33,10 @@ const styles = {
 function Navigation()
 // referenced Stack Overflow for the code to set window states and effects https://stackoverflow.com/questions/46586165/react-conditionally-render-based-on-viewport-size
 {
-  const [isDesktop, setDesktop] = useState(window.innerWidth > 1250);
+  const [isDesktop, setDesktop] = useState(window.innerWidth > 975);
   
   const updateMedia = () => {
-    setDesktop(window.innerWidth > 1250);
+    setDesktop(window.innerWidth > 975);
   };
   // adding event listener to run updateMedia on a page resize; if window is resized to smaller screen size, event listener is removed 
   useEffect(() => {
