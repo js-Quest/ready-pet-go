@@ -184,7 +184,7 @@ export default function Profile() {
               marginTop: '2em'
             }}>
               <form onSubmit={handleFormSubmit}>
-                <Grid container rowSpacing={2} columnSpacing={{ xs: 0 }} maxWidth={'80%'} sx={{ margin: '0 auto' }}>
+                <Grid container rowSpacing={2} columnSpacing={{ xs: 0 }} maxWidth={'85%'} sx={{ margin: '0 auto' }}>
                   <Grid item xs={12} md={6} lg={3}>
                     <Typography sx={{ marginBottom: '0.8em', fontSize: '1.3rem' }}>Username:</Typography>
                     <TextField
@@ -195,6 +195,9 @@ export default function Profile() {
                       type="text"
                       value={formState.username || user.username}
                       onChange={handleChange}
+                      sx={{
+                        width: { xs: '100%', md: '80%' }
+                      }}
                     />
                   </Grid>
                   <Grid item xs={12} md={6} lg={3}>
@@ -207,6 +210,9 @@ export default function Profile() {
                       type="text"
                       value={formState.email || user.email}
                       onChange={handleChange}
+                      sx={{
+                        width: { xs: '100%', md: '80%' }
+                      }}
                     />
                   </Grid>
                   <Grid item xs={12} md={6} lg={3}>
@@ -219,6 +225,9 @@ export default function Profile() {
                       type="text"
                       value={formState.city || user.city}
                       onChange={handleChange}
+                      sx={{
+                        width: { xs: '100%', md: '80%' }
+                      }}
                     />
                   </Grid>
                   <Grid item xs={12} md={6} lg={3}>
@@ -231,6 +240,9 @@ export default function Profile() {
                       type="text"
                       value={formState.phoneNumber || user.phoneNumber}
                       onChange={handleChange}
+                      sx={{
+                        width: { xs: '100%', md: '80%' }
+                      }}
                     />
                   </Grid>
                   <Grid item xs={12}>
@@ -243,7 +255,7 @@ export default function Profile() {
                       type="text"
                       value={formState.bio || user.bio}
                       onChange={handleChange}
-                      sx={{ width: ['80%'] }}
+                      sx={{ width: { xs: '100%', md: '90%', lg: '95%',  } }}
                     />
                   </Grid>
                   <Grid item xs={12} sx={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '0.5em' }}>
@@ -265,11 +277,9 @@ export default function Profile() {
                 </Grid>
               </form>
               {/* editable version of upload profile picture code is contained in the Card component */}
-              <Card>
-                <CardContent>
-                  <UploadWidget setProfilePicture={setProfilePicture} />
-                </CardContent>
-              </Card >
+
+              <UploadWidget setProfilePicture={setProfilePicture} />
+
             </Box>
           ) :
             (
@@ -280,10 +290,11 @@ export default function Profile() {
                 <Typography sx={{ fontSize: '1.5rem' }}>Username :</Typography>
                 <Typography sx={{ paddingLeft: '1em', fontSize: '1.2rem' }}>{user.username}</Typography>
                 <hr
+                  className='hr1'
                   style={{
                     background: "#CD7672",
                     height: "2px",
-                    width: '20%',
+                    width: '40%',
                     border: "none",
                     marginTop: '0.4em',
                     marginBottom: '1.3em',
@@ -292,10 +303,11 @@ export default function Profile() {
                 <Typography sx={{ fontSize: '1.5rem' }}>Email :</Typography>
                 <Typography sx={{ paddingLeft: '1em', fontSize: '1.2rem' }}>{user.email}</Typography>
                 <hr
+                  className='hr2'
                   style={{
                     background: "#534666",
                     height: "2px",
-                    width: '30%',
+                    width: '55%',
                     border: "none",
                     marginTop: '0.4em',
                     marginBottom: '1.3em',
@@ -304,10 +316,11 @@ export default function Profile() {
                 <Typography sx={{ fontSize: '1.5rem' }}>City, ST :</Typography>
                 <Typography sx={{ paddingLeft: '1em', fontSize: '1.2rem' }}>{user.city}</Typography>
                 <hr
+                  className='hr3'
                   style={{
                     background: "#DC8665",
                     height: "2px",
-                    width: '40%',
+                    width: '70%',
                     border: "none",
                     marginTop: '0.4em',
                     marginBottom: '1.3em',
@@ -316,10 +329,11 @@ export default function Profile() {
                 <Typography sx={{ fontSize: '1.5rem' }}>Phone Number :</Typography>
                 <Typography sx={{ paddingLeft: '1em', fontSize: '1.2rem' }}>{user.phoneNumber}</Typography>
                 <hr
+                  className='hr4'
                   style={{
                     background: "#138086",
                     height: "2px",
-                    width: '50%',
+                    width: '85%',
                     border: "none",
                     marginTop: '0.4em',
                     marginBottom: '1.3em',
@@ -330,10 +344,11 @@ export default function Profile() {
                 {/* view-only version of the profile picture is contained in this Card component */}
 
                 <hr
+                  className='hr5'
                   style={{
                     background: "#EEB462",
                     height: "2px",
-                    width: '60%',
+                    width: '100%',
                     border: "none",
                     marginTop: '0.4em',
                     marginBottom: '1.3em',
@@ -342,18 +357,22 @@ export default function Profile() {
                   </Grid>
                   <Grid item xs={12} md={3}>
                     <Card sx={{ 
-                      width: 250, 
-                      height: 250,
-                      marginLeft: { xs: 0, md: '-100px', lg: '-50px', xl: '-20px' },
+                      width: {xs: 200, xl: 250}, 
+                      height: { xs: 200, xl: 250 },
+                      marginLeft: { xs: '25%', md: '-100px', lg: '-50px', xl: '-20px' },
                       }}>
                     <CardMedia
-                      sx={{ height: 250 }}
+                        sx={{ height: { xs: 200, xl: 250 } }}
                       image={user.profilePicture} />
                   </Card>
                   </Grid>
                 </Grid>
                 {data.me &&
-                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <Box sx={{ 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  justifyContent: 'space-between',
+                  marginTop: { xs: '15px', lg: '0px'} }}>
                   <Button variant='contained' type="click" onClick={editFormState} sx={{ backgroundColor: '#36393F', width: '9rem', marginLeft: 'auto' }}>Update</Button>
                 </Box>
                 }
