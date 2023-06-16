@@ -22,6 +22,7 @@ import ProductOnHome from "./pages/ProductOnHome";
 import ProductList from './pages/productList'
 import ProductDetails from "./pages/productDetails";
 import Quiz from "./components/Quiz";
+import SingleMeetUp from './pages/SingleMeetUp';
 
 
 // WORK IN PROGRESS
@@ -59,7 +60,6 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/dashboard" element={<Dashboard />} />
@@ -73,10 +73,15 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/home" element={<Home />} />
 
+          <Route path="/" element={<Navigate to="/home" />} />
 
           {/* quiz componenent needs route so i can use navigation hook in Register page */}
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/meetUp" element={<MeetUp />} />
+                        <Route 
+                path="/meetUp/:meetUpId" 
+                element={<SingleMeetUp />}
+              />
         </Routes>
         <Footer />
       </Router>

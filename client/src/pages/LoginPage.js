@@ -9,7 +9,6 @@ import RedirectInfo from '../components/RedirectInfo';
 import { styled } from '@mui/system';
 import Auth from '../utils/auth';
 // import Container from '@mui/material/Container';
-import PetFoot from '../images/petfoot.png';
 import './style.css';
 
 const Login = (props) => {
