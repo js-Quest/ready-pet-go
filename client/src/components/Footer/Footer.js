@@ -8,7 +8,8 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
 import HelpIcon from '@mui/icons-material/Help';
 import { useLocation } from "react-router-dom";
-import Kitten from '../../images/cat2-small.png';
+import Link from '@mui/material/Link';
+// import Kitten from '../../images/cat2-small.png';
 import './style.css'
 
 function Footer() {
@@ -61,7 +62,14 @@ function Footer() {
           >
             About
           </Typography>
-          <Typography variant="subtitle1" marginLeft={'8px'}>Meet the Team</Typography>
+          <Link
+            className="footLink"
+            variant="subtitle1"
+            marginLeft={'8px'}
+            href="/about"
+            >
+            Meet the Team
+          </Link>
           <Typography variant="subtitle1" marginLeft={'8px'}>Contributions</Typography>
         </Grid>
 
