@@ -192,12 +192,6 @@ export default function Register() {
           redirectHandler={handlePushToLoginPage}
         />
       </AuthBox>
-      <div className='regFootPos'>
-
-        <div className='regFooter'>
-          <p>hello</p>
-        </div>
-      </div>
     </div>
   )
 }
