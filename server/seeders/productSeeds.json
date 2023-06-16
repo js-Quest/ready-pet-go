@@ -2,49 +2,37 @@
   {
     "name": "Ready, Puppy, Go!",
     "slug": "ready-puppy-go",
-    "category": "Dog Toy",
+    "category": "Dog box",
     "image": "https://res.cloudinary.com/dtfbwnsv7/image/upload/v1686770098/dog_1_yltkox.png", 
     "price": 15.99,
     "countInStock": 10,
-    "brand": "JW Pet",
-    "rating": 4,
+    "brand": "Ready Pet Go",
+    "rating": 4.5,
     "numReviews": 10,
-    "description": "The idea of a dumbbell-shape has a lot to do with dogs you might call champion chewers. You and your dog will appreciate the Chompions durability and its textured nubs to help keep teeth clean, stimulate gums and promote oral health. An exceptional teething, fetch and tug toy."
+    "description": "Spoil your pup! Includes: Toys, treats, and some tips & tricks on how to care for your pup!"
   },
   {
     "name": "Ready, Kitty, Go!",
     "slug": "ready-kitty-go",
-    "category": "Dog Toy",
+    "category": "Cat box",
     "image": "https://res.cloudinary.com/dtfbwnsv7/image/upload/v1686769682/cat_2_u5lnwq.png", 
     "price": 15.99,
     "countInStock": 10,
-    "brand": "JW Pet",
-    "rating": 4,
+    "brand": "Ready Pet Go",
+    "rating": 4.7,
     "numReviews": 10,
-    "description": "The idea of a dumbbell-shape has a lot to do with dogs you might call champion chewers. You and your dog will appreciate the Chompions durability and its textured nubs to help keep teeth clean, stimulate gums and promote oral health. An exceptional teething, fetch and tug toy."
+    "description": "Spoil your cat! Includes: Toys, treats, and some tips & tricks on how to care for your cat!"
   },
   {
-    "name": "JW Pet Chompion Dog Toy",
-    "slug": "jw-pet-chompion-dog-toy",
-    "category": "Dog Toy",
-    "image": "https://res.cloudinary.com/dtfbwnsv7/image/upload/v1686761223/jwpetBone_dvz4gd.jpg", 
-    "price": 11.99,
+    "name": "Ready, Combo, Go!",
+    "slug": "ready-combo-go",
+    "category": "Cat and Dog box",
+    "image": "https://res.cloudinary.com/dtfbwnsv7/image/upload/v1686846877/cat_dog_zpqe6t.png", 
+    "price": 20.99,
     "countInStock": 10,
-    "brand": "JW Pet",
-    "rating": 4,
+    "brand": "Ready Pet Go",
+    "rating": 5,
     "numReviews": 10,
-    "description": "The idea of a dumbbell-shape has a lot to do with dogs you might call champion chewers. You and your dog will appreciate the Chompions durability and its textured nubs to help keep teeth clean, stimulate gums and promote oral health. An exceptional teething, fetch and tug toy."
-  },
-  {
-    "name": "JW Pet Chompion Dog Toy",
-    "slug": "jw-pet-chompion-dog-toy",
-    "category": "Dog Toy",
-    "image": "https://res.cloudinary.com/dtfbwnsv7/image/upload/v1686761223/jwpetBone_dvz4gd.jpg", 
-    "price": 11.99,
-    "countInStock": 10,
-    "brand": "JW Pet",
-    "rating": 4,
-    "numReviews": 10,
-    "description": "The idea of a dumbbell-shape has a lot to do with dogs you might call champion chewers. You and your dog will appreciate the Chompions durability and its textured nubs to help keep teeth clean, stimulate gums and promote oral health. An exceptional teething, fetch and tug toy."
+    "description": "Perfect for cat AND dog parents. Spoil your two animals with ONE box! Includes: Treats for each, specialized toys for each animal, a toy both animals will love, a collar, and leash! Every box includes tips & tricks to help you care for your animals."
   }
 ]

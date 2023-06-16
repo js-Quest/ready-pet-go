@@ -29,40 +29,43 @@ export const ADD_USER = gql`
 `;
 
 export const UPDATE_USER = gql`
-      mutation updateUser($username: String, $email: String, $phoneNumber: String, $bio: String, $city: String) {
-        updateUser(username: $username, email: $email, phoneNumber: $phoneNumber, bio: $bio, city: $city) {
+      mutation updateUser($username: String, $email: String, $phoneNumber: String, $bio: String, $city: String, $profilePicture: String) {
+        updateUser(username: $username, email: $email, phoneNumber: $phoneNumber, bio: $bio, city: $city, profilePicture: $profilePicture) {
           _id
           username
           email
           phoneNumber
           city
           bio
+          profilePicture
         }
       }
 `;
 
 // add pet mutation
 export const ADD_PET = gql`
-mutation addPet($photoURL: String, $name: String, $age: String, $breed: String, $bio: String) {
-  addPet(photoURL: $photoURL, name: $name, age: $age, breed: $breed, bio: $bio) {
+mutation addPet($profilePicture: String, $name: String, $age: String, $breed: String, $bio: String) {
+  addPet(profilePicture: $profilePicture, name: $name, age: $age, breed: $breed, bio: $bio) {
     _id
     name
     age
     breed
     bio
+    profilePicture
   }
 }
 `;
 
 // update pet mutation
 export const UPDATE_PET = gql`
-mutation updatePet($updatePetId: ID!, $photoURL: String,$name: String, $age: String, $breed: String, $bio: String) {
-  updatePet(id: $updatePetId, photoURL: $photoURL, name: $name, age: $age, breed: $breed, bio: $bio) {
+mutation updatePet($updatePetId: ID!, $profilePicture: String, $name: String, $age: String, $breed: String, $bio: String) {
+  updatePet(id: $updatePetId, profilePicture: $profilePicture, name: $name, age: $age, breed: $breed, bio: $bio) {
     _id
     name
     age
     breed
     bio
+    profilePicture
   }
 }
 `;
