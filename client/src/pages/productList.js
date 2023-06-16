@@ -62,7 +62,6 @@ function ProductList() {
               <p>
                 <strong>${product.price}</strong>
               </p>
-              <button>Add to cart</button>
             </div>
           </div>
         )))}
