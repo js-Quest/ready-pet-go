@@ -1,7 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { BsFillChatTextFill } from "react-icons/bs";
-import { FaShoppingCart } from "react-icons/fa";
+import HomeIcon from '@mui/icons-material/Home';
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket'; 
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import 'react-dropdown/style.css';
 import Auth from '../utils/auth';
 import { Link } from "react-router-dom";
@@ -46,8 +47,6 @@ function Navigation()
   
   // using state to be able to show menu items on click
   const [showMenu, setShowMenu] = useState(true)
-  // const options = ['Home', 'Profile', 'Products', <BsFillChatTextFill />, <FaShoppingCart />];
-  // const defaultOption = options[0];
   
   const logout = (event) => {
     event.preventDefault();
@@ -73,13 +72,13 @@ function Navigation()
           <Link to="/" style={styles.nav}>Home</Link>
           {/* <a to="/dashboard" style={styles.nav}>Dashboard</a> */}
           <Link to="/product" style={styles.nav}>Products</Link>
-          <Link to="/firebase" style={styles.nav} target="_blank"><BsFillChatTextFill /></Link>
-          <Link to="#" style={styles.nav}><FaShoppingCart /></Link> 
+          <Link to="/firebase" style={styles.nav} target="_blank"><HomeIcon /></Link>
+          <Link to="#" style={styles.nav}><ShoppingBasketIcon /></Link> 
           {/* //conditonally rendering links for logout and profile if user is logged in, or login/signup if user is logged out */}
           {Auth.loggedIn() ? (
             <>
               <Link className="btn btn-lg btn-info m-2" style={styles.nav} to="/me">
-                {Auth.getProfile().data.username}'s profile
+             <AccountCircleIcon />
               </Link>
               <button className="btn btn-lg btn-light m-2" style={styles.logoutBtn} onClick={logout}>
                 Logout

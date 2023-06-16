@@ -3,6 +3,10 @@ import { Link, Navigate, useParams } from 'react-router-dom';
 // import PetCard from '../components/PetCard';
 // import PetForm from '../components/PetForm';
 // import PetButton from '../components/PetButton';
+import Card from '@mui/material/Card';
+import CardMedia from '@mui/material/CardMedia';
+import CardContent from '@mui/material/CardContent';
+import UploadWidget from '../components/UploadWidget';
 import Auth from '../utils/auth';
 import { useMutation } from '@apollo/client';
 import { useQuery } from '@apollo/client';
@@ -17,12 +21,14 @@ import './style.css';
 import { TextField, Button, Grid } from '@mui/material';
 import ElGato from '../images/cat1.png';
 
+// testing
+
 
 export default function Profile() {
   const [editProf, editProfile] = useState(false);
+  const [profilePicture, setProfilePicture] = useState('')
   const [formState, setFormState] = useState({ email: '', city: '', bio: '', username: '', phoneNumber: '' }); 
   const [updateUser, { error }] = useMutation(UPDATE_USER);
-
 
 
   const { username: userParam } = useParams();
@@ -120,7 +126,7 @@ export default function Profile() {
 
     try {
       const { data } = await updateUser({
-        variables: { ...formState }
+        variables: { ...formState, profilePicture }
       })
 
       console.log(data)
@@ -128,8 +134,6 @@ export default function Profile() {
     } catch (err) {
       console.error(err);
     }
-
-
 
     setFormState({ email: '', city: '', bio: '', username: '', phoneNumber: '' });
     editProfile(false)
@@ -260,6 +264,12 @@ export default function Profile() {
                   </Grid>
                 </Grid>
               </form>
+              {/* editable version of upload profile picture code is contained in the Card component */}
+              <Card>
+                <CardContent>
+                  <UploadWidget setProfilePicture={setProfilePicture} />
+                </CardContent>
+              </Card >
             </Box>
           ) :
             (
@@ -315,6 +325,13 @@ export default function Profile() {
                 />
                 <Typography sx={{ fontSize: '1.5rem' }}>My Bio :</Typography>
                 <Typography sx={{ paddingLeft: '1em', fontSize: '1.2rem' }}>{user.bio}</Typography>
+                {/* view-only version of the profile picture is contained in this Card component */}
+                <Card sx={{ width: 300, height: 300 }}>
+                  <CardMedia
+                    sx={{ height: 300 }}
+                    image={user.profilePicture} />
+                </Card>
+
                 <hr
                   style={{
                     background: "#EEB462",
