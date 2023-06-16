@@ -17,6 +17,17 @@ const styles = {
     textDecoration: 'none',
     color: 'inherit'
   },
+  logoutBtn: {
+    fontFamily: 'times',
+    margin: '20px',
+    fontSize: '20px',
+    // borderStyle: '1px solid black'
+    borderRadius: '8px',
+    padding: '.5rem',
+    background: '#EEB462',
+    color: '#36393F',
+    opacity: '0.8'
+  }
 }
 
 function Navigation()
@@ -70,7 +81,7 @@ function Navigation()
               <Link className="btn btn-lg btn-info m-2" style={styles.nav} to="/me">
                 {Auth.getProfile().data.username}'s profile
               </Link>
-              <button className="btn btn-lg btn-light m-2" style={styles.nav} onClick={logout}>
+              <button className="btn btn-lg btn-light m-2" style={styles.logoutBtn} onClick={logout}>
                 Logout
               </button>
             </>

@@ -7,7 +7,7 @@ const styles = {
   heading: {
     background: '#138086',
     lineHeight: 1.0,
-    color: '#656565',
+    color: 'white',
     padding: '20px 20px',
     display: 'flex',
     justifyContent: 'space-between',
