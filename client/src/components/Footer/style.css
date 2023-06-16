@@ -5,3 +5,12 @@
   width: 0px !important;
   height: 0px !important;
 }
+
+.footLink {
+  text-decoration: none !important;
+  color: #000000 !important
+}
+
+.footLink:hover {
+  color: #EEB462 !important
+}
