@@ -24,16 +24,16 @@ app.use(cors());
 // Serve static files from the 'build' directory inside the 'client' folder
 if(process.env.NODE_ENV === 'production'){
   app.use(express.static(path.join(__dirname, '../client/build')));
-}
+
 
 
 
 // Route all other requests to the React app's 'index.html' file
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   // res.setHeader('Permissions-Policy', 'ch-ua-form-factor');
-  res.sendFile(path.join(__dirname, '../client/'));
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
- 
+}
 const startApolloServer = async (typeDefs, resolvers) => {
   await server.start();
   server.applyMiddleware({ app });
