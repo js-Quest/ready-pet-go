@@ -23,6 +23,10 @@ import ProductList from './pages/productList'
 import ProductDetails from "./pages/productDetails";
 import Quiz from "./components/Quiz";
 
+
+// WORK IN PROGRESS
+import MeetUp from "./pages/MeetUp";
+
 import {
   ApolloProvider,
   ApolloClient,
@@ -72,6 +76,7 @@ function App() {
 
           {/* quiz componenent needs route so i can use navigation hook in Register page */}
           <Route path="/quiz" element={<Quiz />} />
+          <Route path="/meetUp" element={<MeetUp />} />
         </Routes>
         <Footer />
       </Router>
