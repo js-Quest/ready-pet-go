@@ -12,11 +12,11 @@ const PetForm = ({ petData, setPetData, setShowCard }) => {
   const [age, setAge] = useState('');
   const [breed, setBreed] = useState(''); 
   const [bio, setBio] = useState('');
-  const [photoURL, setPhotoURL] = useState('')
+  const [profilePicture, setProfilePicture] = useState('')
   
 useEffect(() => {
-  console.log(photoURL)
-}, [photoURL])
+  console.log(profilePicture)
+}, [profilePicture])
 
   const [addPet, { error }] = useMutation(ADD_PET)
 //     update(cache, { data: { addPet } }) {
@@ -37,7 +37,7 @@ useEffect(() => {
     try {
       const { data } = await addPet({
         variables: {
-          photoURL, name, age, breed, bio
+          profilePicture, name, age, breed, bio
         },
       });
       console.log(data)
@@ -54,10 +54,9 @@ useEffect(() => {
     }
   };
 
-  // each card needs to handle fetch request to submit form to database
   return (
     <Card sx={{ maxWidth: 250 }}>
-      <UploadWidget setPhotoURL={setPhotoURL} />
+      <UploadWidget setProfilePicture={setProfilePicture} />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div" >
           <input value={name}
