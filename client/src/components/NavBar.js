@@ -2,6 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import HomeIcon from '@mui/icons-material/Home';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket'; 
+import { BsFillChatTextFill } from 'react-icons/bs'
+import { FaShoppingCart } from 'react-icons/fa';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import 'react-dropdown/style.css';
 import Auth from '../utils/auth';
@@ -69,11 +71,11 @@ function Navigation()
       {/* rendering full nav list for large screens */}
       {isDesktop ?
         <nav>
-          <Link to="/" style={styles.nav}>Home</Link>
+          <Link to="/" style={styles.nav}><HomeIcon /></Link>
           {/* <a to="/dashboard" style={styles.nav}>Dashboard</a> */}
-          <Link to="/product" style={styles.nav}>Products</Link>
-          <Link to="/firebase" style={styles.nav} target="_blank"><HomeIcon /></Link>
-          <Link to="#" style={styles.nav}><ShoppingBasketIcon /></Link> 
+          <Link to="/firebase" style={styles.nav} target="_blank"><BsFillChatTextFill /></Link>
+          <Link to="/product" style={styles.nav}><ShoppingBasketIcon /></Link>
+          <Link to="#" style={styles.nav}><FaShoppingCart /></Link> 
           {/* //conditonally rendering links for logout and profile if user is logged in, or login/signup if user is logged out */}
           {Auth.loggedIn() ? (
             <>
