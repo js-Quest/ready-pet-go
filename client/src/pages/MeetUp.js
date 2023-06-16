@@ -1,14 +1,5 @@
 import React, { useState } from 'react';
-import { Link, Navigate, useParams } from 'react-router-dom';
-// import PetCard from '../components/PetCard';
-// import PetForm from '../components/PetForm';
-// import PetButton from '../components/PetButton';
-import Auth from '../utils/auth';
-import { useMutation } from '@apollo/client';
 import { useQuery } from '@apollo/client';
-import { QUERY_USER, QUERY_ME } from '../utils/queries';
-import { UPDATE_USER } from '../utils/mutations';
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import PetPeek1 from '../images/peeking1.png';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
@@ -17,12 +8,22 @@ import './style.css';
 import { TextField, Button, Grid } from '@mui/material';
 import ElGato from '../images/cat1.png';
 
+import {QUERY_MEETUPS} from '../utils/queries'
+
+import MeetUpForm from '../components/MeetUpComponents/MeetUpForm';
+import MeetUpList from '../components/MeetUpComponents/MeetUpList';
+
+
 
 // THIS IS A WORK IN PROGRESS  
 
 
 
 export default function MeetUp() {
+
+    const { loading, data } = useQuery(QUERY_MEETUPS);
+    const meetUps = data?.meetUps || [];
+
     return (
         <>
             <div className='petPeeking'>
@@ -72,7 +73,9 @@ export default function MeetUp() {
                             }}
                         >
                             Welcome to MeetUp! Please feel free to post pet play dates or just general information about your pet! This forum can and should also be used to help eachother in guiding others in any questions one would have in their journey! Feel free to post your first meet up here! Happy MeetUps!
-                            
+
+                            <MeetUpForm />
+
                         </Typography>
                         <div className='catReach'>
                             <img
@@ -83,6 +86,7 @@ export default function MeetUp() {
                         </div>
                     </Box>
                 </Box>
+                
                 <Box sx={{
                     marginTop: '2em'
                 }}>
@@ -122,7 +126,16 @@ export default function MeetUp() {
                             }}
                         >
                             Welcome to MeetUp! Please feel free to post pet play dates or just general information about your pet! This forum can and should also be used to help eachother in guiding others in any questions one would have in their journey! Feel free to post your first meet up here! Happy MeetUps!
-                            
+
+                            {loading ? (
+                                <div>Loading...</div>
+                            ) : (
+                                <MeetUpList
+                                    meetUps={meetUps}
+                                    title="CHECK OUT THESE MEETUPS!"
+                                />
+                            )}
+
                         </Typography>
                         <div className='catReach'>
                             <img
