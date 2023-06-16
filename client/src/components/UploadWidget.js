@@ -13,7 +13,7 @@ const styles = {
 }
 
 // function creating using Cloudinary's tutorial as a reference  https://www.youtube.com/watch?v=paiO6M2wBqE&t=7s
-function UploadWidget({setPhotoURL}) {
+function UploadWidget({setProfilePicture}) {
   const cloudinaryRef = useRef();
   const widgetRef = useRef();
 
@@ -25,7 +25,7 @@ function UploadWidget({setPhotoURL}) {
     }, function (error, result) {
       if (!error && result && result.event === "success") {
         console.log('Done! Here is the image info: ', result.info);
-        setPhotoURL(result.info.secure_url)
+        setProfilePicture(result.info.secure_url)
 
       }
     })

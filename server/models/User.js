@@ -32,6 +32,9 @@ const userSchema = new Schema(
     city: {
       type: String
     },
+    profilePicture: {
+      type: String
+    },
     pets: [
       {
         type: Schema.Types.ObjectId,
