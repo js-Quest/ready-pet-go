@@ -34,6 +34,7 @@ export default function Profile() {
   const handleLoginError = () => {
     window.location.replace('/login');
   }
+  console.log(data)
 
   if (!data){
     return (

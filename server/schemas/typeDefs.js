@@ -30,6 +30,7 @@ const typeDefs = gql`
   type MeetUp {
     _id: ID
     meetUpText: String
+    meetUpTitle: String
     meetUpAuthor: String
     createdAt: String
     comments: [Comment]!
@@ -74,7 +75,7 @@ const typeDefs = gql`
     removePet(petId: ID!): Pet 
     updateUser(username: String, email: String, phoneNumber: String, bio: String, city: String, profilePicture: String): User
 
-    addMeetUp(meetUpText: String!): MeetUp
+    addMeetUp(meetUpTitle: String!, meetUpText: String): MeetUp
     addComment(meetUpId: ID!, commentText: String!): MeetUp
     removeMeetUp(meetUpId: ID!): MeetUp
     removeComment(meetUpId: ID!, commentId: ID!): MeetUp 

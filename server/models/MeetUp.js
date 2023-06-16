@@ -6,9 +6,14 @@ const dateFormat = require('../utils/dateFormat');
 const meetUpSchema = new Schema({
   meetUpText: {
     type: String,
-    required: 'You need to leave a meetUp!',
     minlength: 1,
     maxlength: 280,
+    trim: true,
+  },
+  meetUpTitle: {
+    type: String,
+    required: 'You need to leave a meetUp!',
+    required: true,
     trim: true,
   },
   meetUpAuthor: {

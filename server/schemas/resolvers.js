@@ -132,10 +132,11 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    addMeetUp: async (parent, { meetUpText }, context) => {
+    addMeetUp: async (parent, { meetUpText, meetUpTitle }, context) => {
       if (context.user) {
         const meetUp = await MeetUp.create({
           meetUpText,
+          meetUpTitle,
           meetUpAuthor: context.user.username,
         });
 
