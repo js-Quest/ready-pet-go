@@ -11,12 +11,12 @@ const resolvers = {
 
     //query all users
     users: async () => {
-      return User.find().populate('pets').populate('meetUps')
+      return User.find().populate('pets').populate('meetUp')
     },
 
     //query one user
     user: async (parent, { username }) => {
-      return User.findOne({ username }).populate('pets').populate('meetUps')
+      return User.findOne({ username }).populate('pets').populate('meetUp')
     },
 
     // query all pets
@@ -28,7 +28,7 @@ const resolvers = {
       // check if users exist
       if (context.user) {
         const userData = await User.findOne({ _id: context.user._id }).
-          populate('pets').select(
+          populate('pets').populate('meetUp').select(
             '-__v -password'
           );
         return userData;
