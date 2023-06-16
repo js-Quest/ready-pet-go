@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 
 mongoose.connect(
-  process.env.MONGO_URI || "mongodb://127.0.0.1:27017/chatAppDB",
+  process.env.MONGO_URI || "mongodb+srv://SunnyOh:finn@practice.wchmv4y.mongodb.net/chatAppDB",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
