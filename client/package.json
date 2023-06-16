@@ -35,7 +35,7 @@
     "socket.io-client": "^4.6.2",
     "universal-cookie": "^4.0.4",
     "web-vitals": "^2.1.4",
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.10"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.0"
   },
   "scripts": {
     "start": "react-scripts start",
