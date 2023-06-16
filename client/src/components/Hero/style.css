@@ -1,12 +1,16 @@
 .hero-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* height: 100vh; */
-}
-
-.hero-image {
+  display: block;
+  position: relative;
+  text-align: center;
   width: 100%;
+  z-index: -1;
+
+}
+.hero-image {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 44%;
   height: auto;
-  max-width: 1500px;
+  margin-top: 1.5em;
 }
