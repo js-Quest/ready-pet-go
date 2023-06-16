@@ -6,6 +6,9 @@ import { useParams } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { UPDATE_USER } from '../utils/mutations';
 
+// testing
+
+
 function ProfilePicture() {
   // const [editPhoto, setEditphoto] = useState(false);
   // const [profilePicture, setProfilePicture] = useState('');

@@ -37,7 +37,7 @@ export default function AboutUs() {
           </Box>
           <Box className='text-box'>
             <h3 className='card-text'>
-              Passionate editor venturing into software development.
+              Passionate editor venturing into software development!
             </h3>
             <a className='card-link' href="https://github.com/lkrum"><i class="fa-brands fa-square-github"></i></a>
           </Box>

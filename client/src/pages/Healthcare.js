@@ -66,28 +66,6 @@ export default function Healthcare() {
         </>
     )
 }
-                        // <h3>Foods to Avoid Feeding Your Little Ones:</h3>
-                        // <p>
-                        //     While it's essential to provide a balanced diet for your puppy or kitten, there are certain foods you should <strong>never</strong> feed them, as they can be harmful or toxic. These include:
-                        //     <div>
-                                <ol>
-                                    <li>Chocolate: Contains theobromine, which is toxic to pets.</li>
-                                    <li>Grapes and raisins: Can cause kidney damage.</li>
-                                    <li>Onions and garlic: Can lead to anemia and other health issues.</li>
-                                    <li>Avocado: Contains persin, which is toxic to pets.</li>
-                                    <li>Alcohol: Can cause severe intoxication and even coma.</li>
-                                    <li>Xylitol: Found in sugar-free gum and certain foods, it is toxic to pets.</li>
-                                    <li>Caffeine: Found in coffee, tea, and energy drinks, it can be harmful to pets.</li>
-                                    <li>Bones: Cooked bones can splinter and cause choking or internal injuries.</li>
-                                    <li>Raw or undercooked meat, eggs, or fish: Can contain harmful bacteria and parasites.</li>
-                                    <li>Dairy products: Many pets are lactose intolerant and can experience digestive issues.</li>
-                                </ol>
-                        //     </div>
-
-                        //     It's crucial to provide a safe and appropriate diet for your pets, so always consult with your veterinarian regarding their nutritional needs and any specific dietary restrictions or recommendations.
-
-                        //     Remember, the information provided here is general, and it's always best to consult with a qualified veterinarian for personalized advice tailored to your pet's specific needs.
-                        // </p>
-
+                       
 
 
