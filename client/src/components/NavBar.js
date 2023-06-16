@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import HomeIcon from '@mui/icons-material/Home';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket'; 
 import { BsFillChatTextFill } from 'react-icons/bs'
+import GroupsIcon from '@mui/icons-material/Groups';
 import { FaShoppingCart } from 'react-icons/fa';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import 'react-dropdown/style.css';
@@ -74,6 +75,7 @@ function Navigation()
           <Link to="/" style={styles.nav}><HomeIcon /></Link>
           {/* <a to="/dashboard" style={styles.nav}>Dashboard</a> */}
           <Link to="/firebase" style={styles.nav} target="_blank"><BsFillChatTextFill /></Link>
+          <Link to="/meetUp" style={styles.nav}><GroupsIcon /></Link>
           <Link to="/product" style={styles.nav}><ShoppingBasketIcon /></Link>
           <Link to="#" style={styles.nav}><FaShoppingCart /></Link> 
           {/* //conditonally rendering links for logout and profile if user is logged in, or login/signup if user is logged out */}

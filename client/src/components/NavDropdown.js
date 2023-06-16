@@ -63,6 +63,8 @@ function Dropdown() {
         </MenuItem>
         <MenuItem onClick={handleClose}><Link style={styles.items} to="/firebase" target="_blank">Chat</Link>
         </MenuItem>
+        <MenuItem onClick={handleClose}><Link style={styles.items} to="/meetUp">MeetUp</Link>
+        </MenuItem>
         <MenuItem onClick={handleClose}><Link style={styles.items} to="/product">Products</Link>
         </MenuItem>
         <MenuItem onClick={handleClose}><Link style={styles.items} to="#">Cart</Link>
