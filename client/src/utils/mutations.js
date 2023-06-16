@@ -79,3 +79,54 @@ mutation removePet($petId: ID!) {
   }
 }
 `;
+
+
+export const ADD_MEETUP = gql`
+mutation addMeetUp($meetUpTitle: String!, $meetUpText: String) {
+  addMeetUp(meetUpTitle: $meetUpTitle, meetUpText: $meetUpText) {
+    _id
+    meetUpText
+    meetUpTitle
+    meetUpAuthor
+    createdAt
+    comments {
+      _id
+      commentText
+    }
+  }
+}
+`;
+
+export const ADD_COMMENT = gql`
+mutation addComment($meetUpId: ID!, $commentText: String!) {
+  addComment(meetUpId: $meetUpId, commentText: $commentText) {
+    _id
+    meetUpText
+    meetUpAuthor
+    meetUpTitle
+    createdAt
+    comments {
+      _id
+      commentText
+      createdAt
+    }
+  }
+}
+`;
+
+
+export const REMOVE_MEETUP = gql`
+mutation removeMeetUp($meetUpId: ID!) {
+  removeMeetUp(meetUpId: $meetUpId) {
+    _id
+  }
+}
+`;
+
+export const REMOVE_COMMENT = gql`
+mutation removeComment($meetUpId: ID!, $commentId: ID!) {
+  removeComment(meetUpId: $meetUpId, commentId: $commentId) {
+    _id
+  }
+}
+`;

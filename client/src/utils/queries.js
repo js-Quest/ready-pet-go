@@ -3,44 +3,70 @@ import { gql } from '@apollo/client';
 // query user by username
 export const QUERY_USER = gql`
 query user($username: String!) {
-    user(username: $username) {
-     _id
+  user(username: $username) {
+    _id
     username
     email
-    bio
-    city
     phoneNumber
+    city
+    bio
     profilePicture
     pets {
       _id
       profilePicture
       name
-      breed
       age
+      breed
       bio
     }
+    meetUp {
+      _id
+      meetUpText
+      meetUpAuthor
+      meetUpTitle
+      createdAt
+      comments {
+        _id
+        commentText
+        commentAuthor
+        createdAt 
+      }
+    }
   }
-  }
+}
 `;
 
 // query logged-in user 
 export const QUERY_ME = gql`
-  query me {
-    me {
+query me {
+  me {
     _id
     username
     email
-    bio
-    city
     phoneNumber
+    city
+    bio
     profilePicture
     pets {
       _id
       profilePicture
       name
-      breed
       age
+      breed
       bio
+    }
+    meetUp {
+      _id
+      meetUpText
+      meetUpAuthor
+      meetUpTitle
+      createdAt
+      comments {
+        _id
+        commentText
+        commentAuthor
+        createdAt
+      }
     }
   }
 }
@@ -100,4 +126,34 @@ export const QUERY_ALL_PRODUCTS = gql`
       description
     }
   }
+`;
+
+export const QUERY_MEETUPS = gql`
+query meetUps {
+  meetUps {
+    _id
+    meetUpText
+    meetUpTitle
+    meetUpAuthor
+    createdAt
+  }
+}
+`;
+
+export const QUERY_MEETUP = gql`
+query meetUp($meetUpId: ID!) {
+  meetUp(meetUpId: $meetUpId) {
+    _id
+    meetUpText
+    meetUpTitle
+    meetUpAuthor
+    createdAt
+    comments {
+      _id
+      commentText
+      commentAuthor
+      createdAt
+    }
+  }
+}
 `;
