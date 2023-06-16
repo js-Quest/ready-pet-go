@@ -275,6 +275,8 @@ export default function Profile() {
             (
               <Box maxWidth={'100%'} sx={{ paddingLeft: '2.8em', paddingRight: '2.8em' }}>
                 <br />
+                <Grid container spacing={0}> 
+                <Grid item xs={12} md={9}>
                 <Typography sx={{ fontSize: '1.5rem' }}>Username :</Typography>
                 <Typography sx={{ paddingLeft: '1em', fontSize: '1.2rem' }}>{user.username}</Typography>
                 <hr
@@ -326,11 +328,6 @@ export default function Profile() {
                 <Typography sx={{ fontSize: '1.5rem' }}>My Bio :</Typography>
                 <Typography sx={{ paddingLeft: '1em', fontSize: '1.2rem' }}>{user.bio}</Typography>
                 {/* view-only version of the profile picture is contained in this Card component */}
-                <Card sx={{ width: 300, height: 300 }}>
-                  <CardMedia
-                    sx={{ height: 300 }}
-                    image={user.profilePicture} />
-                </Card>
 
                 <hr
                   style={{
@@ -342,6 +339,19 @@ export default function Profile() {
                     marginBottom: '1.3em',
                   }}
                 />
+                  </Grid>
+                  <Grid item xs={12} md={3}>
+                    <Card sx={{ 
+                      width: 250, 
+                      height: 250,
+                      marginLeft: { xs: 0, md: '-100px', lg: '-50px', xl: '-20px' },
+                      }}>
+                    <CardMedia
+                      sx={{ height: 250 }}
+                      image={user.profilePicture} />
+                  </Card>
+                  </Grid>
+                </Grid>
                 {data.me &&
                 <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                   <Button variant='contained' type="click" onClick={editFormState} sx={{ backgroundColor: '#36393F', width: '9rem', marginLeft: 'auto' }}>Update</Button>
