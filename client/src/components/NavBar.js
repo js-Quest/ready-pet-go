@@ -13,7 +13,7 @@ const styles = {
     fontFamily: 'times',
     margin: '20px',
     fontSize: '20px',
-    padding: '20px',
+    padding: '10px',
     textDecoration: 'none',
     color: 'inherit'
   },
@@ -36,7 +36,7 @@ function Navigation()
   const [isDesktop, setDesktop] = useState(window.innerWidth > 1250);
   
   const updateMedia = () => {
-    setDesktop(window.innerWidth > 1250);
+    setDesktop(window.innerWidth > 975);
   };
   // adding event listener to run updateMedia on a page resize; if window is resized to smaller screen size, event listener is removed 
   useEffect(() => {
