@@ -1,0 +1,27 @@
+[
+  {
+    "meetUpText": "It'll be fun! EVERYONE come out and bring your doggos!",
+    "meetUpTitle": "Going to the park",
+    "meetUpAuthor": "Jess"
+  },
+  {
+    "meetUpText": "Join us for a book discussion and some coffee!",
+    "meetUpTitle": "Book Club Meeting",
+    "meetUpAuthor": "Sunny"
+  },
+  {
+    "meetUpText": "Calling all hikers! Let's conquer the mountain together!",
+    "meetUpTitle": "Mountain Hiking Adventure",
+    "meetUpAuthor": "Leah"
+  },
+  {
+    "meetUpText": "Come join our coding workshop and learn the latest technologies!",
+    "meetUpTitle": "Tech Talk: Future of Programming",
+    "meetUpAuthor": "Ki"
+  },
+  {
+    "meetUpText": "Can someone give me some tips on how to train my dog to sit?",
+    "meetUpTitle": "HELP WITH DOGGO TRAINING PLZ",
+    "meetUpAuthor": "Emma"
+  }
+]
