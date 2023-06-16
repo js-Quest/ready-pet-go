@@ -16,7 +16,7 @@ import Footer from "./components/Footer/Footer";
 import Profile from "./pages/Profile"
 import Login from './pages/LoginPage';
 import Firebase from "./pages/FirebasePage";
-
+import AboutUs from "./pages/AboutUs";
 import Home from "./pages/Home";
 import Healthcare from "./pages/Healthcare";
 import ProductOnHome from "./pages/ProductOnHome";
@@ -68,6 +68,7 @@ function App() {
           <Route path="/product" element={<ProductList />} />
           <Route path="/healthcare" element={<Healthcare />} />
 
+          <Route path="/about" element={<AboutUs />} />
           <Route path="/home" element={<Home />} />
           {/* <Route path="/product" element={<ProductSearchResults />} /> */}
           <Route path="/" element={<Navigate to="/home" />} />
