@@ -73,11 +73,9 @@ function Navigation()
       {isDesktop ?
         <nav>
           <Link to="/" style={styles.nav}><HomeIcon /></Link>
-          {/* <a to="/dashboard" style={styles.nav}>Dashboard</a> */}
           <Link to="/firebase" style={styles.nav} target="_blank"><BsFillChatTextFill /></Link>
           <Link to="/meetUp" style={styles.nav}><GroupsIcon /></Link>
           <Link to="/product" style={styles.nav}><ShoppingBasketIcon /></Link>
-          <Link to="#" style={styles.nav}><FaShoppingCart /></Link> 
           {/* //conditonally rendering links for logout and profile if user is logged in, or login/signup if user is logged out */}
           {Auth.loggedIn() ? (
             <>
