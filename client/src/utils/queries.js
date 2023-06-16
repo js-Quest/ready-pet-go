@@ -10,9 +10,10 @@ query user($username: String!) {
     bio
     city
     phoneNumber
+    profilePicture
     pets {
       _id
-      photoURL
+      profilePicture
       name
       breed
       age
@@ -32,9 +33,10 @@ export const QUERY_ME = gql`
     bio
     city
     phoneNumber
+    profilePicture
     pets {
       _id
-      photoURL
+      profilePicture
       name
       breed
       age
@@ -49,7 +51,7 @@ export const QUERY_PETS = gql`
 query allPets {
   pets {
     _id
-    photoURL
+    profilePicture
     name
     age
     breed

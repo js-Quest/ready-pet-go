@@ -1,5 +1,5 @@
 // this will be the published pet card that will render after user clicks "save"
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
@@ -29,7 +29,7 @@ function PetCard({ petData, setPetData, pet }) {
       <CardContent>
         <CardMedia
           sx={{ height: 140 }}
-          image={pet.photoURL}
+          image={pet.profilePicture}
         />
         <Typography gutterBottom variant="h5" component="div" >
           {pet.name}

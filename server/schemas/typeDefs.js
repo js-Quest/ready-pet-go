@@ -22,12 +22,13 @@ const typeDefs = gql`
     phoneNumber: String
     city: String
     bio: String
+    profilePicture: String
     pets: [Pet]!
   }
 
   type Pet {
     _id: ID
-    photoURL: String
+    profilePicture: String
     name: String
     age: String
     breed: String
@@ -50,10 +51,10 @@ const typeDefs = gql`
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addPet(photoURL: String, name: String, breed: String, age: String, bio: String): Pet
-    updatePet(id: ID!, photoURL: String, name: String, breed: String, age: String, bio: String): Pet  
+    addPet(profilePicture: String, name: String, breed: String, age: String, bio: String): Pet
+    updatePet(id: ID!, profilePicture: String, name: String, breed: String, age: String, bio: String): Pet  
     removePet(petId: ID!): Pet 
-    updateUser(username: String, email: String, phoneNumber: String, bio: String, city: String): User
+    updateUser(username: String, email: String, phoneNumber: String, bio: String, city: String, profilePicture: String): User
   }
 `;
 
