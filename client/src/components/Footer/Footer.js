@@ -8,7 +8,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
 import HelpIcon from '@mui/icons-material/Help';
 import { useLocation } from "react-router-dom";
-import Link from '@mui/material/Link';
+import { Link } from "react-router-dom";
 // import Kitten from '../../images/cat2-small.png';
 import './style.css'
 
@@ -51,14 +51,13 @@ function Footer() {
           </Typography>
           <Typography
             variant="subtitle1"
-            className="footLink"
             href="/about"
             marginLeft={{ xs: '5px', md: '6px', lg: '8px' }}
             sx={{
               fontSize: { xs: '14px', md: '15px', lg: '16px' },
             }}
           >
-            Meet the Team
+            <Link className='footLink' to='/about'>Meet the Team</Link>
           </Typography>
           <Typography
             variant="subtitle1"
@@ -69,7 +68,7 @@ function Footer() {
               fontSize: { xs: '14px', md: '15px', lg: '16px' },
             }}
           >
-            Contributions
+            <Link className='footLink' to=''>Contributions</Link>
           </Typography>
         </Grid>
 
@@ -103,7 +102,8 @@ function Footer() {
               fontSize: { xs: '14px', md: '15px', lg: '16px' },
             }}
           >
-            Careers</Typography>
+            <Link className='footLink' to=''>Careers</Link>
+          </Typography>
         </Grid>
 
         <Grid item xs={2}>
@@ -125,7 +125,7 @@ function Footer() {
               fontSize: { xs: '14px', md: '15px', lg: '16px' },
             }}
           >
-            GitHub
+            <a className='footLink' href='https://github.com/js-Quest/ready-pet-go'>GitHub</a>
           </Typography>
           <Typography
             variant="subtitle1"
@@ -136,7 +136,7 @@ function Footer() {
               fontSize: { xs: '14px', md: '15px', lg: '16px' },
             }}
           >
-            Privacy Policy
+            <Link className='footLink' to='/policy'>Privacy Policy</Link>
           </Typography>
         </Grid>
 

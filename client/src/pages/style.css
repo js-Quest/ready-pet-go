@@ -347,3 +347,28 @@
   font-size: 2rem;
   margin-top: 2%;
 }
+
+/* Privacy Policy Page */
+/* - - - - - - - - - - -  */
+.policyContainer {
+  margin-top: 5%;
+  margin-bottom: 7%;
+  display: flex;
+  box-shadow: 8px 8px 5px #3030309e;
+  max-width: 65vw !important;
+  border: 1px solid #3d3d3dbd;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  border-radius: 12px;
+}
+
+.policyBox {
+  margin-top: 20px;
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  line-height: 1.5;
+  overflow: auto;
+  padding: 10px;
+}
