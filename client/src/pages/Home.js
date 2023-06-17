@@ -207,7 +207,7 @@ export default function Home() {
               Health & Wellness
             </Typography>
             <Divider orientation="vertical" flexItem />
-            <Typography variant="body1" color="text.secondary" sx={{ marginLeft: '28px', fontSize: '20px' }}>Keeping your pet healthy is a crucial part of pet ownership. See our Pet Care Page for resources.</Typography>
+            <Typography variant="body1" color="text.secondary" sx={{ marginLeft: '28px', fontSize: '20px' }}>Keeping your pet healthy is a crucial part of pet ownership. Connect with your community on MeetUps!</Typography>
           </CardContent>
         </Card>
 
