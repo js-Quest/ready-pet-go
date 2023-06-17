@@ -372,3 +372,10 @@
   overflow: auto;
   padding: 10px;
 }
+
+/* Modal for Payment */
+/*  - - - - - -  */
+.paymentClose:hover {
+  background-color: white !important;
+  color: black;
+}
