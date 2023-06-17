@@ -8,7 +8,13 @@ const styles = {
   },
   button: {
     border: "solid black 1px",
-    padding: "0 5px"
+    padding: "8px",
+    backgroundColor: '#36393F', 
+    width: '8rem', 
+    fontSize: '15px',
+    color: 'white',
+    borderRadius: '6px',
+    marginTop: '10px'
   }
 }
 

@@ -173,6 +173,54 @@
   border: 1px solid #3030307f;
 }
 
+/* horizontal lines */
+/* .hr1 {
+  background-color: #CD7672;
+  height: 2px;
+  border: none;
+  margin-top: 0.4em;
+  margin-bottom: 1.3em;
+}
+
+
+.hr2 {
+  background-color: #534666;
+  height: 2px;
+  border: none;
+  margin-top: 0.4em;
+  margin-bottom: 1.3em;
+}
+
+.hr3 {
+  background-color: #DC8665;
+  height: 2px;
+  border: none;
+  margin-top: 0.4em;
+  margin-bottom: 1.3em;
+}
+
+.hr4 {
+  background-color: #138086;
+  height: 2px;
+  border: none;
+  margin-top: 0.4em;
+  margin-bottom: 1.3em;
+}
+
+.hr5 {
+  background-color: #EEB462;
+  height: 2px;
+  border: none;
+  margin-top: 0.4em;
+  margin-bottom: 1.3em;
+} */
+
+@media (max-width: 899px) {
+  .hr1, .hr2, .hr3, .hr4, .hr5 {
+    width: 100% !important;
+  }
+}
+
 /* Access Error Message */
 /* - - - - - - - - - - -  */
 .errorLink {
