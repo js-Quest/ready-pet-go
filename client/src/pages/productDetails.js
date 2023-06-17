@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import data from "../components/Cart/combobox";
 import { Button, Modal, TextField } from "@mui/material";
+import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+import { IconButton, Typography } from "@mui/material";
+import './style.css';
 
 function ItemDetails() {
   const [openModal, setOpenModal] = useState(false);
@@ -63,20 +66,61 @@ function ItemDetails() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          margin: '5px',
         }}
       >
         <div
           className="modal-container"
           style={{
-            backgroundColor: "#000",
-            padding: "2rem",
+            backgroundColor: "#fff",
+            paddingLeft: "2rem",
+            paddingRight: '2rem',
+            paddingBottom: '2rem',
             borderRadius: "4px",
             color: "#fff",
-            textAlign: "center",
+            // textAlign: "center",
+            display: 'flex',
+            flexDirection: 'column',
+            maxWidth: '525px',
           }}
         >
-          <h2>Successfully added!</h2>
-          <p style={{ color: "#fff" }}>Your Total is $20.99</p>
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column'
+          }}>
+            <IconButton
+              className="paymentClose"
+              variant="text"
+              onClick={handleModalClose}
+              sx={{
+                display: 'flex',
+                marginLeft: '98%',
+                marginTop: '2%',
+              }}
+            >
+              <CloseRoundedIcon className="paymentClose"  sx={{ color: '#8180809e', fontSize: '32px' }} />
+            </IconButton>
+            <Typography sx={{
+              color: "#0b4548",
+              marginBottom: '0.4rem',
+              marginTop: '-1rem',
+              textAlign: 'center',
+              fontFamily: 'roboto',
+              fontSize: '1.5rem'
+            }}
+            >
+              Successfully added!
+            </Typography>
+          </div>
+          <p style={{
+            color: "#0b4548",
+            marginBottom: '1rem',
+            textAlign: "center",
+          }}
+          >
+            Your Total is $20.99
+          </p>
+
           <form onSubmit={handleSubmit}>
             <TextField
               label="Name On Card"
@@ -85,10 +129,10 @@ function ItemDetails() {
               fullWidth
               style={{ marginBottom: "1rem" }}
               InputLabelProps={{
-                style: { color: "#fff" },
+                style: { color: "#8180809e" },
               }}
               InputProps={{
-                style: { color: "#fff" },
+                style: { color: "black" },
               }}
             />
             <TextField
@@ -98,10 +142,10 @@ function ItemDetails() {
               fullWidth
               style={{ marginBottom: "1rem" }}
               InputLabelProps={{
-                style: { color: "#fff" },
+                style: { color: "#8180809e" },
               }}
               InputProps={{
-                style: { color: "#fff" },
+                style: { color: "#black" },
               }}
             />
             <TextField
@@ -111,13 +155,19 @@ function ItemDetails() {
               fullWidth
               style={{ marginBottom: "1rem" }}
               InputLabelProps={{
-                style: { color: "#fff" },
+                style: { color: "#8180809e" },
               }}
               InputProps={{
-                style: { color: "#fff" },
+                style: { color: "#black" },
               }}
             />
-            <Button type="submit" variant="contained">
+            <Button 
+            type="submit" 
+            variant="contained"
+            style={{
+              marginLeft: 'calc(50% - 30px)'
+            }}
+            >
               Pay
             </Button>
           </form>
