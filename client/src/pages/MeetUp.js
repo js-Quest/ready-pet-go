@@ -33,7 +33,7 @@ export default function MeetUp() {
                 />
             </div>
             <Container className='dashboardContainer'>
-                <h1 className='dashboardHead'>Welcom to MeetUp!</h1>
+                <h1 className='dashboardHead'>Welcome to MeetUp!</h1>
                 <Box sx={{
                     marginTop: '2em'
                 }}>

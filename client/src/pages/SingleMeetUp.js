@@ -42,7 +42,7 @@ const SingleMeetUp = () => {
                 />
             </div>
             <Container className='dashboardContainer'>
-                <h1 className='dashboardHead'>Welcom to MeetUps!</h1>
+                <h1 className='dashboardHead'>Welcome to MeetUps!</h1>
                 <Box sx={{
                     marginTop: '2em'
                 }}>
