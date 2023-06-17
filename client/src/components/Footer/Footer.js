@@ -47,7 +47,7 @@ function Footer() {
   };
 
   const { pathname } = useLocation();
-  if (pathname === "/firebase") return null;
+  if (pathname === "/firebase" || pathname === "/login" || pathname === "/register" ) return null;
 
   const handleRedirect = (url) => {
     window.open(url, '_blank');

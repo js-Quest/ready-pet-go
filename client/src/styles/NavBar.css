@@ -1,0 +1,13 @@
+.logoutNavBtn:hover {
+  font-weight: bold;
+  background-color: #36393F !important;
+  border: 2px solid #EEB462;
+  color: #EEB462;
+}
+
+.navbarIcons {
+
+}
+.navbarIcons:hover {
+  color: #EEB462;
+}
