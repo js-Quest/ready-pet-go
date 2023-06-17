@@ -4,6 +4,9 @@ import { useMutation } from '@apollo/client';
 import { ADD_COMMENT } from '../../utils/mutations'; 
 import Auth from '../../utils/auth';
 
+
+import { Box, Container, Typography, TextField, Button} from '@mui/material';
+
 const CommentForm = ({ meetUpId }) => {
   const [commentText, setCommentText] = useState('');
   const [characterCount, setCharacterCount] = useState(0);
@@ -38,48 +41,43 @@ const CommentForm = ({ meetUpId }) => {
   };
 
   return (
-    <div>
-      <h4>Reply to this MeetUp!</h4>
+    <Box sx={{ marginTop: '1.2em', width: '80%', marginLeft: 'auto', marginRight: 'auto' }}> 
 
       {Auth.loggedIn() ? (
-        <>
-          <p
-            className={`m-0 ${
-              characterCount === 280 || error ? 'text-danger' : ''
-            }`}
-          >
-            Character Count: {characterCount}/280
-            {error && <span className="ml-2">{error.message}</span>}
-          </p>
+        <> 
+            
           <form
-            className="flex-row justify-center justify-space-between-md align-center"
+            style= {{display:'flex', flexDirection:'column', justifyContent:'center'}}
             onSubmit={handleFormSubmit}
           >
-            <div className="col-12 col-lg-9">
-              <textarea
+            <div>
+            <h4>
+                         Reply to this MeetUp: <span style={{fontSize:'.8em', float:'right'}}> Character Count: {characterCount}/280</span>
+                        </h4>
+            {error && <span>{error.message}</span>} 
+            </div>
+            <div>
+              <TextField
                 name="commentText"
                 placeholder="Add your comment..."
-                value={commentText}
-                className="form-input w-100"
-                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                value={commentText} 
+                style={{marginBottom:'.8em', width:'100%'}}
                 onChange={handleChange}
-              ></textarea>
+              ></TextField>
             </div>
 
-            <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
-                Add Comment
-              </button>
+            <div > 
+              <Button variant='contained' type="submit" sx={{ backgroundColor: '#36393F', width: '9rem', marginLeft: 'auto' }}>Add Comment</Button>
             </div>
           </form>
         </>
       ) : (
         <p>
-          You need to be logged in to share your meetUps. Please{' '}
+          You need to be logged in to reply to meetUps. Please{' '}
           <Link to="/login">login</Link> or <Link to="/signup">signup.</Link>
         </p>
       )}
-    </div>
+    </Box>
   );
 };
 
