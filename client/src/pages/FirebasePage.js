@@ -24,7 +24,7 @@ export default function FirebasePage() {
         <h1 className='errorHead'>Hold Up!</h1>
         <Box className='errorBox'>
           <h2 className='errorText'
-          >Please <Link to="/login" className='errorLink'>LOGIN</Link> to join PuppyChat!
+          >Please <Link to="/login" className='errorLink'>LOGIN</Link> to join Ready, Pet, Chat!
           </h2>
           <Button sx={{
             background: '#B6B3B2',
@@ -47,6 +47,8 @@ export default function FirebasePage() {
       </Container>
     );
   }
+// Tutorial on building a Firebase Chatapp
+// https://www.cometchat.com/tutorials/how-to-build-a-chat-app-with-firebase
   return (
     <div className="App">
       <NavBar />

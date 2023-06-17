@@ -57,15 +57,13 @@ function Dropdown() {
       >
         <MenuItem onClick={handleClose}><Link style={styles.items} to="/">Home</Link>
         </MenuItem>
-        {/* <MenuItem onClick={handleClose}><Link style={styles.items} to="/dashboard">Dashboard</Link>
-        </MenuItem> */}
         <MenuItem onClick={handleClose}><Link style={styles.items} to="/me">Profile</Link>
         </MenuItem>
         <MenuItem onClick={handleClose}><Link style={styles.items} to="/firebase" target="_blank">Chat</Link>
         </MenuItem>
-        <MenuItem onClick={handleClose}><Link style={styles.items} to="/product">Products</Link>
+        <MenuItem onClick={handleClose}><Link style={styles.items} to="/meetUp">MeetUp</Link>
         </MenuItem>
-        <MenuItem onClick={handleClose}><Link style={styles.items} to="#">Cart</Link>
+        <MenuItem onClick={handleClose}><Link style={styles.items} to="/product">Products</Link>
         </MenuItem>
         {!token ? (
           <MenuItem onClick={handleClose}><Link style={styles.items} to="/login">Login</Link>

@@ -1,6 +1,7 @@
 import React from 'react';
-// import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import IconButton from '@mui/material/IconButton';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
+// import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 // const styles = {
 //   container: {
@@ -15,8 +16,9 @@ import AddRoundedIcon from '@mui/icons-material/AddRounded';
 
 function PetButton({setShowCard}) {
   return (
-    <>
-      <button type='submit' onClick={() => setShowCard((prev) => prev += 1)}>
+      <IconButton 
+        aria-label='add' 
+        onClick={() => setShowCard((prev) => prev += 1)}>
         {/* <div style={styles.container}> */}
           <AddRoundedIcon sx={{
             width: '45px',
@@ -25,8 +27,7 @@ function PetButton({setShowCard}) {
           }}
           />
         {/* </div> */}
-      </button>
-    </>
+      </IconButton>
   )
 }
 

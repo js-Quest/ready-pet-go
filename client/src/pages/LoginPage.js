@@ -114,13 +114,20 @@ const Login = (props) => {
           Welcome Back!
         </Typography>
         {/* color light grey, sx used for styling */}
-        <Typography sx={{ color: '#b9bbbe', textAlign: 'center' }}>
-          Nice to see you, bruh.
+        <Typography sx={{ color: '#b9bbbe', textAlign: 'center', marginTop: '0.8rem' }}>
+          Nice to see you again!
         </Typography>
         {data ? (
-          <p>
-            Success! You may now head{' '}
-            <Link to="/">back to the homepage.</Link>
+          <p style={{ color: 'white', fontSize: '1.8rem', textAlign: 'center'}}>
+            Now loading the{' '}
+            <Link 
+            style={{ 
+              color: '#ee9f80', 
+              textDecoration: 'none'
+              }} 
+            to="/">
+              Homepage
+            </Link>
           </p>
         ) : (
           <form onSubmit={handleFormSubmit} style={styles.form}>

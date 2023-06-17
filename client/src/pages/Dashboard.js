@@ -79,12 +79,6 @@ console.log(petData)
   }
   return (
     <div>
-      <div className='petPeeking'>
-        <img
-          src={PetPeek1}
-          alt='peeking'
-        />
-      </div>
 
       <Container className='dashboardContainer'>
         <h1 className='dashboardHead'>Dashboard</h1>
