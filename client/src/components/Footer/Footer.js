@@ -16,6 +16,10 @@ function Footer() {
   const { pathname } = useLocation();
   if (pathname === "/firebase") return null;
 
+  const handleRedirect = (url) => {
+    window.open(url, '_blank');
+  };
+
   return (
     <Container maxWidth='100'
       sx={{
@@ -24,7 +28,7 @@ function Footer() {
         marginTop: '2em',
       }}
     >
-      <Grid container spacing={2} columns={14} sx={{
+      <Grid container spacing={2} columns={14} className='sizeBrk' sx={{
         width: '98%',
         marginLeft: 'auto',
         marginRight: 'auto',
@@ -32,12 +36,20 @@ function Footer() {
         paddingBottom: '1.6em',
       }}>
 
-        <Grid item xs={2} sx={{ textAlign: 'center', marginRight: '2em' }}>
-          <img src={Logo} alt="pawprint" />
-          <Typography variant="h6">Ready, Pet, Go!</Typography>
+        <Grid item xs={3} md={2} className='footLogo' sx={{ textAlign: 'center', marginRight: '2em' }}>
+          <img src={Logo} alt="pawprint" className='footLogo' />
+          <Typography
+            variant="h6"
+            className='footLogo' 
+            sx={{
+              fontSize: { xs: '18px', md: '20px', lg: '22px', xl: '24px' },
+            }}
+          >
+            Ready, Pet, Go!
+          </Typography>
         </Grid>
 
-        <Grid item xs={1.5}></Grid>
+        <Grid item xs={1.5} className="hideCol"></Grid>
 
         <Grid item xs={2}>
           <Typography
@@ -140,13 +152,13 @@ function Footer() {
           </Typography>
         </Grid>
 
-        <Grid item xs={1.5}></Grid>
+        <Grid item xs={1.5} className="hideCol"></Grid>
 
-        <Grid item xs={2} sx={{
+        <Grid item xs={3} md={2} sx={{
           justifyContent: 'center',
           alignItems: 'end'
         }}>
-          <Box
+          <Box className='footBox'
             sx={{
               display: 'flex',
               flexDirection: 'column',
@@ -158,27 +170,40 @@ function Footer() {
               textAlign: 'center',
               width: { xs: '100%' }
             }}>
-            <Typography sx={{ 
-              fontSize: { xs: '16px', md: '20px', lg: '24px'}, 
-              color: '#000', 
-              marginBottom: '0.4em' 
-              }}
-              >
-                Stay in touch!
-                </Typography>
+            <Typography sx={{
+              fontSize: { xs: '16px', md: '20px', lg: '24px' },
+              color: '#000',
+              marginBottom: '0.4em'
+            }}
+            >
+              Stay in touch!
+            </Typography>
             <Box sx={{ display: 'flex', justifyContent: 'space-evenly', gap: '6px' }}>
-              <GitHubIcon sx={{ 
-                fontSize: { xs: '18px', md: '24px', lg: '30px' } 
-                }} 
+              <Link href='https://github.com/js-Quest/ready-pet-go'>
+                <GitHubIcon sx={{
+                  fontSize: { xs: '18px', md: '24px', lg: '30px' },
+                  color: 'black',
+                  textDecoration: 'none'
+                }}
                 />
-              <EmailIcon sx={{ 
-                fontSize: { xs: '18px', md: '24px', lg: '30px' }
-                }} 
+              </Link>
+              <Link onClick={() => handleRedirect('mailto:YourMom@email.com')}>
+                <EmailIcon sx={{
+                  fontSize: { xs: '18px', md: '24px', lg: '30px' },
+                  color: 'black',
+                  textDecoration: 'none'
+                }}
                 />
-              <HelpIcon sx={{ 
-                fontSize: { xs: '18px', md: '24px', lg: '30px' }
-                }} 
+              </Link>
+
+              <Link href='https://github.com/js-Quest/ready-pet-go'>
+                <HelpIcon sx={{
+                  fontSize: { xs: '18px', md: '24px', lg: '30px' },
+                  color: 'black',
+                  textDecoration: 'none'
+                }}
                 />
+              </Link>
             </Box>
           </Box>
         </Grid>
