@@ -2,10 +2,11 @@ import React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import ScrollToTop from '../components/ScrollTop';
 
 export default function Healthcare() {
     return (
-        <>
+        <ScrollToTop>
             <Card sx={{ maxWidth: 500 }}>
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
@@ -63,7 +64,7 @@ export default function Healthcare() {
                     </Typography>
                 </CardContent>
             </Card>
-        </>
+        </ScrollToTop>
     )
 }
                        

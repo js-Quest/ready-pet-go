@@ -4,10 +4,15 @@ import { useMutation } from '@apollo/client';
 
 import { ADD_MEETUP } from '../../utils/mutations';
 import { QUERY_MEETUPS, QUERY_ME } from '../../utils/queries';
+ 
+import { Box, Container, Typography, TextField, Button} from '@mui/material';
+
+
 
 import Auth from '../../utils/auth';
 
 export default function MeetUpForm() {
+
     const [meetUpTitle, setMeetUpTitle] = useState('');
     const [meetUpText, setMeetUpText] = useState('');
 
@@ -45,51 +50,47 @@ export default function MeetUpForm() {
         }
         if (name === 'meetUpTitle') {
             setMeetUpTitle(value);
-            setCharacterCount(value.length);
         }
     };
 
     return (
-        <div>
-            <h3>You can create a new MeetUp here!</h3>
+        <Box sx={{ marginTop: '1.2em', width: '80%', marginLeft: 'auto', marginRight: 'auto' }}>
             {Auth.loggedIn() ? (
                 <>
                     <form
-                        className="flex-row justify-center justify-space-between-md align-center"
+                        style= {{display:'flex', flexDirection:'column', justifyContent:'center'}}
                         onSubmit={handleFormSubmit}
                     >
-                        <p>Write your title here!</p>
+                        <h4>Your Title Below:</h4>
                         <div className="col-12 col-lg-9">
-                            <textarea
+                            <TextField
                                 name="meetUpTitle"
                                 placeholder="Write your title here!"
                                 value={meetUpTitle}
                                 className="form-input w-100"
-                                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                                style={{marginBottom:'.8em', width:'100%'}}
                                 onChange={handleChange}
-                            ></textarea>
+                            ></TextField>
                         </div>
-                        <p
-                            className={`m-0 ${characterCount === 280 || error ? 'text-danger' : ''
-                                }`}
-                        >
-                            Character Count: {characterCount}/280
-                        </p>
+                        
+                        <h4>
+                         MeetUp Info Here: <span style={{fontSize:'.8em', float:'right'}}> Character Count: {characterCount}/280</span>
+                        </h4>
                         <div className="col-12 col-lg-9">
-                            <textarea
+                            <TextField
                                 name="meetUpText"
-                                placeholder="Say you need to say!"
+                                placeholder="Say what you need to say!"
                                 value={meetUpText}
                                 className="form-input w-100"
-                                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                                style={{marginBottom:'.8em', width:'100%'}}
                                 onChange={handleChange}
-                            ></textarea>
+                            ></TextField>
                         </div>
 
-                        <div className="col-12 col-lg-3">
-                            <button className="btn btn-primary btn-block py-3" type="submit">
-                                Add MeetUp
-                            </button>
+                        <div className="col-12 col-lg-3"> 
+
+                            <Button variant='contained' type="submit" sx={{ backgroundColor: '#36393F', width: '9rem', marginLeft: 'auto' }}>Add MeetUp</Button>
+
                         </div>
                         {error && (
                             <div className="col-12 my-3 bg-danger text-white p-3">
@@ -104,7 +105,7 @@ export default function MeetUpForm() {
                     <Link to="/login">login</Link> or <Link to="/register">signup.</Link>
                 </p>
             )}
-        </div>
+        </Box>
     );
 };
 
