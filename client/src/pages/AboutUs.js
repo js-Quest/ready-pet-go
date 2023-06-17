@@ -2,6 +2,7 @@ import React from 'react'
 import { Box, Container } from '@mui/material'
 import jess from '../images/jsportrait.png'
 import Leah from '../images/LeahProfilePic.png'
+import Ki from '../images/kiProfilePic.jpg'
 
 const styles = {
   img: {
@@ -74,17 +75,17 @@ export default function AboutUs() {
         </Box>
       </Container>
       <Container className='card-container'>
-        <h2 className='card-head'>Jessica Saddington</h2>
+        <h2 className='card-head'>Ki Sar</h2>
         <Box className='card-box'>
           <Box>
-            <img style={styles.img} className='portrait-box' src={jess}></img>
+            <img style={styles.img} className='portrait-box' src={Ki}></img>
 
           </Box>
           <Box className='text-box'>
             <h3 className='card-text'>
-              Restaurateur turned Web Dev.  Make results happen.
+              Full-time Legend.
             </h3>
-            <a className='card-link' href="https://github.com/js-Quest"><i class="fa-brands fa-square-github"></i></a>
+            <a className='card-link' href="https://github.com/rxs291"><i class="fa-brands fa-square-github"></i></a>
           </Box>
         </Box>
       </Container>
