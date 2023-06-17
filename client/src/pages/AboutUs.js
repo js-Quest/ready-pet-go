@@ -2,7 +2,7 @@ import React from 'react'
 import { Box, Container } from '@mui/material'
 import jess from '../images/jsportrait.png'
 import Leah from '../images/LeahProfilePic.png'
-import Ki from '../images/kiProfilePic.jpg'
+import Ki from '../images/kiProfilePic.JPEG'
 
 const styles = {
   img: {
