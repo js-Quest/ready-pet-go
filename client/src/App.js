@@ -23,6 +23,7 @@ import ProductList from './pages/productList'
 import ProductDetails from "./pages/productDetails";
 import Quiz from "./components/Quiz";
 import SingleMeetUp from './pages/SingleMeetUp';
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 
 // WORK IN PROGRESS
@@ -72,6 +73,7 @@ function App() {
           <Route path="/healthcare" element={<Healthcare />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/policy" element={<PrivacyPolicy />} />
 
           <Route path="/" element={<Navigate to="/home" />} />
 
