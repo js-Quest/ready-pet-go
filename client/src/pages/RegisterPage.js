@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations';
-import { Container, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import Auth from '../utils/auth';
 import AuthBox from '../components/AuthBox';
 import RedirectInfo from '../components/RedirectInfo';
@@ -116,12 +116,13 @@ export default function Register() {
   }
 
   return (
-    <Container maxWidth={100}
+    <div maxWidth={100}
       sx={{
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         backgroundColor: '#fff',
+        height: 'auto'
       }}>
       <AuthBox>
         <Typography variant='h5' sx={{ color: 'white', textAlign: 'center' }}>
@@ -191,6 +192,6 @@ export default function Register() {
           redirectHandler={handlePushToLoginPage}
         />
       </AuthBox>
-    </Container>
+    </div>
   )
 }
