@@ -37,6 +37,10 @@ const quiz = [
         input: true,
         question: 'Please write a little about yourself and why you are here today so we can further help you and your needs:',
     },
+    {
+        input: false,
+        question: 'Place holder, this question actually never shows.', 
+    }
 
 ]
 const options = quiz[0].options;
@@ -104,13 +108,15 @@ const Quiz = () => {
 
             
 
+ 
+ 
+            ////replace this console log with render new page
+            console.log('quiz complete!')
+            window.location.assign('/home');
             ///quiz is over, render new page
             setActiveQuestion(0)
             setStartQuiz(true)
             setFormState({ email: '', city: '', bio: '', username: '', phoneNumber: '' }); 
-            ////replace this console log with render new page
-            console.log('quiz complete!')
-            window.location.assign('/home');
         }
 
 
@@ -145,6 +151,30 @@ const Quiz = () => {
             </Typography>
         </AuthBox>
         )
+    }
+ 
+    if (activeQuestion === quiz.length - 1) {
+        return (
+            <AuthBox>
+            <Typography variant='h5' sx={{ color: 'white' }}>
+                Thank you for visiting Ready-Pet-Go!
+            </Typography>
+            <Typography sx={{ color: '#b9bbbe' }}>
+                <div style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    marginTop: '100px'
+                }}>
+                    <div>
+                        <h3>Thank you for taking the questionaire! Your information has been added to your portfolio.</h3>
+                    </div>
+
+                    <Button type="button" onClick={handleFormSubmit} style={{ marginTop: 110 }} variant="contained">Finished!</Button>
+                </div>
+            </Typography>
+        </AuthBox>
+        )
+
     }
 
 
