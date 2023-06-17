@@ -62,12 +62,11 @@ export default function MeetUpForm() {
                         onSubmit={handleFormSubmit}
                     >
                         <h4>Your Title Below:</h4>
-                        <div className="col-12 col-lg-9">
+                        <div >
                             <TextField
                                 name="meetUpTitle"
                                 placeholder="Write your title here!"
-                                value={meetUpTitle}
-                                className="form-input w-100"
+                                value={meetUpTitle} 
                                 style={{marginBottom:'.8em', width:'100%'}}
                                 onChange={handleChange}
                             ></TextField>
@@ -76,24 +75,23 @@ export default function MeetUpForm() {
                         <h4>
                          MeetUp Info Here: <span style={{fontSize:'.8em', float:'right'}}> Character Count: {characterCount}/280</span>
                         </h4>
-                        <div className="col-12 col-lg-9">
+                        <div>
                             <TextField
                                 name="meetUpText"
                                 placeholder="Say what you need to say!"
-                                value={meetUpText}
-                                className="form-input w-100"
+                                value={meetUpText} 
                                 style={{marginBottom:'.8em', width:'100%'}}
                                 onChange={handleChange}
                             ></TextField>
                         </div>
 
-                        <div className="col-12 col-lg-3"> 
+                        <div> 
 
                             <Button variant='contained' type="submit" sx={{ backgroundColor: '#36393F', width: '9rem', marginLeft: 'auto' }}>Add MeetUp</Button>
 
                         </div>
                         {error && (
-                            <div className="col-12 my-3 bg-danger text-white p-3">
+                            <div>
                                 {error.message}
                             </div>
                         )}
