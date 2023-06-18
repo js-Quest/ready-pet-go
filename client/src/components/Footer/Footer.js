@@ -171,7 +171,7 @@ function Footer() {
                 fontSize: { xs: '14px', md: '15px', lg: '16px' },
               }}
             >
-              <a className='footLink' href='https://github.com/js-Quest/ready-pet-go'>GitHub</a>
+              <Link className='footLink' to='/healthcare'>Health & Wellness</Link>
             </Typography>
             <Typography
               variant="subtitle1"
