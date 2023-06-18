@@ -38,11 +38,11 @@ const MeetUpList = ({
             <Link style={{ textDecoration: 'none' }} to={`/meetUp/${meetUp._id}`}>
               <Card key={meetUp._id} sx={{ backgroundColor: '#f5f5f5', borderStyle: 'outSet', borderColor: 'black', display: 'flex', marginBottom: '1.0em', height: '6em', alignItems: 'center' }}>
 
-                {/* {console.log(meetUp.user[0].profilePicture)}
+                {/* {console.log(meetUp.user[0].profilePicture)} */}
 
                 <img
-                  styles={{ height: { xs: 200, xl: 250 } }}
-                  src={meetUp.user[0].profilePicture} /> */}
+                  style={{ width: 100 }}
+                  src={meetUp.user[0].profilePicture} />
 
  
                 <div style={{ fontSize: '1.5rem', width: '100%' }} >

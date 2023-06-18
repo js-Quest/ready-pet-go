@@ -21,8 +21,6 @@ import './style.css';
 import { TextField, Button, Grid } from '@mui/material';
 import ElGato from '../images/cat1.png';
 
-// testing
-
 
 export default function Profile() {
   const [editProf, editProfile] = useState(false);
@@ -34,7 +32,7 @@ export default function Profile() {
   const [numCard, setNumCard] = useState(0);
   const { username: userParam } = useParams();
 
-  
+
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
   });
@@ -266,6 +264,8 @@ export default function Profile() {
                       sx={{ width: { xs: '100%', md: '90%', lg: '95%', } }}
                     />
                   </Grid>
+                  {/* editable version of upload profile picture code */}
+                  <UploadWidget setProfilePicture={setProfilePicture} />
                   <Grid item xs={12} sx={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '0.5em' }}>
                     <Button
                       variant="contained"
@@ -284,8 +284,6 @@ export default function Profile() {
                   </Grid>
                 </Grid>
               </form>
-              {/* editable version of upload profile picture code */}
-              <UploadWidget setProfilePicture={setProfilePicture} />
 
             </Box>
           ) :
@@ -429,11 +427,11 @@ export default function Profile() {
             {/* array to render new PetForm whenever PetButton is clicked */}
             {[...Array(numCard)].map((_, i) => <PetForm petData={petData} setPetData={setPetData} key={i} setShowCard={setNumCard} />)}
 
-            <PetButton 
+            <PetButton
               setShowCard={setNumCard}
               variant='text'
-              className='changeBtn' 
-              />
+              className='changeBtn'
+            />
 
           </Box>
           <div className='catReach'>
