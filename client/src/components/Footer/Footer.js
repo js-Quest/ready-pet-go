@@ -213,14 +213,14 @@ function Footer() {
                 Stay in touch!
               </Typography>
               <Box sx={{ display: 'flex', justifyContent: 'space-evenly', gap: '6px' }}>
-                <Link href='https://github.com/js-Quest/ready-pet-go'>
+                <a href='https://github.com/js-Quest/ready-pet-go'>
                   <GitHubIcon sx={{
                     fontSize: { xs: '18px', md: '24px', lg: '30px' },
                     color: 'black',
                     textDecoration: 'none'
                   }}
                   />
-                </Link>
+                </a>
                 <Link onClick={() => handleRedirect('mailto:YourMom@email.com')}>
                   <EmailIcon sx={{
                     fontSize: { xs: '18px', md: '24px', lg: '30px' },
@@ -230,7 +230,7 @@ function Footer() {
                   />
                 </Link>
 
-                <Link href='https://github.com/js-Quest/ready-pet-go'>
+                <Link>
                   <HelpIcon sx={{
                     fontSize: { xs: '18px', md: '24px', lg: '30px' },
                     color: 'black',
