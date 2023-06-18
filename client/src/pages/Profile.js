@@ -12,7 +12,6 @@ import { useMutation } from '@apollo/client';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import { UPDATE_USER } from '../utils/mutations';
-
 import PetPeek1 from '../images/peeking1.png';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
@@ -34,7 +33,7 @@ export default function Profile() {
   const [numCard, setNumCard] = useState(0);
   const { username: userParam } = useParams();
 
-  
+
   const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
     variables: { username: userParam },
   });
@@ -382,11 +381,11 @@ export default function Profile() {
                     justifyContent: 'space-between',
                     marginTop: { xs: '15px', lg: '0px' }
                   }}>
-                    <Button 
-                      variant='contained' 
+                    <Button
+                      variant='contained'
                       className='updateProfBtn'
-                      type="click" 
-                      onClick={editFormState} 
+                      type="click"
+                      onClick={editFormState}
                       sx={{ backgroundColor: '#36393F', width: '9rem', marginLeft: 'auto' }}>Update</Button>
                   </Box>
                 }
@@ -428,18 +427,22 @@ export default function Profile() {
               paddingLeft: '3em',
               paddingRight: '3em',
               paddingTop: '1em',
-              paddingBottom: '3em',
+              paddingBottom: '2em',
+              display: 'flex',
+              flexDirection: 'row'
             }}
           >
-            {petData.map((item, i) => <PetCard pet={item} petData={petData} setPetData={setPetData} key={i} />)}
-            {/* array to render new PetForm whenever PetButton is clicked */}
-            {[...Array(numCard)].map((_, i) => <PetForm petData={petData} setPetData={setPetData} key={i} setShowCard={setNumCard} />)}
-
-            <PetButton 
+            {/* <Box> */}
+              {petData.map((item, i) => <PetCard pet={item} petData={petData} setPetData={setPetData} key={i} />)}
+              {/* array to render new PetForm whenever PetButton is clicked */}
+              {[...Array(numCard)].map((_, i) => <PetForm petData={petData} setPetData={setPetData} key={i} setShowCard={setNumCard} />)}
+            {/* </Box> */}
+            <PetButton
               setShowCard={setNumCard}
               variant='text'
-              className='changeBtn' 
-              />
+              className='changeBtn'
+              id='addPetBtn'
+            />
 
           </Box>
           <div className='catReach'>
