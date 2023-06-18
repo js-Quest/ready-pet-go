@@ -17,7 +17,7 @@ import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import './style.css';
-import { TextField, Button, Grid } from '@mui/material';
+import { TextField, Button, Grid, Tooltip } from '@mui/material';
 import ElGato from '../images/cat1.png';
 
 
@@ -267,7 +267,7 @@ export default function Profile() {
                     <Typography sx={{ marginBottom: '0.8em', fontSize: '1.3rem', marginTop: ['0em', '1.3em'] }}>Profile Picture</Typography>
 
                     <Box sx={{
-                      maxWidth: ['98%','30%'],
+                      maxWidth: ['98%', '30%'],
                       border: '2px dashed #36393F',
                       display: 'flex',
                       flexDirection: 'column',
@@ -455,13 +455,11 @@ export default function Profile() {
             {petData.map((item, i) => <PetCard pet={item} petData={petData} setPetData={setPetData} key={i} />)}
             {/* array to render new PetForm whenever PetButton is clicked */}
             {[...Array(numCard)].map((_, i) => <PetForm petData={petData} setPetData={setPetData} key={i} setShowCard={setNumCard} />)}
-
-            <PetButton
-              setShowCard={setNumCard}
-              variant='text'
-              className='changeBtn'
-            />
-
+              <PetButton
+                setShowCard={setNumCard}
+                variant='text'
+                className='changeBtn'
+              />
           </Box>
           <div className='catReach'>
             <img

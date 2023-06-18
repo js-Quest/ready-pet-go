@@ -1,6 +1,7 @@
 import React from 'react';
 import IconButton from '@mui/material/IconButton';
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
+import { Tooltip } from '@mui/material';
 import '../styles/PetCard.css'
 // import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
@@ -15,23 +16,26 @@ import '../styles/PetCard.css'
 //   }
 // }
 
-function PetButton({setShowCard}) {
+function PetButton({ setShowCard }) {
   return (
-      <IconButton 
-        aria-label='add' 
-        className='addPetBtn'
-        onClick={() => setShowCard((prev) => prev += 1)}>
-        {/* <div style={styles.container}> */}
-          <AddRoundedIcon 
+
+    <IconButton
+      aria-label='add'
+      className='addPetBtn'
+      onClick={() => setShowCard((prev) => prev += 1)}>
+      {/* <div style={styles.container}> */}
+      <Tooltip title='Add New Pet'>
+        <AddRoundedIcon
           className='addPetBtn'
           sx={{
-            width: '45px',
-            height: 'auto',
+            width: 'auto',
+            height: '45px',
             color: '#656565'
           }}
-          />
-        {/* </div> */}
-      </IconButton>
+        />
+      </Tooltip>
+      {/* </div> */}
+    </IconButton>
   )
 }
 
