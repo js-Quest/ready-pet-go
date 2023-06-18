@@ -133,6 +133,14 @@
   width: auto; */
 }
 
+.updateProfBtn:hover {
+  background-color: #eeb462 !important;
+  border: 3px dashed #36393f;
+  color: #36393f;
+  margin-bottom: -6px;
+  font-weight: bold;
+}
+
 .dashboardHead {
   display: flex;
   justify-content: center;
@@ -158,6 +166,13 @@
   border-radius: 50% !important;
   margin-bottom: 1.5em !important;
   background-color: none;
+}
+
+.editProfileBtn:hover {
+  background-color: #36393F !important;
+  color: #EEB462;
+  border: 2px solid #EEB462;
+  text-decoration: none;
 }
 
 #addPetContainer {
@@ -216,7 +231,12 @@
 } */
 
 @media (max-width: 899px) {
-  .hr1, .hr2, .hr3, .hr4, .hr5 {
+
+  .hr1,
+  .hr2,
+  .hr3,
+  .hr4,
+  .hr5 {
     width: 100% !important;
   }
 }
@@ -287,7 +307,7 @@
   border-radius: 10px;
   cursor: pointer;
 }
-  
+
 /* About Us styling */
 /* - - - - - - - - - - -  */
 .card-container {

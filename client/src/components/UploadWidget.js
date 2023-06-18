@@ -9,17 +9,17 @@ const styles = {
   button: {
     border: "solid black 1px",
     padding: "8px",
-    backgroundColor: '#36393F', 
-    width: '8rem', 
+    backgroundColor: '#36393F',
+    width: '6rem',
     fontSize: '15px',
     color: 'white',
     borderRadius: '6px',
-    marginTop: '10px'
+    margin: '10px 5px 4px 10px'
   }
 }
 
 // function creating using Cloudinary's tutorial as a reference  https://www.youtube.com/watch?v=paiO6M2wBqE&t=7s
-function UploadWidget({setProfilePicture}) {
+function UploadWidget({ setProfilePicture }) {
   const cloudinaryRef = useRef();
   const widgetRef = useRef();
 
@@ -39,9 +39,16 @@ function UploadWidget({setProfilePicture}) {
 
   return (
     <div style={styles.container}>
-      <button onClick={() => widgetRef.current.open()} style={styles.button} >
-        Upload Photo
+      <button
+        type="button"
+        onClick={() => widgetRef.current.open()} style={styles.button} >
+        Upload
       </button>
+      <button
+        type='button'
+        onClick={() => setProfilePicture('')}
+        style={styles.button}
+      >Delete</button>
     </div>
   );
 }

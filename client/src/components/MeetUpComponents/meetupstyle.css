@@ -1,0 +1,23 @@
+.addMeetBtn:hover {
+  background-color: #eeb462 !important;
+  border: 2px dashed #36393f;
+  color: #36393f;
+  margin-bottom: -4px;
+  font-weight: bold;
+}
+
+.addCommentBtn:hover {
+  background-color: #eeb462 !important;
+  border: 2px dashed #36393f;
+  color: #36393f;
+  margin-bottom: -4px;
+  font-weight: bold;
+}
+
+.pupPeek {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 0px !important;
+  height: 0px !important;
+}

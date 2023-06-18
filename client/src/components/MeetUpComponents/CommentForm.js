@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client'; 
 import { ADD_COMMENT } from '../../utils/mutations'; 
 import Auth from '../../utils/auth';
+import './meetupstyle.css'
 
 
 import { Box, Container, Typography, TextField, Button} from '@mui/material';
@@ -67,7 +68,7 @@ const CommentForm = ({ meetUpId }) => {
             </div>
 
             <div > 
-              <Button variant='contained' type="submit" sx={{ backgroundColor: '#36393F', width: '9rem', marginLeft: 'auto' }}>Add Comment</Button>
+              <Button variant='contained' type="submit" className='addCommentBtn' sx={{ backgroundColor: '#36393F', width: '9rem', marginLeft: 'auto' }}>Add Comment</Button>
             </div>
           </form>
         </>
