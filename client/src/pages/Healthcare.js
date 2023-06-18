@@ -3,12 +3,13 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
-import { Box } from '@mui/material'
+import { Box } from '@mui/material';
+import ScrollToTop from '../components/ScrollTop';
 
 
 export default function Healthcare() {
     return (
-        <>
+        <ScrollToTop>
             <Box sx={{
                 flexGrow: 1,
                 marginTop: '2.6em',
@@ -20,7 +21,8 @@ export default function Healthcare() {
                     justifyContent='space-evenly'
                     alignItems='flex-start'>
                     <Card sx={{
-                        maxWidth: { xs: '98%', md: '60%', lg: 360 }
+                        maxWidth: { xs: '98%', md: '80%', lg: 700 },
+                        marginTop: 2
                     }}
                     >
                         <CardContent>
@@ -42,9 +44,11 @@ export default function Healthcare() {
                         </CardContent>
                     </Card>
 
-                    <Card sx={{ maxWidth: 500, marginTop: 2 }}>
+                    <Card sx={{ maxWidth: { xs: '98%', md: '80%', lg: 700 }, marginTop: 2 }}>
                         <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
+                            <Typography gutterBottom variant="h5" component="div"
+                                sx={{ textAlign: 'center' }}
+                            >
                                 Preventative Care
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
@@ -53,9 +57,11 @@ export default function Healthcare() {
                         </CardContent>
                     </Card>
 
-                    <Card sx={{ maxWidth: 500, marginTop: 2 }}>
+                    <Card sx={{ maxWidth: { xs: '98%', md: '80%', lg: 700 }, marginTop: 2 }}>
                         <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
+                            <Typography gutterBottom variant="h5" component="div"
+                                sx={{ textAlign: 'center' }}
+                            >
                                 Supplements and Medications
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
@@ -64,9 +70,11 @@ export default function Healthcare() {
                         </CardContent>
                     </Card>
 
-                    <Card sx={{ maxWidth: 500, paddingLeft: 2 }}>
+                    <Card sx={{ maxWidth: { xs: '98%', md: '80%', lg: 700 }, paddingLeft: 2, marginTop: 2 }}>
                         <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
+                            <Typography gutterBottom variant="h5" component="div"
+                                sx={{ textAlign: 'center' }}
+                            >
                                 Foods to Avoid Feeding Your Little Ones
                             </Typography>
                             <Typography variant="body2" color="text.secondary">
@@ -90,7 +98,7 @@ export default function Healthcare() {
                     </Card>
                 </Grid >
             </Box>
-        </>
+        </ScrollToTop>
     )
 }
 
