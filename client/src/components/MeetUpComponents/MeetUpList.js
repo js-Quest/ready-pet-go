@@ -15,11 +15,13 @@ const MeetUpList = ({
   showUsername = true,
 }) => {
 
+
+
   console.log(meetUps)
   if (!meetUps.length) {
     return <h3>No MeetUps Yet</h3>;
   }
-
+ 
   return (
     <div>
 
@@ -33,18 +35,19 @@ const MeetUpList = ({
 
 
         {meetUps &&
-          meetUps.map((meetUp) => (
+          meetUps.map((meetUp) => ( 
 
             <Link style={{ textDecoration: 'none' }} to={`/meetUp/${meetUp._id}`}>
               <Card key={meetUp._id} sx={{ backgroundColor: '#f5f5f5', borderStyle: 'outSet', border: '2px solid black', display: 'flex', marginBottom: '1.0em', height: '6em', alignItems: 'center' }}>
 
-                {/* {console.log(meetUp.user[0].profilePicture)} */}
 
+
+                {meetUp.user?.[0]?.profilePicture && (
                 <img
                   style={{ width: 100, marginLeft: '5px', border: '1px solid #36393f62' }}
                   src={meetUp.user[0].profilePicture} />
+                  )}
 
- 
                 <div style={{ fontSize: '1.5rem', width: '100%' }} >
                   <Link style={{paddingLeft:'.8em', color: 'black', textDecoration: 'none', fontFamily: 'Times New Roman, Times, serif' }} to={`/meetUp/${meetUp._id}`}> {meetUp.meetUpTitle} </Link>
                 </div>
