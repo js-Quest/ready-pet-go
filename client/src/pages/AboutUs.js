@@ -4,7 +4,7 @@ import jess from '../images/jsportrait.png'
 import Leah from '../images/LeahProfilePic.png'
 import Sunny from '../images/Sunny.png'
 import Emma from '../images/Emma.png'
-import ki from '../images/kiProfilePic.JPEG'
+import ki from '../images/kiProfilePic2.JPEG'
 import placeholderImg from '../images/placeholderProfile.png';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
