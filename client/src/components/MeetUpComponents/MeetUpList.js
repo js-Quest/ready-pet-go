@@ -33,16 +33,16 @@ const MeetUpList = ({
           meetUps.map((meetUp) => (
 
             <Link style={{ textDecoration: 'none' }} to={`/meetUp/${meetUp._id}`}>
-              <Card key={meetUp._id} sx={{ backgroundColor: '#534666', borderStyle: 'outSet', borderColor: 'black', display: 'flex', marginBottom: '1.0em', height:'6em', alignItems:'center'}}>
+              <Card key={meetUp._id} sx={{ backgroundColor: '#f5f5f5', borderStyle: 'outSet', borderColor: 'black', display: 'flex', marginBottom: '1.0em', height:'6em', alignItems:'center'}}>
 
 
                 <div style={{ fontSize: '2rem', width: '100%' }} >
-                  <Link style={{paddingLeft:'.8em', color: 'white', textDecoration: 'none', fontFamily: 'Times New Roman, Times, serif' }} to={`/meetUp/${meetUp._id}`}> {meetUp.meetUpTitle} </Link>
+                  <Link style={{paddingLeft:'.8em', color: 'black', textDecoration: 'none', fontFamily: 'Times New Roman, Times, serif' }} to={`/meetUp/${meetUp._id}`}> {meetUp.meetUpTitle} </Link>
                 </div>
                 <Typography variant="h5" component="div" sx={{ color: '#36393F', fontSize: '.9em', textAlign: 'center', marginLeft: '20px', marginRight: '20px' }}>
 
                   {showUsername ? (
-                    <Link style={{ color: '#c4bfca' }} to={`/profiles/${meetUp.meetUpAuthor}`}>
+                    <Link style={{ color: 'gray' }} to={`/profiles/${meetUp.meetUpAuthor}`}>
                       <span> {meetUp.meetUpAuthor} posted this meetUp on {meetUp.createdAt} </span>
                     </Link>
                   ) : (
@@ -58,7 +58,7 @@ const MeetUpList = ({
 
 
                 <Link
-                  style={{ color: '#c4bfca', marginLeft: '.5em', marginRight: '.5em', textAlign: 'center' }}
+                  style={{ color: 'gray', marginLeft: '.5em', marginRight: '.5em', textAlign: 'center' }}
                   to={`/meetUp/${meetUp._id}`}
                 >
                   Join discussion
