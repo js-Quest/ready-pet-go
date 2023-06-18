@@ -382,7 +382,12 @@ export default function Profile() {
                     justifyContent: 'space-between',
                     marginTop: { xs: '15px', lg: '0px' }
                   }}>
-                    <Button variant='contained' type="click" onClick={editFormState} sx={{ backgroundColor: '#36393F', width: '9rem', marginLeft: 'auto' }}>Update</Button>
+                    <Button 
+                      variant='contained' 
+                      className='updateProfBtn'
+                      type="click" 
+                      onClick={editFormState} 
+                      sx={{ backgroundColor: '#36393F', width: '9rem', marginLeft: 'auto' }}>Update</Button>
                   </Box>
                 }
               </Box>
