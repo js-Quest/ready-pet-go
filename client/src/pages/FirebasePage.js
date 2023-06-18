@@ -9,7 +9,7 @@ import Auth from '../utils/auth'
 import { Link } from 'react-router-dom';
 import './style.css'
 import { Container, Box, Button } from '@mui/material';
-import Footer from '../components/Footer/Footer';
+
 
 export default function FirebasePage() {
   const [user] = useAuthState(auth);
