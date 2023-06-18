@@ -28,7 +28,9 @@ function PetCard({ petData, setPetData, pet }) {
   }
 
   return (
-    <Card sx={{ width: 250 }}>
+    <Card sx={{ 
+      width: 275,
+      marginRight: '15px' }}>
       <CardContent>
         <CardMedia
           sx={{
@@ -37,7 +39,7 @@ function PetCard({ petData, setPetData, pet }) {
           }}
           image={pet.profilePicture}
         />
-        <Typography gutterBottom variant="h5" component="div" sx={{ textAlign: 'center' }} >
+        <Typography gutterBottom variant="h5" component="div" sx={{ textAlign: 'center', marginBottom: '12px' }} >
           {pet.name}
         </Typography>
         <Typography variant="body1" color="text.secondary">

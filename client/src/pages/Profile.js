@@ -429,7 +429,8 @@ export default function Profile() {
               paddingTop: '1em',
               paddingBottom: '2em',
               display: 'flex',
-              flexDirection: 'row'
+              flexDirection: 'row',
+              // flexWrap: 'wrap'
             }}
           >
             {/* <Box> */}
