@@ -8,6 +8,7 @@ import ChatIcon from '@mui/icons-material/Chat';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Tooltip from '@mui/material/Tooltip';
+import { Divider } from "@mui/material";
 // import { FaShoppingCart } from 'react-icons/fa';
 import GroupsIcon from '@mui/icons-material/Groups';
 import 'react-dropdown/style.css';
@@ -28,7 +29,6 @@ const styles = {
   },
   navdiv: {
     display: 'flex',
-    justifyContent: 'flex-end',
     flexDirection: 'row-reverse'
   }
 
@@ -81,10 +81,10 @@ function Navigation()
   return (
     <Box sx={{
       display: 'flex',
-      width: '30em',
+      // width: '30em',
       // justifyContent: 'flex-end',
       flexDirection: 'row',
-      marginRight: '2em',
+      marginRight: '3em',
       alignItems: 'center',
     }}>
       {/* rendering full nav list for large screens */}
@@ -98,55 +98,55 @@ function Navigation()
           width: '30em',
           gap: '20px'
         }}>
-          <Link href="/"
+          <Link to="/"
             sx={{
               textDecoration: 'none',
             }}
           >
             <Tooltip title='Home'>
-            <HomeRoundedIcon className="navbarIcons" sx={{ color: 'white', fontSize: '33px' }} />
+              <HomeRoundedIcon className="navbarIcons" sx={{ color: 'white', fontSize: '33px' }} />
             </Tooltip>
           </Link>
 
-          <Link href="/firebase"
+          <Link to="/firebase"
             target="_blank"
             sx={{
               textDecoration: 'none',
             }}
           >
             <Tooltip title='Chat!'>
-            <ChatIcon className="navbarIcons" sx={{ color: 'white', fontSize: '27px', }} />
+              <ChatIcon className="navbarIcons" sx={{ color: 'white', fontSize: '27px', }} />
             </Tooltip>
           </Link>
 
-          <Link href="/meetUp"
+          <Link to="/meetUp"
             sx={{
               textDecoration: 'none',
             }}
           >
             <Tooltip title='MeetUps'>
-            <Groups2Icon className="navbarIcons" sx={{ color: 'white', fontSize: '35px', marginBottom: '-5px' }} />
+              <Groups2Icon className="navbarIcons" sx={{ color: 'white', fontSize: '35px', marginBottom: '-5px' }} />
             </Tooltip>
           </Link>
-          <Link href="/product"
+          <Link to="/product"
             sx={{
               textDecoration: 'none',
             }}
           >
             <Tooltip title='Shopping'>
-            <ShoppingBasketIcon className="navbarIcons" sx={{ color: 'white', fontSize: '31px' }} />
+              <ShoppingBasketIcon className="navbarIcons" sx={{ color: 'white', fontSize: '31px' }} />
             </Tooltip>
           </Link>
           {/* //conditonally rendering links for logout and profile if user is logged in, or login/signup if user is logged out */}
           {Auth.loggedIn() ? (
             <>
-              <Link href="/me"
+              <Link to="/me"
                 sx={{
                   textDecoration: 'none',
                 }}
               >
                 <Tooltip title='My Profile'>
-                <AccountCircleIcon className="navbarIcons" sx={{ color: 'white', fontSize: '29px' }} />
+                  <AccountCircleIcon className="navbarIcons" to="/me" sx={{ color: 'white', fontSize: '29px' }} />
                 </Tooltip>
               </Link>
 
@@ -169,18 +169,11 @@ function Navigation()
             </>
           ) : (
             <>
-              <Link href="/login"
-                sx={{
-                  textDecoration: 'none',
-                }}
-              >
+              <Link to="/login" className="nav-wordLink1">
                 Login
               </Link>
-              <Link href="/register"
-                sx={{
-                  textDecoration: 'none',
-                }}
-              >
+                <Divider orientation="vertical" variant="middle" flexItem />
+              <Link to="/register" className="nav-wordLink2">
                 Signup
               </Link>
             </>
@@ -189,13 +182,13 @@ function Navigation()
         </Box>
 
         // * { isLogged}
-        // <a href="/login" style={styles.nav}>Login</a> */}
+        // <a to="/login" style={styles.nav}>Login</a> */}
         :
         // rendering dropdown bars for small screens 
-        <div style={styles.navdiv}>
-          <a href="#" style={styles.nav}>
+        <div>
+          <Link to="#" sx={styles.nav}>
             <Dropdown onClick={() => setShowMenu(!showMenu)} />
-          </a>
+          </Link>
         </div>
       }
     </Box>
