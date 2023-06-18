@@ -72,21 +72,7 @@ export default function AboutUs() {
           </Box>
         </Box>
       </Container>
-      <Container className='card-container'>
-        <h2 className='card-head'>Ki Sar</h2>
-        <Box className='card-box'>
-          <Box>
-            <img style={styles.img} className='portrait-box' src={ki}></img>
-
-          </Box>
-          <Box className='text-box'>
-            <h3 className='card-text'>
-            From dawn 'til dusk, a hero without rest, a legend at its best!
-            </h3>
-            <a className='card-link' href="https://github.com/rxs291"><i class="fa-brands fa-square-github"></i></a>
-          </Box>
-        </Box>
-      </Container>
+ 
       <Container className='card-container'>
         <h2 className='card-head'>Emma Carr</h2>
         <Box className='card-box'>
@@ -99,6 +85,21 @@ export default function AboutUs() {
               PLEASE COMPLETE FOR YOURSELF! 
             </h3>
             <a className='card-link' href="https://github.com/emcarr99"><i class="fa-brands fa-square-github"></i></a>
+          </Box>
+        </Box>
+      </Container>
+      <Container className='card-container'>
+        <h2 className='card-head'>Ki Sar</h2>
+        <Box className='card-box'>
+          <Box>
+            <img style={styles.img} className='portrait-box' src={ki}></img>
+
+          </Box>
+          <Box className='text-box'>
+            <h3 className='card-text'>
+            All-time Hero. Full-time Legend.
+            </h3>
+            <a className='card-link' href="https://github.com/rxs291"><i class="fa-brands fa-square-github"></i></a>
           </Box>
         </Box>
       </Container>
