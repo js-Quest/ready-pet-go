@@ -3,6 +3,8 @@
   background-color: #36393F !important;
   border: 2px solid #EEB462;
   color: #EEB462;
+  margin-bottom: -1px;
+  margin-left: 16px;
 }
 
 .navbarIcons {

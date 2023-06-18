@@ -291,14 +291,24 @@ export default function Profile() {
                     <Button
                       variant="contained"
                       type="submit"
-                      sx={{ cursor: 'pointer', marginRight: '1em', width: '8em' }}
+                      className='editProfileBtn'
+                      sx={{ 
+                        cursor: 'pointer', 
+                        marginRight: '1em', 
+                        width: '8em', 
+                        backgroundColor: '#CD7672', 
+                        color: '#36393f', 
+                        fontWeight: 'bold', 
+                        border: '2px solid #36393f' 
+                      }}
                     >
                       Submit
                     </Button>
                     <Button
                       variant='contained'
+                      className='editProfileBtn'
                       onClick={editFormState}
-                      sx={{ cursor: 'pointer', width: '8em' }}
+                      sx={{ cursor: 'pointer', width: '8em', backgroundColor: '#CD7672', color: '#36393f', fontWeight: 'bold', border: '2px solid #36393f' }}
                     >
                       Cancel
                     </Button>
