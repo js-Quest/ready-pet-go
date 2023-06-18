@@ -36,12 +36,12 @@ const MeetUpList = ({
           meetUps.map((meetUp) => (
 
             <Link style={{ textDecoration: 'none' }} to={`/meetUp/${meetUp._id}`}>
-              <Card key={meetUp._id} sx={{ backgroundColor: '#f5f5f5', borderStyle: 'outSet', borderColor: 'black', display: 'flex', marginBottom: '1.0em', height: '6em', alignItems: 'center' }}>
+              <Card key={meetUp._id} sx={{ backgroundColor: '#f5f5f5', borderStyle: 'outSet', border: '2px solid black', display: 'flex', marginBottom: '1.0em', height: '6em', alignItems: 'center' }}>
 
                 {/* {console.log(meetUp.user[0].profilePicture)} */}
 
                 <img
-                  style={{ width: 100 }}
+                  style={{ width: 100, marginLeft: '5px', border: '1px solid #36393f62' }}
                   src={meetUp.user[0].profilePicture} />
 
  

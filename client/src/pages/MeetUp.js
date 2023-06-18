@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
-import PetPeek1 from '../images/peeking1.png';
+// import PetPeek1 from '../images/peeking1.png';
+import PupPeek from '../images/pups-peeking.png';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import './style.css';
-import { TextField, Button, Grid } from '@mui/material';
-import ElGato from '../images/cat1.png';
+// import { TextField, Button, Grid } from '@mui/material';
+import Kitten from '../images/cat2-small.png';
 
-import {QUERY_MEETUPS} from '../utils/queries'
+import { QUERY_MEETUPS } from '../utils/queries'
 
 import MeetUpForm from '../components/MeetUpComponents/MeetUpForm';
 import MeetUpList from '../components/MeetUpComponents/MeetUpList';
@@ -26,20 +27,14 @@ export default function MeetUp() {
 
     return (
         <>
-            <div className='petPeeking'>
-                <img
-                    src={PetPeek1}
-                    alt='peeking'
-                />
-            </div>
             <Container className='dashboardContainer'>
                 <h1 className='dashboardHead'>Welcome to MeetUp!</h1>
                 <Box sx={{
                     marginTop: '2em'
                 }}>
                     <Box sx={{
-                        border: '5px solid',
-                        borderColor: '#DC8665',
+                        border: '4px solid #DC8665',
+                        // borderColor: '#DC8665',
                         borderRadius: '5px',
                         // paddingBottom: 3,
                         maxWidth: '75%',
@@ -60,42 +55,41 @@ export default function MeetUp() {
                             Create a MeetUp!
                         </Typography>
 
-                     <Typography sx={{textAlign:'center', marginTop:'.8em'}} variant='h5'>   Welcome to MeetUp!  </Typography>  
+                        <Typography sx={{ textAlign: 'center', marginTop: '.8em' }} variant='h5'>   Welcome to MeetUp!  </Typography>
 
                         <Typography
                             variant="body1"
                             component="p"
                             sx={{
-                                fontSize: '1.1rem', 
+                                fontSize: '1.1rem',
                                 paddingLeft: '3em',
                                 paddingRight: '3em',
                                 paddingTop: '1em',
                                 paddingBottom: '3em',
                             }}
-                        >                           
-                            
-                             Here at Ready, Pet, Go! we make pet socializing easier by providing a forum to help our users schedule playdates for thier beloved pets! Leave your time, location, and breed/size of pet so that other users can see and respond to your MeetUp post!
-                        <br /><br />
-                            Additionally, we understand that sometimes only true 'experience' is the answer and google won't be enough to help you along on your journey of pet-parenthood. In this forum, ask any questions you may have and get input or advice from others! 
+                        >
+
+                            Here at Ready, Pet, Go! we make pet socializing easier by providing a forum to help our users schedule playdates for thier beloved pets! Leave your time, location, and breed/size of pet so that other users can see and respond to your MeetUp post!
+                            <br /><br />
+                            Additionally, we understand that sometimes only true 'experience' is the answer and google won't be enough to help you along on your journey of pet-parenthood. In this forum, ask any questions you may have and get input or advice from others!
 
                             <MeetUpForm />
-
                         </Typography>
-                        <div className='catReach'>
-                            <img
-                                src={ElGato}
-                                alt='CatSneezins'
-                                style={{ marginLeft: '-8em', marginBottom: '-.4em' }}
-                            />
-                        </div>
+                    <div className='pupPeek'>
+                        <img
+                            src={PupPeek}
+                            alt='pibbles'
+                            style={{ marginRight: '2px', marginBottom: '9em' }}
+                        />
+                    </div>
                     </Box>
                 </Box>
-                
+
                 <Box sx={{
                     marginTop: '2em'
                 }}>
                     <Box sx={{
-                        border: '5px solid',
+                        border: '4px solid',
                         borderColor: '#DC8665',
                         borderRadius: '5px',
                         // paddingBottom: 3,
@@ -103,6 +97,7 @@ export default function MeetUp() {
                         marginLeft: 'auto',
                         marginRight: 'auto',
                         marginTop: 5,
+                        marginBottom: '2em'
                     }}
                     >
                         <Typography
@@ -111,7 +106,7 @@ export default function MeetUp() {
                                 backgroundColor: '#DC8665',
                                 fontSize: '1.75rem',
                                 fontWeight: 'inherit',
-                                padding: '0.9em' 
+                                padding: '0.9em'
                             }}
                         >
                             Check out these MeetUps!
@@ -128,7 +123,7 @@ export default function MeetUp() {
                                 paddingTop: '1em',
                                 paddingBottom: '3em',
                             }}
-                        > 
+                        >
                             {loading ? (
                                 <div>Loading...</div>
                             ) : (
@@ -139,13 +134,17 @@ export default function MeetUp() {
                             )}
 
                         </Typography>
-                        <div className='catReach'>
-                            <img
-                                src={ElGato}
-                                alt='CatSneezins'
-                                style={{ marginLeft: '-8em', marginBottom: '-.4em' }}
-                            />
-                        </div>
+                            <div style={{
+                                display: 'flex',
+                                width: '100%',
+                                flexDirection: 'row-reverse'
+                            }}>
+                                <img
+                                    src={Kitten}
+                                    alt='peeking'
+                                    style={{ marginRight: '-2.8em', marginBottom: '-1.6em' }}
+                                />
+                            </div>
                     </Box>
                 </Box>
             </Container >
