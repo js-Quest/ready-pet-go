@@ -12,7 +12,6 @@ import { useMutation } from '@apollo/client';
 import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import { UPDATE_USER } from '../utils/mutations';
-
 import PetPeek1 from '../images/peeking1.png';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
@@ -264,9 +263,31 @@ export default function Profile() {
                       sx={{ width: { xs: '100%', md: '90%', lg: '95%', } }}
                     />
                   </Grid>
-                  {/* editable version of upload profile picture code */}
-                  <UploadWidget setProfilePicture={setProfilePicture} />
-                  <Grid item xs={12} sx={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '0.5em' }}>
+                  <Grid item xs={12}>
+                    <Typography sx={{ marginBottom: '0.8em', fontSize: '1.3rem', marginTop: ['0em', '1.3em'] }}>Profile Picture</Typography>
+
+                    <Box sx={{
+                      maxWidth: ['98%','30%'],
+                      border: '2px dashed #36393F',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'center',
+                      marginLeft: '2em',
+                      padding: '2em'
+                    }}>
+                      <img
+                        src={user.profilePicture}
+                        alt='profileImage'
+                        loading='lazy'
+                        style={{ height: '100px', width: '100px', border: '1px solid black', display: 'flex', marginLeft: 'auto', marginRight: 'auto' }}
+                      ></img>
+
+                      {/* editable version of upload profile picture code */}
+                      <UploadWidget setProfilePicture={setProfilePicture} />
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12} sx={{ textAlign: 'end', marginTop: '1.5em', marginBottom: '0.5em' }}>
+
                     <Button
                       variant="contained"
                       type="submit"
@@ -379,7 +400,12 @@ export default function Profile() {
                     justifyContent: 'space-between',
                     marginTop: { xs: '15px', lg: '0px' }
                   }}>
-                    <Button variant='contained' type="click" onClick={editFormState} sx={{ backgroundColor: '#36393F', width: '9rem', marginLeft: 'auto' }}>Update</Button>
+                    <Button
+                      variant='contained'
+                      className='updateProfBtn'
+                      type="click"
+                      onClick={editFormState}
+                      sx={{ backgroundColor: '#36393F', width: '9rem', marginLeft: 'auto' }}>Update</Button>
                   </Box>
                 }
               </Box>
@@ -420,7 +446,10 @@ export default function Profile() {
               paddingLeft: '3em',
               paddingRight: '3em',
               paddingTop: '1em',
-              paddingBottom: '3em',
+              paddingBottom: '2em',
+              display: 'flex',
+              flexDirection: 'row',
+              // flexWrap: 'wrap'
             }}
           >
             {petData.map((item, i) => <PetCard pet={item} petData={petData} setPetData={setPetData} key={i} />)}

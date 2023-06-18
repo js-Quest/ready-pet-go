@@ -10,11 +10,11 @@ const styles = {
     border: "solid black 1px",
     padding: "8px",
     backgroundColor: '#36393F',
-    width: '8rem',
+    width: '6rem',
     fontSize: '15px',
     color: 'white',
     borderRadius: '6px',
-    margin: '15px 10px 0px 10px'
+    margin: '10px 5px 4px 10px'
   }
 }
 
@@ -42,13 +42,13 @@ function UploadWidget({ setProfilePicture }) {
       <button
         type="button"
         onClick={() => widgetRef.current.open()} style={styles.button} >
-        Upload Photo
+        Upload
       </button>
       <button
         type='button'
         onClick={() => setProfilePicture('')}
         style={styles.button}
-      >Delete Photo</button>
+      >Delete</button>
     </div>
   );
 }

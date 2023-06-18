@@ -133,6 +133,13 @@
   width: auto; */
 }
 
+.updateProfBtn:hover {
+  font-weight: bold;
+  background-color: #36393F !important;
+  border: 2px solid #EEB462;
+  color: #EEB462;
+}
+
 .dashboardHead {
   display: flex;
   justify-content: center;
