@@ -79,6 +79,7 @@ export default function MeetUp() {
                         <img
                             src={PupPeek}
                             alt='pibbles'
+                            loading='lazy'
                             style={{ marginRight: '2px', marginBottom: '9em' }}
                         />
                     </div>
@@ -142,6 +143,7 @@ export default function MeetUp() {
                                 <img
                                     src={Kitten}
                                     alt='peeking'
+                                    loading='lazy'
                                     style={{ marginRight: '-2.8em', marginBottom: '-1.6em' }}
                                 />
                             </div>

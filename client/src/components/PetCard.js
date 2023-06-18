@@ -61,8 +61,10 @@ function PetCard({ petData, setPetData, pet }) {
         sx={{
           display: 'flex',
           justifyContent: 'flex-end',
+          alignItems: 'flex-end',
+          marginTop: 'auto !important',
           paddingTop: '0.2em',
-          paddingBottom: '0.2em'
+          paddingBottom: '0.2em',
         }}
       >
         <Tooltip title='Delete Pet?'>
