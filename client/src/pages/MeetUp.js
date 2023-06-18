@@ -74,9 +74,9 @@ export default function MeetUp() {
                             }}
                         >                           
                             
-                             Here a MeetUp we make pet socializing easier by providing a forum to help our users schedule playdates for thier beloved pets! Leave your time, location, and breed/size of pet and allow other users to see and respond to MeetUp you post!
+                             Here at Ready, Pet, Go! we make pet socializing easier by providing a forum to help our users schedule playdates for thier beloved pets! Leave your time, location, and breed/size of pet so that other users can see and respond to your MeetUp post!
                         <br /><br />
-                            And sometimes only true 'experience' is the answer and goodgle wont be enough to help you along on your journey of pet-parenthood. In this forum, ask any questions you may have and get input or advice from others! 
+                            Additionally, we understand that sometimes only true 'experience' is the answer and google won't be enough to help you along on your journey of pet-parenthood. In this forum, ask any questions you may have and get input or advice from others! 
 
                             <MeetUpForm />
 
