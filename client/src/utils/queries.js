@@ -136,6 +136,9 @@ query meetUps {
     meetUpTitle
     meetUpAuthor
     createdAt
+    user {
+      profilePicture
+    }
   }
 }
 `;
@@ -148,6 +151,9 @@ query meetUp($meetUpId: ID!) {
     meetUpTitle
     meetUpAuthor
     createdAt
+    user {
+      profilePicture
+    }
     comments {
       _id
       commentText
