@@ -39,7 +39,7 @@ export default function MeetUp() {
                 }}>
                     <Box sx={{
                         border: '5px solid',
-                        borderColor: '#dee2e6',
+                        borderColor: '#DC8665',
                         borderRadius: '5px',
                         // paddingBottom: 3,
                         maxWidth: '75%',
@@ -51,28 +51,32 @@ export default function MeetUp() {
                         <Typography
                             variant="h3"
                             sx={{
-                                backgroundColor: '#dee2e6',
+                                backgroundColor: '#DC8665',
                                 fontSize: '1.75rem',
                                 fontWeight: 'inherit',
                                 padding: '0.9em',
                             }}
                         >
-                            Why Here
+                            Create a MeetUp!
                         </Typography>
+
+                     <Typography sx={{textAlign:'center', marginTop:'.8em'}} variant='h5'>   Welcome to MeetUp!  </Typography>  
 
                         <Typography
                             variant="body1"
                             component="p"
                             sx={{
-                                fontSize: '1.1rem',
-                                marginTop: '1.3em',
+                                fontSize: '1.1rem', 
                                 paddingLeft: '3em',
                                 paddingRight: '3em',
                                 paddingTop: '1em',
                                 paddingBottom: '3em',
                             }}
-                        >
-                            Welcome to MeetUp! Please feel free to post pet play dates or just general information about your pet! This forum can and should also be used to help eachother in guiding others in any questions one would have in their journey! Feel free to post your first meet up here! Happy MeetUps!
+                        >                           
+                            
+                             Here at Ready, Pet, Go! we make pet socializing easier by providing a forum to help our users schedule playdates for thier beloved pets! Leave your time, location, and breed/size of pet so that other users can see and respond to your MeetUp post!
+                        <br /><br />
+                            Additionally, we understand that sometimes only true 'experience' is the answer and google won't be enough to help you along on your journey of pet-parenthood. In this forum, ask any questions you may have and get input or advice from others! 
 
                             <MeetUpForm />
 
@@ -92,7 +96,7 @@ export default function MeetUp() {
                 }}>
                     <Box sx={{
                         border: '5px solid',
-                        borderColor: '#dee2e6',
+                        borderColor: '#DC8665',
                         borderRadius: '5px',
                         // paddingBottom: 3,
                         maxWidth: '75%',
@@ -104,13 +108,13 @@ export default function MeetUp() {
                         <Typography
                             variant="h3"
                             sx={{
-                                backgroundColor: '#dee2e6',
+                                backgroundColor: '#DC8665',
                                 fontSize: '1.75rem',
                                 fontWeight: 'inherit',
-                                padding: '0.9em',
+                                padding: '0.9em' 
                             }}
                         >
-                            Why Here
+                            Check out these MeetUps!
                         </Typography>
 
                         <Typography
@@ -124,15 +128,13 @@ export default function MeetUp() {
                                 paddingTop: '1em',
                                 paddingBottom: '3em',
                             }}
-                        >
-                            Welcome to MeetUp! Please feel free to post pet play dates or just general information about your pet! This forum can and should also be used to help eachother in guiding others in any questions one would have in their journey! Feel free to post your first meet up here! Happy MeetUps!
-
+                        > 
                             {loading ? (
                                 <div>Loading...</div>
                             ) : (
                                 <MeetUpList
                                     meetUps={meetUps}
-                                    title="CHECK OUT THESE MEETUPS!"
+                                    title="Click on any meetUp below to see more information or to leave a comment!"
                                 />
                             )}
 

@@ -20,8 +20,6 @@ import './style.css';
 import { TextField, Button, Grid } from '@mui/material';
 import ElGato from '../images/cat1.png';
 
-// testing
-
 
 export default function Profile() {
   const [editProf, editProfile] = useState(false);
@@ -265,7 +263,31 @@ export default function Profile() {
                       sx={{ width: { xs: '100%', md: '90%', lg: '95%', } }}
                     />
                   </Grid>
-                  <Grid item xs={12} sx={{ textAlign: 'center', marginTop: '1.5em', marginBottom: '0.5em' }}>
+                  <Grid item xs={12}>
+                    <Typography sx={{ marginBottom: '0.8em', fontSize: '1.3rem', marginTop: ['0em', '1.3em'] }}>Profile Picture</Typography>
+
+                    <Box sx={{
+                      maxWidth: ['98%','30%'],
+                      border: '2px dashed #36393F',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'center',
+                      marginLeft: '2em',
+                      padding: '2em'
+                    }}>
+                      <img
+                        src={user.profilePicture}
+                        alt='profileImage'
+                        loading='lazy'
+                        style={{ height: '100px', width: '100px', border: '1px solid black', display: 'flex', marginLeft: 'auto', marginRight: 'auto' }}
+                      ></img>
+
+                      {/* editable version of upload profile picture code */}
+                      <UploadWidget setProfilePicture={setProfilePicture} />
+                    </Box>
+                  </Grid>
+                  <Grid item xs={12} sx={{ textAlign: 'end', marginTop: '1.5em', marginBottom: '0.5em' }}>
+
                     <Button
                       variant="contained"
                       type="submit"
@@ -283,9 +305,6 @@ export default function Profile() {
                   </Grid>
                 </Grid>
               </form>
-              {/* editable version of upload profile picture code is contained in the Card component */}
-
-              <UploadWidget setProfilePicture={setProfilePicture} />
 
             </Box>
           ) :
@@ -433,16 +452,14 @@ export default function Profile() {
               // flexWrap: 'wrap'
             }}
           >
-            {/* <Box> */}
-              {petData.map((item, i) => <PetCard pet={item} petData={petData} setPetData={setPetData} key={i} />)}
-              {/* array to render new PetForm whenever PetButton is clicked */}
-              {[...Array(numCard)].map((_, i) => <PetForm petData={petData} setPetData={setPetData} key={i} setShowCard={setNumCard} />)}
-            {/* </Box> */}
+            {petData.map((item, i) => <PetCard pet={item} petData={petData} setPetData={setPetData} key={i} />)}
+            {/* array to render new PetForm whenever PetButton is clicked */}
+            {[...Array(numCard)].map((_, i) => <PetForm petData={petData} setPetData={setPetData} key={i} setShowCard={setNumCard} />)}
+
             <PetButton
               setShowCard={setNumCard}
               variant='text'
               className='changeBtn'
-              id='addPetBtn'
             />
 
           </Box>

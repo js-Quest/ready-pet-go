@@ -42,15 +42,14 @@ const SingleMeetUp = () => {
                 />
             </div>
             <Container className='dashboardContainer'>
-                <h1 className='dashboardHead'>Welcome to MeetUps!</h1>
+                <h1 className='dashboardHead'>{meetUp.meetUpAuthor}'s MeetUp!</h1>
                 <Box sx={{
                     marginTop: '2em'
                 }}>
                     <Box sx={{
                         border: '5px solid',
-                        borderColor: '#dee2e6',
-                        borderRadius: '5px',
-                        // paddingBottom: 3,
+                        borderColor: '#DC8665',
+                        borderRadius: '5px', 
                         maxWidth: '75%',
                         marginLeft: 'auto',
                         marginRight: 'auto',
@@ -60,17 +59,19 @@ const SingleMeetUp = () => {
                         <Typography
                             variant="h3"
                             sx={{
-                                backgroundColor: '#dee2e6',
+                                backgroundColor: '#DC8665',
                                 fontSize: '1.75rem',
                                 fontWeight: 'inherit',
                                 padding: '0.9em',
+                                position:'relative'
                             }}
                         >
-                            <h3> {meetUp.meetUpTitle}</h3>
-                            <h5 className="card-header bg-dark text-light p-2 m-0">
-                                Created By: {meetUp.meetUpAuthor} <br />
-                                <span style={{ fontSize: '1rem' }}>
-                                    posted this meetUp on {meetUp.createdAt}
+                            <h3 style={{fontSize: '1.75rem',
+                                fontWeight: 'inherit',}}> {meetUp.meetUpTitle}</h3>
+                            <h5>
+                            
+                                <span style={{ fontSize: '1rem', display:'flex', alignItem:'baseline', position:'absolute', bottom:'0' }}>
+                                {meetUp.meetUpAuthor} posted this meetUp on {meetUp.createdAt}
                                 </span>
                             </h5>
                         </Typography>
@@ -81,22 +82,24 @@ const SingleMeetUp = () => {
                             sx={{
                                 fontSize: '1.1rem',
                                 marginTop: '1.3em',
-                                paddingLeft: '3em',
-                                paddingRight: '3em',
+                                paddingLeft: '2.3em',
+                                paddingRight: '2.3em',
                                 paddingTop: '1em',
-                                paddingBottom: '3em',
+                                paddingBottom: '2.2em',
+                                backgroundColor:''
                             }}
                         >
 
 
 
-                            <div className="bg-light py-4">
-                                <blockquote
-                                    className="p-4"
+                            <div>
+                                <blockquote 
                                     style={{
                                         fontSize: '1.5rem',
                                         fontStyle: 'italic',
-                                        border: '2px dotted #1a1a1a',
+                                        border: '.1em dashed #534666',
+                                        padding:'2.5em',
+                                        margin:'-1.5em',
                                         lineHeight: '1.5',
                                     }}
                                 >
@@ -123,9 +126,8 @@ const SingleMeetUp = () => {
                 }}>
                     <Box sx={{
                         border: '5px solid',
-                        borderColor: '#dee2e6',
-                        borderRadius: '5px',
-                        // paddingBottom: 3,
+                        borderColor: '#DC8665',
+                        borderRadius: '5px', 
                         maxWidth: '75%',
                         marginLeft: 'auto',
                         marginRight: 'auto',
@@ -135,7 +137,7 @@ const SingleMeetUp = () => {
                         <Typography
                             variant="h3"
                             sx={{
-                                backgroundColor: '#dee2e6',
+                                backgroundColor: '#DC8665',
                                 fontSize: '1.75rem',
                                 fontWeight: 'inherit',
                                 padding: '0.9em',
@@ -158,10 +160,10 @@ const SingleMeetUp = () => {
                         >
 
 
-                            <div className="my-5">
+                            <div>
                                 <CommentList comments={meetUp.comments} />
                             </div>
-                            <div className="m-3 p-4" style={{ border: '1px dotted #1a1a1a' }}>
+                            <div >
                                 <CommentForm meetUpId={meetUp._id} />
                             </div>
 

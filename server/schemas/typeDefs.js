@@ -33,6 +33,7 @@ const typeDefs = gql`
     meetUpTitle: String
     meetUpAuthor: String
     createdAt: String
+    user: [User]!
     comments: [Comment]!
   }
 

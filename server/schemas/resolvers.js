@@ -37,10 +37,10 @@ const resolvers = {
     },
     meetUps: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return MeetUp.find(params).sort({ createdAt: -1 });
+      return MeetUp.find(params).sort({ createdAt: -1 }).populate('user');
     },
     meetUp: async (parent, { meetUpId }) => {
-      return MeetUp.findOne({ _id: meetUpId });
+      return MeetUp.findOne({ _id: meetUpId }).populate('user');
     },
   },
 
@@ -134,15 +134,17 @@ const resolvers = {
     },
     addMeetUp: async (parent, { meetUpText, meetUpTitle }, context) => {
       if (context.user) {
+        console.log(context)
         const meetUp = await MeetUp.create({
           meetUpText,
           meetUpTitle,
           meetUpAuthor: context.user.username,
+          user: context.user._id
         });
 
         await User.findOneAndUpdate(
           { _id: context.user._id },
-          { $addToSet: { meetUps: meetUp._id } }
+          { $addToSet: { meetUp: meetUp._id } }
         );
 
         return meetUp;

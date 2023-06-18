@@ -26,6 +26,12 @@ const meetUpSchema = new Schema({
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
   },
+  user: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: 'user'
+    },
+  ],
   comments: [
     {
       commentText: {
