@@ -11,3 +11,18 @@
 .navbarIcons:hover {
   color: #EEB462;
 }
+
+.nav-wordLink1 {
+  text-decoration: none;
+  color: #EEB462;
+  font-size: 20px;
+  margin-right: -4px;
+  margin-left: 1em
+}
+
+.nav-wordLink2 {
+  text-decoration: none;
+  color: #EEB462;
+  font-size: 20px;
+  margin-left: -4px;
+}

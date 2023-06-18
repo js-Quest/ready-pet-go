@@ -4,7 +4,8 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import Auth from "../utils/auth"
+import Auth from "../utils/auth";
+import { Box } from '@mui/material';
 import styled from '@emotion/styled';
 
 const styles = {
@@ -34,10 +35,13 @@ function Dropdown() {
   const token = Auth.loggedIn() ? Auth.getToken() : null;
 
   return (
-    <div>
+    <Box sx={{ 
+      display: 'flex', 
+      flexDirection: 'row-reverse !important' 
+      }}>
       <Button
       sx={{
-        color: 'white'
+        color: 'white',
       }}
         id="basic-button"
         aria-controls={open ? 'basic-menu' : undefined}
@@ -73,7 +77,7 @@ function Dropdown() {
           </MenuItem>
         )}
       </Menu>
-    </div >
+    </Box >
   );
 };
 
