@@ -284,8 +284,7 @@ export default function Profile() {
                   </Grid>
                 </Grid>
               </form>
-              {/* editable version of upload profile picture code is contained in the Card component */}
-
+              {/* editable version of upload profile picture code */}
               <UploadWidget setProfilePicture={setProfilePicture} />
 
             </Box>

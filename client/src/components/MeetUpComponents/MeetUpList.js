@@ -45,8 +45,8 @@ const MeetUpList = ({
                   src={meetUp.user[0].profilePicture} /> */}
 
 
-                <div style={{ fontSize: '2rem', width: '100%' }} >
-                  <Link style={{ paddingLeft: '.8em', color: 'black', textDecoration: 'none', fontFamily: 'Times New Roman, Times, serif' }} to={`/meetUp/${meetUp._id}`}> {meetUp.meetUpTitle} </Link>
+                <div style={{ fontSize: '1.5rem', width: '100%' }} >
+                  <Link style={{paddingLeft:'.8em', color: 'black', textDecoration: 'none', fontFamily: 'Times New Roman, Times, serif' }} to={`/meetUp/${meetUp._id}`}> {meetUp.meetUpTitle} </Link>
                 </div>
                 <Typography variant="h5" component="div" sx={{ color: '#36393F', fontSize: '.9em', textAlign: 'center', marginLeft: '20px', marginRight: '20px' }}>
 
