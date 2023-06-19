@@ -82,7 +82,7 @@ export default function AboutUs() {
           </Box>
           <Box className='text-box'>
             <h3 className='card-text'>
-              PLEASE COMPLETE FOR YOURSELF! 
+              Canva pls hire me.
             </h3>
             <a className='card-link' href="https://github.com/emcarr99"><i class="fa-brands fa-square-github"></i></a>
           </Box>
