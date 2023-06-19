@@ -5,8 +5,7 @@ const dateFormat = require('../utils/dateFormat');
 
 const meetUpSchema = new Schema({
   meetUpText: {
-    type: String,
-    minlength: 1,
+    type: String, 
     maxlength: 280,
     trim: true,
   },

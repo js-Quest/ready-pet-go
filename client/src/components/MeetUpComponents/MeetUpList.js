@@ -8,6 +8,8 @@ import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import Divider from '@mui/material/Divider';
 
+import placePic from '../../../src/images/placeholderProfile.png'
+
 const MeetUpList = ({
   meetUps,
   title,
@@ -42,11 +44,16 @@ const MeetUpList = ({
 
 
 
-                {meetUp.user?.[0]?.profilePicture && (
+                {meetUp.user?.[0]?.profilePicture ? (
                 <img
                   style={{ width: 100, marginLeft: '5px', border: '1px solid #36393f62' }}
                   src={meetUp.user[0].profilePicture} />
-                  )}
+                  ):
+                (<img
+                  style={{ width: 100, marginLeft: '5px', border: '1px solid #36393f62' }}
+                  src={placePic} />
+                  )
+                  }
 
                 <div style={{ fontSize: '1.5rem', width: '100%' }} >
                   <Link style={{paddingLeft:'.8em', color: 'black', textDecoration: 'none', fontFamily: 'Times New Roman, Times, serif' }} to={`/meetUp/${meetUp._id}`}> {meetUp.meetUpTitle} </Link>
