@@ -247,7 +247,13 @@
   text-decoration: none;
   font-weight: 600;
   font-size: 1.5rem !important;
-  color: #0b4548;
+  color: #DC8665 !important;
+}
+
+.errorBtn:hover{
+  background-color: #DC8665 !important;
+  color: #36393f;
+  border: 2px solid #36393F;
 }
 
 .errorText {
@@ -260,7 +266,7 @@
 }
 
 .errorContainer {
-  margin-top: 15%;
+  margin-top: 10%;
   margin-bottom: 15%;
   display: flex;
   box-shadow: 8px 8px 5px #3030309e;
@@ -272,7 +278,7 @@
 }
 
 .errorBox {
-  height: 45vh !important;
+  height: 40vh !important;
   display: flex;
   justify-content: center;
   align-items: center;

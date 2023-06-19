@@ -89,7 +89,7 @@ export default function AboutUs() {
                 <img style={styles.img} className='portrait-box' src={Sunny}></img>
               </Box>
               <CardContent sx={{ fontSize: '19px', textAlign: 'center', lineHeight: '28px', paddingBottom: '0' }}>
-                Biz industry survivor & closet-crafter <br></br>🡫<br></br> UX/UI Dev Nerd.
+                Biz industry survivor & closet-crafter <br></br>➔ UX/UI Dev Nerd
               </CardContent>
               <CardActions sx={{ display: 'flex', justifyContent: 'center', textAlign: 'center'}}>
                 <IconButton size='large' href='https://github.com/SunnyOhK'>
@@ -108,7 +108,7 @@ export default function AboutUs() {
                 <img style={styles.img} className='portrait-box' src={Emma}></img>
               </Box>
               <CardContent sx={{ fontSize: '19px', textAlign: 'center', lineHeight: '28px', paddingBottom: '0' }}>
-                ~ ~ ~
+                Canva, <br></br> please hire me.
               </CardContent>
               <CardActions sx={{ display: 'flex', justifyContent: 'center', textAlign: 'center'}}>
                 <IconButton size='large' href='https://github.com/emcarr99'>

@@ -8,6 +8,7 @@ import Auth from '../utils/auth';
 import AuthBox from '../components/AuthBox';
 import RedirectInfo from '../components/RedirectInfo';
 import { styled } from '@mui/system';
+import AbbrFooter from '../components/Footer/AbbrFooter';
 
 
 export default function Register() {
@@ -60,9 +61,9 @@ export default function Register() {
     });
   };
 
- 
 
-  const navigate = useNavigate(); 
+
+  const navigate = useNavigate();
   const handlePushToLoginPage = () => {
     navigate('/login')
   };
@@ -133,7 +134,7 @@ export default function Register() {
         We are glad you're here!
       </Typography> */}
         {data ? (
-  
+
           <p>
             Success! You may now head{' '}
             <Link to="/">back to the homepage.</Link>
@@ -187,11 +188,12 @@ export default function Register() {
         <RedirectInfo
           text='Already a member? '
           redirectText='Login Here'
-          
+
           additionalStyles={{ marginTop: '40px', marginLeft: 'auto', marginRight: '10px' }}
           redirectHandler={handlePushToLoginPage}
         />
       </AuthBox>
+      <AbbrFooter />
     </div>
   )
 }

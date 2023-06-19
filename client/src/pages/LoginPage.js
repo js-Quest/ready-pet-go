@@ -10,6 +10,7 @@ import { styled } from '@mui/system';
 import Auth from '../utils/auth';
 // import Container from '@mui/material/Container';
 import './style.css';
+import AbbrFooter from '../components/Footer/AbbrFooter';
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -174,6 +175,7 @@ const Login = (props) => {
           redirectHandler={handlePushToRegisterPage}
         />
       </AuthBox>
+      <AbbrFooter />
     </div>
   );
 };
