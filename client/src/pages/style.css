@@ -338,7 +338,7 @@
   flex-direction: column;
 }
 
-.card-head {
+/* .card-head {
   display: flex;
   justify-content: center;
   text-align: center;
@@ -351,23 +351,23 @@
   vertical-align: middle;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-}
+} */
 
-.card-text {
+/* .card-text {
   text-align: center;
   color: #0b4548;
   padding-left: 7%;
   padding-right: 7%;
   line-height: 1.5rem;
-}
+} */
 
-.text-box {
+/* .text-box {
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 80px;
   margin-top: .6rem
-}
+} */
 
 .card-link {
   font-size: 2rem;

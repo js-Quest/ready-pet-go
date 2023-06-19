@@ -9,11 +9,9 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import './style.css';
 import { TextField, Button, Grid } from '@mui/material';
-import ElGato from '../images/cat1.png';
-
 import CommentList from '../components/MeetUpComponents/CommentList';
 import CommentForm from '../components/MeetUpComponents/CommentForm';
-
+import Fab from '@mui/material/Fab';
 import { QUERY_MEETUP } from '../utils/queries';
 
 
@@ -32,7 +30,7 @@ const SingleMeetUp = () => {
     if (loading) {
         return <div>Loading...</div>;
     }
-    return ( 
+    return (
 
         <>
             <div className='pupPeeking'>
@@ -46,10 +44,23 @@ const SingleMeetUp = () => {
                 <Box sx={{
                     marginTop: '2em'
                 }}>
+                    <Fab aria-label='back'
+                        href='/meetUp'
+                        sx={{
+                            position: 'fixed',
+                            marginLeft: {xs: '0', lg: '2em'},
+                            fontSize: '26px',
+                            display: 'flex',
+                            alignItems: 'center',
+                            color: '#39363f',
+                            backgroundColor: 'white'
+                        }}>
+                        🡸
+                    </Fab>
                     <Box sx={{
                         border: '5px solid',
                         borderColor: '#DC8665',
-                        borderRadius: '5px', 
+                        borderRadius: '5px',
                         maxWidth: '75%',
                         marginLeft: 'auto',
                         marginRight: 'auto',
@@ -63,15 +74,17 @@ const SingleMeetUp = () => {
                                 fontSize: '1.75rem',
                                 fontWeight: 'inherit',
                                 padding: '0.9em',
-                                position:'relative'
+                                position: 'relative'
                             }}
                         >
-                            <h3 style={{fontSize: '1.75rem',
-                                fontWeight: 'inherit',}}> {meetUp.meetUpTitle}</h3>
+                            <h3 style={{
+                                fontSize: '1.75rem',
+                                fontWeight: 'inherit',
+                            }}> {meetUp.meetUpTitle}</h3>
                             <h5>
-                            
-                                <span style={{ fontSize: '1rem', display:'flex', alignItem:'baseline', position:'absolute', bottom:'2px' }}>
-                                {meetUp.meetUpAuthor} posted this meetUp on {meetUp.createdAt}
+
+                                <span style={{ fontSize: '1rem', display: 'flex', alignItem: 'baseline', position: 'absolute', bottom: '2px' }}>
+                                    {meetUp.meetUpAuthor} posted this meetUp on {meetUp.createdAt}
                                 </span>
                             </h5>
                         </Typography>
@@ -86,20 +99,20 @@ const SingleMeetUp = () => {
                                 paddingRight: '2.3em',
                                 paddingTop: '1em',
                                 paddingBottom: '2.2em',
-                                backgroundColor:''
+                                backgroundColor: ''
                             }}
                         >
 
 
 
                             <div>
-                                <blockquote 
+                                <blockquote
                                     style={{
                                         fontSize: '1.5rem',
                                         fontStyle: 'italic',
                                         border: '.1em dashed #534666',
-                                        padding:'2.5em',
-                                        margin:'-1.5em',
+                                        padding: '2.5em',
+                                        margin: '-1.5em',
                                         lineHeight: '1.5',
                                     }}
                                 >
@@ -127,7 +140,7 @@ const SingleMeetUp = () => {
                     <Box sx={{
                         border: '5px solid',
                         borderColor: '#DC8665',
-                        borderRadius: '5px', 
+                        borderRadius: '5px',
                         maxWidth: '75%',
                         marginLeft: 'auto',
                         marginRight: 'auto',
