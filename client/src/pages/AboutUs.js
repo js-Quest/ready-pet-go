@@ -63,7 +63,7 @@ export default function AboutUs() {
 
           <Grid item xs={12} md={6} xl={3.5} sx={{ justifyContent: 'center' }}>
             <Card sx={{ width: '350px', height: '485px' }}>
-              <CardContent component='h2' sx={{ textAlign: 'center', paddingTop: '1em', paddingBottom: '1em', backgroundColor: '#ee9f80', marginBottom: '1em' }}>
+              <CardContent component='h2' sx={{ textAlign: 'center', paddingTop: '1em', paddingBottom: '1em', backgroundColor: '#EEB462', marginBottom: '1em' }}>
               Leah Krumholz
               </CardContent>
               <Box className='card-box'>
@@ -82,7 +82,7 @@ export default function AboutUs() {
 
           <Grid item xs={12} md={6} xl={3.5} sx={{ justifyContent: 'center' }}>
             <Card sx={{ width: '350px', height: '485px' }}>
-              <CardContent component='h2' sx={{ textAlign: 'center', paddingTop: '1em', paddingBottom: '1em', backgroundColor: '#ee9f80', marginBottom: '1em' }}>
+              <CardContent component='h2' sx={{ textAlign: 'center', paddingTop: '1em', paddingBottom: '1em', backgroundColor: '#534666', marginBottom: '1em' }}>
               Sunny Ovson
               </CardContent>
               <Box className='card-box'>
@@ -101,7 +101,7 @@ export default function AboutUs() {
 
           <Grid item xs={12} md={6} xl={3.5} sx={{ justifyContent: 'center' }}>
             <Card sx={{ width: '350px', height: '485px' }}>
-              <CardContent component='h2' sx={{ textAlign: 'center', paddingTop: '1em', paddingBottom: '1em', backgroundColor: '#ee9f80', marginBottom: '1em' }}>
+              <CardContent component='h2' sx={{ textAlign: 'center', paddingTop: '1em', paddingBottom: '1em', backgroundColor: '#CD7672', marginBottom: '1em' }}>
               Emma Carr
               </CardContent>
               <Box className='card-box'>
@@ -120,7 +120,7 @@ export default function AboutUs() {
 
           <Grid item xs={12} md={6} xl={3.5} sx={{ justifyContent: 'center' }}>
             <Card sx={{ width: '350px', height: '485px' }}>
-              <CardContent component='h2' sx={{ textAlign: 'center', paddingTop: '1em', paddingBottom: '1em', backgroundColor: '#ee9f80', marginBottom: '1em' }}>
+              <CardContent component='h2' sx={{ textAlign: 'center', paddingTop: '1em', paddingBottom: '1em', backgroundColor: '#138086', marginBottom: '1em' }}>
               Ki Sar
               </CardContent>
               <Box className='card-box'>
