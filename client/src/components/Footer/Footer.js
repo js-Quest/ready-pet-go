@@ -131,7 +131,7 @@ function Footer() {
             <Typography
               variant="subtitle1"
               className="footLink"
-              href="/"
+              onClick={() => handleRedirect('mailto:YourMom@email.com')}
               marginLeft={{ xs: '5px', md: '6px', lg: '8px' }}
               sx={{
                 fontSize: { xs: '14px', md: '15px', lg: '16px' },
