@@ -14,11 +14,6 @@ import MeetUpForm from '../components/MeetUpComponents/MeetUpForm';
 import MeetUpList from '../components/MeetUpComponents/MeetUpList';
 
 
-
-// THIS IS A WORK IN PROGRESS  
-
-
-
 export default function MeetUp() {
 
     const { loading, data } = useQuery(QUERY_MEETUPS);
@@ -68,7 +63,7 @@ export default function MeetUp() {
                             }}
                         >
 
-                            Here at Ready, Pet, Go! we make pet socializing easier by providing a forum to help our users schedule playdates for thier beloved pets! Leave your time, location, and breed/size of pet so that other users can see and respond to your MeetUp post!
+                            Here at Ready, Pet, Go! we make pet socializing easier by providing a forum to help our users schedule playdates for their beloved pets! Leave your time, location, and breed/size of pet so that other users can see and respond to your MeetUp post!
                             <br /><br />
                             Additionally, we understand that sometimes only true 'experience' is the answer and google won't be enough to help you along on your journey of pet-parenthood. In this forum, ask any questions you may have and get input or advice from others!
 

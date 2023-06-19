@@ -39,7 +39,7 @@ export default function Home() {
             paddingBottom: '5px'
           }}
         >
-          Welcome Fellow Pet People!
+          Welcome, Fellow Pet People!
         </Typography>
       </Box>
 
@@ -64,7 +64,7 @@ export default function Home() {
             fontSize: { xs: '20px', md: '23px', lg: '26px' },
           }}
         >
-          At Ready, Pet, Go!, our mission is simple: <i>to be a trusted companion for pet owners</i>. <br></br>We provide comprehensive guidance and support to prospective, new, and long-time pet parents.
+          At Ready, Pet, Go!, our mission is simple: <i>to be a trusted companion for pet owners</i>. <br></br>We provide comprehensive guidance and support for prospective, new, and long-time pet parents.
         </Typography>
       </Box>
 
