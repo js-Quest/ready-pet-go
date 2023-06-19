@@ -50,7 +50,7 @@ const MeetUpList = ({
                   src={meetUp.user[0].profilePicture} />
                   ):
                 (<img
-                  style={{ width: 100, marginLeft: '5px', border: '1px solid #36393f62' }}
+                  style={{ width: 100, height: 97, marginLeft: '5px', border: '1px solid #36393f62' }}
                   src={placePic} />
                   )
                   }
