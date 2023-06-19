@@ -12,7 +12,9 @@ import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 // import Kitten from '../../images/cat2-small.png';
-import './style.css'
+import './style.css';
+import CareersPop from "./Popper";
+import ContribPop from "./ContribPop";
 
 function Footer() {
   const [openModal, setOpenModal] = useState(false);
@@ -105,16 +107,8 @@ function Footer() {
             >
               <Link className='footLink' to='/about'>Meet the Team</Link>
             </Typography>
-            <Typography
-              variant="subtitle1"
-              className="footLink"
-              href="/"
-              marginLeft={{ xs: '5px', md: '6px', lg: '8px' }}
-              sx={{
-                fontSize: { xs: '14px', md: '15px', lg: '16px' },
-              }}
-            >
-              <Link className='footLink' to=''>Contributions</Link>
+            <Typography>
+              <ContribPop />
             </Typography>
           </Grid>
 
@@ -139,16 +133,8 @@ function Footer() {
             >
               Email
             </Typography>
-            <Typography
-              variant="subtitle1"
-              className="footLink"
-              href="/"
-              marginLeft={{ xs: '5px', md: '6px', lg: '8px' }}
-              sx={{
-                fontSize: { xs: '14px', md: '15px', lg: '16px' },
-              }}
-            >
-              <Link className='footLink' to=''>Careers</Link>
+            <Typography>
+              <CareersPop />
             </Typography>
           </Grid>
 
