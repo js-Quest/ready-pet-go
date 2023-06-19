@@ -3,7 +3,7 @@ import React from 'react';
 // Import the `useParams()` hook
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
-import PetPeek1 from '../images/peeking1.png';
+import PupPeekSolo from '../images/pupPeekSolo.png';
 import Container from '@mui/material/Container';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -35,9 +35,9 @@ const SingleMeetUp = () => {
     return ( 
 
         <>
-            <div className='petPeeking'>
+            <div className='pupPeeking'>
                 <img
-                    src={PetPeek1}
+                    src={PupPeekSolo}
                     alt='peeking'
                 />
             </div>
@@ -70,7 +70,7 @@ const SingleMeetUp = () => {
                                 fontWeight: 'inherit',}}> {meetUp.meetUpTitle}</h3>
                             <h5>
                             
-                                <span style={{ fontSize: '1rem', display:'flex', alignItem:'baseline', position:'absolute', bottom:'0' }}>
+                                <span style={{ fontSize: '1rem', display:'flex', alignItem:'baseline', position:'absolute', bottom:'2px' }}>
                                 {meetUp.meetUpAuthor} posted this meetUp on {meetUp.createdAt}
                                 </span>
                             </h5>
@@ -111,13 +111,13 @@ const SingleMeetUp = () => {
 
 
                         </Typography>
-                        <div className='catReach'>
+                        {/* <div className='catReach'>
                             <img
                                 src={ElGato}
                                 alt='CatSneezins'
                                 style={{ marginLeft: '-8em', marginBottom: '-.4em' }}
                             />
-                        </div>
+                        </div> */}
                     </Box>
                 </Box>
 
@@ -168,13 +168,13 @@ const SingleMeetUp = () => {
                             </div>
 
                         </Typography>
-                        <div className='catReach'>
+                        {/* <div className='catReach'>
                             <img
                                 src={ElGato}
                                 alt='CatSneezins'
                                 style={{ marginLeft: '-8em', marginBottom: '-.4em' }}
                             />
-                        </div>
+                        </div> */}
                     </Box>
                 </Box>
             </Container >

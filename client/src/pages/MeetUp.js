@@ -8,7 +8,6 @@ import Typography from '@mui/material/Typography';
 import './style.css';
 // import { TextField, Button, Grid } from '@mui/material';
 import Kitten from '../images/cat2-small.png';
-
 import { QUERY_MEETUPS } from '../utils/queries'
 
 import MeetUpForm from '../components/MeetUpComponents/MeetUpForm';
@@ -27,7 +26,7 @@ export default function MeetUp() {
 
     return (
         <>
-            <Container className='dashboardContainer'>
+            <Container className='dashboardContainer' sx={{ marginTop: '2em' }}>
                 <h1 className='dashboardHead'>Welcome to MeetUp!</h1>
                 <Box sx={{
                     marginTop: '2em'

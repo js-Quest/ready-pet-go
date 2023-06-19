@@ -310,7 +310,7 @@
 
 /* About Us styling */
 /* - - - - - - - - - - -  */
-.card-container {
+/* .card-container {
   margin-top: 8%;
   margin-bottom: 0%;
   display: flex;
@@ -321,10 +321,10 @@
   padding-left: 0px !important;
   padding-right: 0px !important;
   border-radius: 10px;
-}
+} */
 
 .card-box {
-  min-height: 350px;
+  min-height: auto;
   min-width: 300px;
   display: flex;
   justify-content: center;
@@ -368,6 +368,21 @@
   margin-top: 2%;
 }
 
+.catNap {
+  max-width: 92%;
+  display: flex;
+  margin-bottom: -8.3em;
+  justify-content: end;
+}
+
+/* @media (max-width: 1337px) {
+  .catImgNap {
+    width: 140px;
+    height: auto;
+    margin-bottom: -4em;
+  }
+} */
+
 /* Privacy Policy Page */
 /* - - - - - - - - - - -  */
 .policyContainer {
@@ -398,4 +413,14 @@
 .paymentClose:hover {
   background-color: white !important;
   color: black;
+}
+
+/* MEETUPS & COMMENTS */
+/* - - - - - - - - - - -  */
+.pupPeeking {
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin-bottom: -23px !important;
+  margin-left: -2em;
 }
