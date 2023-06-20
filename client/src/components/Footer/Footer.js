@@ -49,7 +49,7 @@ function Footer() {
   };
 
   const { pathname } = useLocation();
-  if (pathname === "/firebase" || pathname === "/login" || pathname === "/register" ) return null;
+  if (pathname === "/firebase" || pathname === "/login" || pathname === "/register" || pathname === "/product/ready-kitty-go" || pathname === "/product/ready-combo-go" || pathname === "/product/ready-puppy-go") return null;
 
   const handleRedirect = (url) => {
     window.open(url, '_blank');

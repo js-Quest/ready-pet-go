@@ -4,6 +4,7 @@ import { Button, Modal, TextField } from "@mui/material";
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import { IconButton, Typography } from "@mui/material";
 import './style.css';
+import AbbrFooter from '../components/Footer/AbbrFooter';
 
 function ItemDetails() {
   const [openModal, setOpenModal] = useState(false);
@@ -39,7 +40,8 @@ function ItemDetails() {
   };
 
   return (
-    <div className="products">
+    <div maxWidth={100}>
+    <div className="products" style={{ marginTop: '4%'}}>
       {data.item.map((item) => (
         <div className="product" key={item.slug}>
           <a href={`${item.slug}`}>
@@ -173,6 +175,8 @@ function ItemDetails() {
           </form>
         </div>
       </Modal>
+    </div>
+    <AbbrFooter />
     </div>
   );
 }
