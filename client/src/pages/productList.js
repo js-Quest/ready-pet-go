@@ -18,20 +18,20 @@ function ProductList() {
   const token = Auth.loggedIn() ? Auth.getToken() : null;
   if (!token) {
     return (
-      <Container className='errorContainer'>
+      <Container className='errorContainer' sx={{ marginTop: '6%', marginBottom: '6%'}}>
         <h1 className='errorHead'>Hold Up!</h1>
         <Box className='errorBox'>
           <h2 className='errorText'
           >Please <Link to="/login" className='errorLink'>LOGIN</Link> to view Products!
           </h2>
-          <Button sx={{
-            background: '#B6B3B2',
-            color: '#36393F',
+          <Button className='errorBtn' sx={{
+            background: '#534666',
+            color: '#eeb462',
             textTransform: 'none',
-            fontSize: '16px',
+            fontSize: '20px',
             fontWeight: 700,
             height: '40px',
-            width: '50%',
+            width: '30%',
             marginTop: '50px',
             border: '1px solid black',
             borderRadius: '10px',
@@ -47,8 +47,8 @@ function ProductList() {
   }
 
   return (
-    <div>
-      <h1>Featured Products</h1>
+    <div className='featProdContain'>
+      <h1 className='featProdTitle'>Featured Products</h1>
       <div className="products">
         {loading ? (<div>loading</div>) : (products.map((product) => (
           <div className="product" key={product.slug}>

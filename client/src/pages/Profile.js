@@ -454,12 +454,12 @@ export default function Profile() {
               fontSize: '1.1rem',
               marginTop: '1.3em',
               paddingLeft: '3em',
-              paddingRight: '3em',
+              paddingRight: 0,
               paddingTop: '1em',
-              paddingBottom: '2em',
+              paddingBottom: '1.2em',
               display: 'flex',
               flexDirection: 'row',
-              // flexWrap: 'wrap'
+              flexWrap: 'wrap'
             }}
           >
             {petData.map((item, i) => <PetCard pet={item} petData={petData} setPetData={setPetData} key={i} />)}

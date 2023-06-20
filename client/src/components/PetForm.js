@@ -47,7 +47,14 @@ const PetForm = ({ petData, setPetData, setShowCard }) => {
   };
 
   return (
-    <Card sx={{ maxWidth: 275, padding: '12px' }}>
+    <Card sx={{ 
+      width: 275, 
+      height: '417px', 
+      paddingTop: '15px', 
+      paddingRight: '15px', 
+      paddingLeft: '15px', 
+      }}
+      >
       <CardMedia>
         <CardMedia
           component='img'
@@ -66,7 +73,7 @@ const PetForm = ({ petData, setPetData, setShowCard }) => {
       <CardContent sx={{ marginTop: '-10px', width: 100, paddingLeft: 0, paddingRight: 0 }}>
         <Typography variant="body1" color="text.secondary">
           Name: </Typography>
-          <Typography sx={{ marginLeft: '1.2em' }}>
+        <Typography sx={{ marginLeft: '1.5em' }}>
           <input value={name}
             onChange={(e) => setName(e.target.value)}
             type="text"
@@ -74,7 +81,7 @@ const PetForm = ({ petData, setPetData, setShowCard }) => {
         </Typography>
         <Typography variant="body1" color="text.secondary">
           Age: </Typography>
-        <Typography sx={{ marginLeft: '1.2em' }}>
+        <Typography sx={{ marginLeft: '1.5em' }}>
           <input value={age}
             onChange={(e) => setAge(e.target.value)}
             type="text"
@@ -82,7 +89,7 @@ const PetForm = ({ petData, setPetData, setShowCard }) => {
         </Typography>
         <Typography variant="body1" color="text.secondary">
           Breed: </Typography>
-        <Typography sx={{ marginLeft: '1.2em' }}>
+        <Typography sx={{ marginLeft: '1.5em' }}>
           <input value={breed}
             onChange={(e) => setBreed(e.target.value)}
             type="text"
@@ -90,7 +97,7 @@ const PetForm = ({ petData, setPetData, setShowCard }) => {
         </Typography>
         <Typography variant="body1" color="text.secondary">
           Bio: </Typography>
-        <Typography sx={{ marginLeft: '1.2em' }}>
+        <Typography sx={{ marginLeft: '1.5em' }}>
           <input value={bio}
             onChange={(e) => setBio(e.target.value)}
             type="text"
@@ -104,12 +111,12 @@ const PetForm = ({ petData, setPetData, setShowCard }) => {
           alignItems: 'flex-end',
         }}
       >
-      <IconButton
-        aria-label='save'
-        onClick={handleFormSubmit}
-        sx={{ marginTop: '-12px' }}>
-        <SaveIcon />
-      </IconButton>
+        <IconButton
+          aria-label='save'
+          onClick={handleFormSubmit}
+          sx={{ marginTop: '-4px' }}>
+          <SaveIcon />
+        </IconButton>
       </Box>
     </Card>
   );
