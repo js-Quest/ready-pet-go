@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import '../styles/UWidget.css'
 
 const styles = {
   container: {
@@ -41,11 +42,13 @@ function UploadWidget({ setProfilePicture }) {
     <div style={styles.container}>
       <button
         type="button"
+        className='widgetBtn'
         onClick={() => widgetRef.current.open()} style={styles.button} >
         Upload
       </button>
       <button
         type='button'
+        className='widgetBtn'
         onClick={() => setProfilePicture('')}
         style={styles.button}
       >Delete</button>

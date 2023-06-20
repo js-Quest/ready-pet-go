@@ -30,7 +30,8 @@ function PetCard({ petData, setPetData, pet }) {
   return (
     <Card sx={{ 
       width: 275,
-      marginRight: '15px' }}>
+      marginRight: '15px',
+      marginBottom: '15px' }}>
       <CardContent>
         <CardMedia
           sx={{

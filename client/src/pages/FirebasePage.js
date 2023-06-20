@@ -38,7 +38,7 @@ export default function FirebasePage() {
             height: '50px',
             width: '30%',
             marginTop: '50px',
-            border: '2px dashed #EEB462',
+            border: '1px solid black',
             borderRadius: '10px',
             cursor: 'pointer',
           }}
